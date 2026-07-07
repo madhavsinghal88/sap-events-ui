@@ -1,10 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from 'next/server';
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-const { syncEvents } = require('../../../scripts/sync_events');
+import { syncEvents } from '../../../scripts/sync_events';
 
 export async function GET(request) {
   // Security check: Verify Vercel Cron authorization header to prevent unauthorized triggers

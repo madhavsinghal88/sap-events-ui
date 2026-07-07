@@ -3,11 +3,10 @@ export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { createRequire } from 'module';
 
-const require = createRequire(import.meta.url);
-const { fetchAllSapEvents, mergeWithExistingStatuses } = require('../../../lib/sapFetcher');
-const { hasGoogleCredentials, readEventsFromSheet, writeEventsToSheet } = require('../../../lib/googleSheets');
+
+import { fetchAllSapEvents, mergeWithExistingStatuses } from '../../../lib/sapFetcher';
+import { hasGoogleCredentials, readEventsFromSheet, writeEventsToSheet } from '../../../lib/googleSheets';
 
 const DATA_PATH = path.join(process.cwd(), 'data/events.json');
 

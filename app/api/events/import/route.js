@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-const { mapImportedPayload, mergeWithExistingStatuses } = require('../../../../lib/sapFetcher');
+import { mapImportedPayload, mergeWithExistingStatuses } from '../../../../lib/sapFetcher';
 
 const DATA_PATH = path.join(process.cwd(), 'data/events.json');
 
