@@ -2,7 +2,7 @@ require('dotenv').config({ path: '.env.local' });
 
 const { syncEvents } = require('./sync_events');
 
-const TWELVE_HOURS_MS = 12 * 60 * 60 * 1000;
+const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
 
 async function runSync(label) {
   console.log(`[${new Date().toISOString()}] ${label}`);
@@ -14,10 +14,10 @@ async function runSync(label) {
   }
 }
 
-console.log('SAP Events scheduler started (every 12 hours)');
+console.log('SAP Events scheduler started (every 24 hours)');
 console.log('Press Ctrl+C to stop.');
 
 runSync('Initial sync on startup');
 setInterval(() => {
-  runSync('Scheduled 12-hour sync');
-}, TWELVE_HOURS_MS);
+  runSync('Scheduled 24-hour sync');
+}, TWENTY_FOUR_HOURS_MS);

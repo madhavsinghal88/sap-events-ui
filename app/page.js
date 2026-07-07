@@ -39,10 +39,10 @@ export default function Dashboard() {
   useEffect(() => {
     fetchEvents();
 
-    // Simulate 12-hour automation check
+    // Simulate 24-hour automation check
     const interval = setInterval(() => {
       refreshData();
-    }, 43200000); // 12 hours (12 * 60 * 60 * 1000)
+    }, 86400000); // 24 hours (24 * 60 * 60 * 1000)
 
     return () => clearInterval(interval);
   }, []);
@@ -189,7 +189,7 @@ export default function Dashboard() {
           <h1 className="gradient-text">SAP Events</h1>
           <div className="last-updated">
             <Clock size={14} />
-             <span>Last synced: {lastRefreshed} (Auto-syncs every 12 hours)</span>
+             <span>Last synced: {lastRefreshed} (Auto-syncs every 24 hours)</span>
             {syncMessage ? <span className="sync-message">{syncMessage}</span> : null}
           </div>
         </div>
