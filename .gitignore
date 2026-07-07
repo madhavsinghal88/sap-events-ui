@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# google service account keys
+/credentials/*.json
 
 # vercel
 .vercel
@@ -39,3 +43,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch / temp files
+/data/sap_payload.json
+/potential_data.json
+/sap_raw.html

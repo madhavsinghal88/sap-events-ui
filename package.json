@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8881",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "next start -p 8881",
+    "lint": "eslint",
+    "sync": "node scripts/sync_events.js",
+    "scheduler": "node scripts/scheduler.js",
+    "print-import-script": "node scripts/print_import_script.js",
+    "import-sap-payload": "node scripts/import_sap_payload.js"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "googleapis": "^144.0.0",
     "lucide-react": "^0.575.0",
     "next": "16.1.6",
     "node-fetch": "^2.7.0",
+    "puppeteer-core": "^25.3.0",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },

@@ -18,9 +18,11 @@ import {
 export default function Dashboard() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('All');
+  const [activeTab, setActiveTab] = useState('Explore all events');
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedMonth, setSelectedMonth] = useState('All');
   const [lastRefreshed, setLastRefreshed] = useState(new Date().toLocaleTimeString());
+  const [syncMessage, setSyncMessage] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
 
   const fetchEvents = async () => {
@@ -37,21 +39,28 @@ export default function Dashboard() {
   useEffect(() => {
     fetchEvents();
 
-    // Simulate 48-hour automation check
+    // Simulate 12-hour automation check
     const interval = setInterval(() => {
       refreshData();
-    }, 172800000); // 48 hours (48 * 60 * 60 * 1000)
+    }, 43200000); // 12 hours (12 * 60 * 60 * 1000)
 
     return () => clearInterval(interval);
   }, []);
 
   const refreshData = async () => {
     try {
-      await fetch('/api/events', { method: 'PATCH' });
+      const res = await fetch('/api/events', { method: 'PATCH' });
+      const data = await res.json();
       await fetchEvents();
       setLastRefreshed(new Date().toLocaleTimeString());
+      if (data.source === 'sap_api') {
+        setSyncMessage(`Synced ${data.count} live SAP events.`);
+      } else {
+        setSyncMessage(data.hint || 'Server sync blocked. Run the browser import from SAP finder.');
+      }
     } catch (error) {
       console.error('Refresh failed:', error);
+      setSyncMessage('Refresh failed. Try browser import from SAP finder.');
     }
   };
 
@@ -76,10 +85,44 @@ export default function Dashboard() {
     setSortConfig({ key, direction });
   };
 
+  const parseDateForSort = (dateStr) => {
+    if (!dateStr) return new Date(0);
+    
+    let clean = dateStr.replace(/[–—-]/g, '-');
+    
+    if (clean.includes('-')) {
+      const parts = clean.split('-');
+      const firstPart = parts[0].trim();
+      const lastPart = parts[parts.length - 1].trim();
+      
+      if (/^\d+$/.test(firstPart)) {
+        const monthYearMatch = lastPart.match(/[a-zA-Z]+,?\s*\d{4}/);
+        if (monthYearMatch) {
+          clean = `${monthYearMatch[0].replace(',', '')} ${firstPart}`;
+        }
+      } else {
+        const yearMatch = lastPart.match(/\d{4}/);
+        if (yearMatch) {
+          clean = `${firstPart}, ${yearMatch[0]}`;
+        }
+      }
+    }
+
+    const parsed = new Date(clean);
+    if (!isNaN(parsed.getTime())) return parsed;
+    
+    const yearMatch = dateStr.match(/\d{4}/);
+    const year = yearMatch ? yearMatch[0] : '1970';
+    const monthMatch = dateStr.match(/(January|February|March|April|May|June|July|August|September|October|November|December)/i);
+    const month = monthMatch ? monthMatch[0] : 'January';
+    
+    return new Date(`${month} 1, ${year}`);
+  };
+
   const sortedEvents = [...events].sort((a, b) => {
     if (sortConfig.key === 'date') {
-      const dateA = new Date(a.date.split(' – ')[0].split(' – ')[0]);
-      const dateB = new Date(b.date.split(' – ')[0].split(' – ')[0]);
+      const dateA = parseDateForSort(a.date);
+      const dateB = parseDateForSort(b.date);
       return sortConfig.direction === 'asc' ? dateA - dateB : dateB - dateA;
     }
 
@@ -103,18 +146,36 @@ export default function Dashboard() {
   });
 
   const filteredEvents = sortedEvents.filter(event => {
-    const matchesTab = activeTab === 'All' || event.type === activeTab;
+    let matchesTab = false;
+    if (activeTab === 'Explore all events') {
+      matchesTab = true;
+    } else if (activeTab === 'In-person') {
+      matchesTab = event.inPerson;
+    } else if (activeTab === 'Virtual - Live') {
+      matchesTab = event.virtualLive;
+    } else if (activeTab === 'Virtual - On-demand') {
+      matchesTab = event.virtualOnDemand;
+    } else if (activeTab === 'Applied') {
+      matchesTab = event.status === 'applied';
+    }
+
+    let matchesMonth = true;
+    if (selectedMonth !== 'All') {
+      const eventDate = parseDateForSort(event.date);
+      matchesMonth = eventDate.getMonth() === parseInt(selectedMonth, 10);
+    }
+
     const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.location.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesTab && matchesSearch;
+    return matchesTab && matchesMonth && matchesSearch;
   });
 
   const toBeAppliedEvents = events.filter(e => e.status === 'to_be_applied');
 
   const stats = {
     total: events.length,
-    upcoming: events.filter(e => new Date(e.date) > new Date()).length,
-    virtual: events.filter(e => e.type === 'Virtual').length,
+    upcoming: events.filter(e => parseDateForSort(e.date) > new Date()).length,
+    virtual: events.filter(e => e.type.includes('Virtual')).length,
     applied: events.filter(e => e.status === 'applied').length
   };
 
@@ -128,10 +189,33 @@ export default function Dashboard() {
           <h1 className="gradient-text">SAP Events</h1>
           <div className="last-updated">
             <Clock size={14} />
-            <span>Last synced: {lastRefreshed} (Auto-syncs every 48 hours)</span>
+             <span>Last synced: {lastRefreshed} (Auto-syncs every 12 hours)</span>
+            {syncMessage ? <span className="sync-message">{syncMessage}</span> : null}
           </div>
         </div>
         <div className="header-actions">
+          <div className="month-filter-box glass-panel">
+            <Calendar size={16} />
+            <select
+              value={selectedMonth}
+              onChange={(e) => setSelectedMonth(e.target.value)}
+              className="month-select"
+            >
+              <option value="All">All Months</option>
+              <option value="0">January</option>
+              <option value="1">February</option>
+              <option value="2">March</option>
+              <option value="3">April</option>
+              <option value="4">May</option>
+              <option value="5">June</option>
+              <option value="6">July</option>
+              <option value="7">August</option>
+              <option value="8">September</option>
+              <option value="9">October</option>
+              <option value="10">November</option>
+              <option value="11">December</option>
+            </select>
+          </div>
           <div className="search-box glass-panel">
             <Search size={18} />
             <input
@@ -149,10 +233,10 @@ export default function Dashboard() {
 
       {/* Stats Section */}
       <section className="stats-grid">
-        <StatCard label="Total Events" value={stats.total} icon={<Calendar className="text-blue" />} />
+        <StatCard label="Total Events" value={stats.total} icon={<Calendar className="text-blue" />} onClick={() => setActiveTab('Explore all events')} />
         <StatCard label="Upcoming" value={stats.upcoming} icon={<Clock className="text-purple" />} />
-        <StatCard label="Virtual" value={stats.virtual} icon={<Monitor className="text-green" />} />
-        <StatCard label="Applied" value={stats.applied} icon={<CheckCircle2 className="text-blue" />} />
+        <StatCard label="Virtual" value={stats.virtual} icon={<Monitor className="text-green" />} onClick={() => setActiveTab('Virtual - Live')} />
+        <StatCard label="Applied" value={stats.applied} icon={<CheckCircle2 className="text-blue" />} onClick={() => setActiveTab('Applied')} />
       </section>
 
       <div className="main-content">
@@ -161,7 +245,7 @@ export default function Dashboard() {
           <div className="section-header">
             <h2>Explore Events <span className="results-count">({filteredEvents.length} results)</span></h2>
             <div className="tabs">
-              {['All', 'In-Person', 'Virtual', 'Hybrid'].map(tab => (
+              {['Explore all events', 'In-person', 'Virtual - Live', 'Virtual - On-demand', 'Applied'].map(tab => (
                 <button
                   key={tab}
                   className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
@@ -295,6 +379,11 @@ export default function Dashboard() {
           gap: 0.5rem;
           color: var(--text-muted);
           font-size: 0.85rem;
+          flex-wrap: wrap;
+        }
+
+        .sync-message {
+          color: #f59e0b;
         }
 
         .header-actions {
@@ -317,6 +406,30 @@ export default function Dashboard() {
           color: white;
           width: 100%;
           outline: none;
+        }
+
+        .month-filter-box {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.6rem 1rem;
+          border-radius: 12px;
+        }
+
+        .month-select {
+          background: none;
+          border: none;
+          color: white;
+          outline: none;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 0.95rem;
+          padding-right: 0.5rem;
+        }
+
+        .month-select option {
+          background: #12131a;
+          color: white;
         }
 
         .refresh-btn {
@@ -666,9 +779,9 @@ export default function Dashboard() {
   );
 }
 
-function StatCard({ label, value, icon }) {
+function StatCard({ label, value, icon, onClick }) {
   return (
-    <div className="stat-card glass-panel">
+    <div className={`stat-card glass-panel ${onClick ? 'clickable' : ''}`} onClick={onClick}>
       <div className="stat-icon">{icon}</div>
       <div className="stat-info">
         <span className="stat-label">{label}</span>
@@ -682,7 +795,16 @@ function StatCard({ label, value, icon }) {
           gap: 1.5rem;
           transition: all 0.2s;
         }
-        .stat-card:hover {
+        .stat-card.clickable {
+          cursor: pointer;
+        }
+        .stat-card.clickable:hover {
+          transform: translateY(-2px);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.3);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+        .stat-card:hover:not(.clickable) {
           background: rgba(255, 255, 255, 0.06);
           border-color: rgba(255, 255, 255, 0.2);
         }
