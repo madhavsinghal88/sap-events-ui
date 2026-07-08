@@ -5,15 +5,12 @@ import {
   Calendar,
   MapPin,
   Monitor,
-  CheckCircle2,
-  PlusCircle,
   Clock,
   Search,
-  Filter,
   ExternalLink,
-  ChevronRight,
-  Info,
-  Globe
+  Globe,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 const getCountryFromLocation = (location) => {
@@ -41,39 +38,115 @@ const getCountryFromLocation = (location) => {
   return loc;
 };
 
+const PRODUCT_CATEGORY_RULES = [
+  ['AI & Analytics', ['ai', 'analytics', 'data cloud', 'data', 'planning', 'joule']],
+  ['ERP & Finance', ['erp', 'finance', 'financial', 'accounting', 'tax', 'treasury']],
+  ['Human Capital Management', ['hr', 'workforce', 'human capital', 'employee', 'successfactors']],
+  ['Customer Experience', ['customer experience', 'cx', 'sales', 'service', 'commerce', 'crm', 'marketing']],
+  ['Supply Chain', ['supply chain', 'procurement', 'logistics', 'inventory', 'manufacturing']],
+  ['Integration & Platform', ['integration', 'btp', 'platform', 'developer', 'api', 'cloud']],
+];
+
+const INDUSTRY_RULES = [
+  ['Travel & Transportation', ['travel', 'transportation', 'airline', 'airport', 'mobility']],
+  ['Retail & Consumer', ['retail', 'consumer', 'e-commerce', 'commerce']],
+  ['Manufacturing', ['manufacturing', 'automotive', 'industrial', 'factory']],
+  ['Financial Services', ['bank', 'banking', 'insurance', 'finance', 'financial']],
+  ['Public Sector', ['public sector', 'government', 'education', 'academic']],
+  ['Technology', ['technology', 'developer', 'software', 'cloud', 'data']],
+];
+
+const EVENT_CATEGORY_RULES = [
+  ['Conference', ['conference', 'congress', 'connect', 'convention']],
+  ['Webinar', ['webinar', 'web cast', 'webcast']],
+  ['Workshop', ['workshop', 'bootcamp', 'hands-on']],
+  ['Summit', ['summit']],
+  ['Forum', ['forum']],
+  ['Roadshow', ['roadshow', 'tour']],
+];
+
+function deriveFromRules(text, rules, fallback) {
+  const normalized = String(text || '').toLowerCase();
+  for (const [label, keywords] of rules) {
+    if (keywords.some((keyword) => normalized.includes(keyword))) {
+      return label;
+    }
+  }
+  return fallback;
+}
+
+function getProductCategory(event) {
+  return deriveFromRules(event.title, PRODUCT_CATEGORY_RULES, 'General Business');
+}
+
+function getIndustry(event) {
+  return deriveFromRules(`${event.title} ${event.location}`, INDUSTRY_RULES, 'Cross-industry');
+}
+
+function getEventCategory(event) {
+  const fromTitle = deriveFromRules(event.title, EVENT_CATEGORY_RULES, null);
+  if (fromTitle) return fromTitle;
+  if (event.type === 'In-person') return 'Event';
+  if (event.type === 'Hybrid') return 'Hybrid Event';
+  if (event.type === 'Virtual - On-demand') return 'On-demand Session';
+  return 'Virtual Event';
+}
+
+function getLanguage(event) {
+  const title = String(event.title || '');
+  const link = String(event.link || '').toLowerCase();
+  const location = String(event.location || '').toLowerCase();
+
+  if (/[\u3040-\u30ff\u4e00-\u9faf]/.test(title)) return 'Japanese';
+  if (/[äöüß]/i.test(title) || link.includes('/germany/') || location.includes('germany')) return 'German';
+  if (/[\u00c0-\u024f]/.test(title) && (link.includes('/spain/') || link.includes('/mexico/') || location.includes('spain'))) {
+    return 'Spanish';
+  }
+  if (link.includes('/france/') || location.includes('france')) return 'French';
+  if (link.includes('/brazil/') || location.includes('brazil')) return 'Portuguese';
+  return 'English';
+}
+
+function getDateRangeBucket(date) {
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const diffDays = Math.ceil((date - startOfToday) / (1000 * 60 * 60 * 24));
+
+  if (diffDays < 0) return 'Past';
+  if (diffDays <= 30) return 'Next 30 Days';
+  if (diffDays <= 90) return 'Next 90 Days';
+  return 'Later';
+}
+
 export default function Dashboard() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('Explore all events');
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedDateRange, setSelectedDateRange] = useState('All');
+  const [selectedProductCategory, setSelectedProductCategory] = useState('All');
+  const [selectedIndustry, setSelectedIndustry] = useState('All');
+  const [selectedEventCategory, setSelectedEventCategory] = useState('All');
+  const [selectedLanguage, setSelectedLanguage] = useState('All');
   const [selectedMonth, setSelectedMonth] = useState('All');
   const [selectedCountry, setSelectedCountry] = useState('All');
+  const [selectedEventType, setSelectedEventType] = useState('All');
   const [selectedCompany, setSelectedCompany] = useState('All');
-
-  // Filter events by selected company first
-  const companyFilteredEvents = useMemo(() => {
-    if (selectedCompany === 'All') return events;
-    return events.filter(e => (e.company || 'SAP').toLowerCase() === selectedCompany.toLowerCase());
-  }, [events, selectedCompany]);
-
-  // Derive available countries list dynamically from company-filtered events
-  const countriesList = useMemo(() => {
-    const list = new Set();
-    companyFilteredEvents.forEach(e => {
-      list.add(getCountryFromLocation(e.location));
-    });
-    return Array.from(list).sort();
-  }, [companyFilteredEvents]);
-
-  // Reset filters when switching companies to prevent empty states
-  useEffect(() => {
-    setSelectedCountry('All');
-    setActiveTab('Explore all events');
-  }, [selectedCompany]);
 
   const [lastRefreshed, setLastRefreshed] = useState('');
   const [syncMessage, setSyncMessage] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('eventall-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+  };
 
   const formatLastSynced = (isoString) => {
     if (!isoString) return '';
@@ -113,16 +186,6 @@ export default function Dashboard() {
     }
   };
 
-  useEffect(() => {
-    fetchEvents();
-
-    const interval = setInterval(() => {
-      refreshData();
-    }, 86400000); // 24 hours (24 * 60 * 60 * 1000)
-
-    return () => clearInterval(interval);
-  }, []);
-
   const refreshData = async () => {
     try {
       const res = await fetch('/api/events', { method: 'PATCH' });
@@ -144,6 +207,21 @@ export default function Dashboard() {
     }
   };
 
+  useEffect(() => {
+    const initialFetch = setTimeout(() => {
+      fetchEvents();
+    }, 0);
+
+    const interval = setInterval(() => {
+      refreshData();
+    }, 86400000); // 24 hours (24 * 60 * 60 * 1000)
+
+    return () => {
+      clearTimeout(initialFetch);
+      clearInterval(interval);
+    };
+  }, []);
+
   const updateStatus = async (id, status) => {
     try {
       setEvents(prev => prev.map(e => e.id === id ? { ...e, status } : e));
@@ -155,6 +233,20 @@ export default function Dashboard() {
     } catch (error) {
       console.error('Status update failed:', error);
     }
+  };
+
+  const handleCompanyChange = (company) => {
+    setSelectedCompany(company);
+    setSelectedCountry('All');
+    setSelectedDateRange('All');
+    setSelectedProductCategory('All');
+    setSelectedIndustry('All');
+    setSelectedEventCategory('All');
+    setSelectedLanguage('All');
+    setSelectedEventType('All');
+    setSelectedMonth('All');
+    setSearchTerm('');
+    setActiveTab('Explore all events');
   };
 
   const requestSort = (key) => {
@@ -199,10 +291,58 @@ export default function Dashboard() {
     return new Date(`${month} 1, ${year}`);
   };
 
+  const enrichedEvents = useMemo(() => (
+    events.map((event) => {
+      const parsedDate = parseDateForSort(event.date);
+      return {
+        ...event,
+        parsedDate,
+        regionCountry: getCountryFromLocation(event.location),
+        productCategory: getProductCategory(event),
+        industry: getIndustry(event),
+        eventCategory: getEventCategory(event),
+        language: getLanguage(event),
+        eventType: event.type || 'Other',
+        dateRange: getDateRangeBucket(parsedDate),
+      };
+    })
+  ), [events]);
+
+  const companyFilteredEvents = useMemo(() => {
+    if (selectedCompany === 'All') return enrichedEvents;
+    return enrichedEvents.filter(e => (e.company || 'SAP').toLowerCase() === selectedCompany.toLowerCase());
+  }, [enrichedEvents, selectedCompany]);
+
+  const countriesList = useMemo(() => {
+    const list = new Set();
+    companyFilteredEvents.forEach((e) => list.add(e.regionCountry));
+    return Array.from(list).sort();
+  }, [companyFilteredEvents]);
+
+  const productCategories = useMemo(() => (
+    Array.from(new Set(companyFilteredEvents.map((e) => e.productCategory))).sort()
+  ), [companyFilteredEvents]);
+
+  const industries = useMemo(() => (
+    Array.from(new Set(companyFilteredEvents.map((e) => e.industry))).sort()
+  ), [companyFilteredEvents]);
+
+  const eventCategories = useMemo(() => (
+    Array.from(new Set(companyFilteredEvents.map((e) => e.eventCategory))).sort()
+  ), [companyFilteredEvents]);
+
+  const languages = useMemo(() => (
+    Array.from(new Set(companyFilteredEvents.map((e) => e.language))).sort()
+  ), [companyFilteredEvents]);
+
+  const eventTypes = useMemo(() => (
+    Array.from(new Set(companyFilteredEvents.map((e) => e.eventType))).sort()
+  ), [companyFilteredEvents]);
+
   const sortedEvents = [...companyFilteredEvents].sort((a, b) => {
     if (sortConfig.key === 'date') {
-      const dateA = parseDateForSort(a.date);
-      const dateB = parseDateForSort(b.date);
+      const dateA = a.parsedDate;
+      const dateB = b.parsedDate;
       return sortConfig.direction === 'asc' ? dateA - dateB : dateB - dateA;
     }
 
@@ -243,18 +383,34 @@ export default function Dashboard() {
 
     let matchesMonth = true;
     if (selectedMonth !== 'All') {
-      const eventDate = parseDateForSort(event.date);
+      const eventDate = event.parsedDate;
       matchesMonth = eventDate.getMonth() === parseInt(selectedMonth, 10);
     }
 
     let matchesCountry = true;
     if (selectedCountry !== 'All') {
-      matchesCountry = getCountryFromLocation(event.location) === selectedCountry;
+      matchesCountry = event.regionCountry === selectedCountry;
     }
+
+    const matchesDateRange = selectedDateRange === 'All' || event.dateRange === selectedDateRange;
+    const matchesProductCategory = selectedProductCategory === 'All' || event.productCategory === selectedProductCategory;
+    const matchesIndustry = selectedIndustry === 'All' || event.industry === selectedIndustry;
+    const matchesEventCategory = selectedEventCategory === 'All' || event.eventCategory === selectedEventCategory;
+    const matchesLanguage = selectedLanguage === 'All' || event.language === selectedLanguage;
+    const matchesEventType = selectedEventType === 'All' || event.eventType === selectedEventType;
 
     const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.location.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesTab && matchesMonth && matchesCountry && matchesSearch;
+    return matchesTab &&
+      matchesMonth &&
+      matchesCountry &&
+      matchesDateRange &&
+      matchesProductCategory &&
+      matchesIndustry &&
+      matchesEventCategory &&
+      matchesLanguage &&
+      matchesEventType &&
+      matchesSearch;
   });
 
   const toBeAppliedEvents = companyFilteredEvents.filter(e => e.status === 'to_be_applied');
@@ -284,41 +440,6 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="header-actions">
-          <div className="month-filter-box glass-panel">
-            <Globe size={16} />
-            <select
-              value={selectedCountry}
-              onChange={(e) => setSelectedCountry(e.target.value)}
-              className="month-select"
-            >
-              <option value="All">Filter by Location</option>
-              {countriesList.map(country => (
-                <option key={country} value={country}>{country}</option>
-              ))}
-            </select>
-          </div>
-          <div className="month-filter-box glass-panel">
-            <Calendar size={16} />
-            <select
-              value={selectedMonth}
-              onChange={(e) => setSelectedMonth(e.target.value)}
-              className="month-select"
-            >
-              <option value="All">Filter by Month</option>
-              <option value="0">January</option>
-              <option value="1">February</option>
-              <option value="2">March</option>
-              <option value="3">April</option>
-              <option value="4">May</option>
-              <option value="5">June</option>
-              <option value="6">July</option>
-              <option value="7">August</option>
-              <option value="8">September</option>
-              <option value="9">October</option>
-              <option value="10">November</option>
-              <option value="11">December</option>
-            </select>
-          </div>
           <div className="search-box glass-panel">
             <Search size={18} />
             <input
@@ -331,8 +452,79 @@ export default function Dashboard() {
           <button onClick={refreshData} className="refresh-btn glass-panel">
             Trigger Intel Sync
           </button>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label={theme === 'light' ? 'Switch to black background' : 'Switch to white background'}
+            title={theme === 'light' ? 'Black background' : 'White background'}
+          >
+            {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+            {theme === 'light' ? 'Black' : 'White'}
+          </button>
         </div>
       </header>
+
+      <div className="sap-filter-bar glass-panel">
+        <FilterSelect
+          label="Date Range"
+          value={selectedDateRange}
+          onChange={setSelectedDateRange}
+          options={['All', 'Next 30 Days', 'Next 90 Days', 'Later', 'Past']}
+        />
+        <FilterSelect
+          label="Product Category"
+          value={selectedProductCategory}
+          onChange={setSelectedProductCategory}
+          options={['All', ...productCategories]}
+        />
+        <FilterSelect
+          label="Industry"
+          value={selectedIndustry}
+          onChange={setSelectedIndustry}
+          options={['All', ...industries]}
+        />
+        <FilterSelect
+          label="Event Category"
+          value={selectedEventCategory}
+          onChange={setSelectedEventCategory}
+          options={['All', ...eventCategories]}
+        />
+        <FilterSelect
+          label="Language"
+          value={selectedLanguage}
+          onChange={setSelectedLanguage}
+          options={['All', ...languages]}
+        />
+        <FilterSelect
+          label="Region/Country"
+          value={selectedCountry}
+          onChange={setSelectedCountry}
+          options={['All', ...countriesList]}
+        />
+        <FilterSelect
+          label="Event Type"
+          value={selectedEventType}
+          onChange={setSelectedEventType}
+          options={['All', ...eventTypes]}
+        />
+        <FilterSelect
+          label="Sort By"
+          value={`${sortConfig.key}:${sortConfig.direction}`}
+          onChange={(value) => {
+            const [key, direction] = value.split(':');
+            setSortConfig({ key, direction });
+          }}
+          options={[
+            { value: 'date:asc', label: 'Upcoming' },
+            { value: 'date:desc', label: 'Newest' },
+            { value: 'title:asc', label: 'Title A-Z' },
+            { value: 'location:asc', label: 'Location' },
+            { value: 'status:asc', label: 'Status' },
+          ]}
+          alignRight
+        />
+      </div>
 
       {/* Company Selector Tab Bar */}
       <div className="company-selector glass-panel">
@@ -342,7 +534,7 @@ export default function Dashboard() {
           return (
             <button
               key={compTab}
-              onClick={() => setSelectedCompany(compValue)}
+              onClick={() => handleCompanyChange(compValue)}
               className={`company-tab-btn ${isSelected ? 'active' : ''} ${compValue.toLowerCase()}`}
             >
               {compTab}
@@ -433,6 +625,14 @@ export default function Dashboard() {
           gap: 2.5rem;
         }
 
+        .sap-filter-bar {
+          display: grid;
+          grid-template-columns: repeat(8, minmax(0, 1fr));
+          gap: 0.35rem;
+          padding: 0.6rem 0.8rem;
+          align-items: center;
+        }
+
         .company-selector {
           display: flex;
           gap: 0.8rem;
@@ -459,14 +659,14 @@ export default function Dashboard() {
 
         .company-tab-btn:hover {
           color: var(--foreground);
-          background: #F8FAFC;
-          border-color: #CBD5E1;
+          background: var(--surface-hover);
+          border-color: var(--border-strong);
         }
 
         .company-tab-btn.active.all {
-          border-color: #94A3B8;
+          border-color: var(--border-strong);
           color: var(--foreground);
-          background: #F1F5F9;
+          background: var(--surface-alt);
         }
 
         .company-tab-btn.active.sap {
@@ -617,7 +817,7 @@ export default function Dashboard() {
         }
 
         .search-box input::placeholder {
-          color: #94A3B8;
+          color: var(--text-placeholder);
         }
 
         .month-filter-box {
@@ -659,8 +859,8 @@ export default function Dashboard() {
         }
 
         .refresh-btn:hover {
-          background: #F8FAFC;
-          border-color: #CBD5E1;
+          background: var(--surface-hover);
+          border-color: var(--border-strong);
           transform: translateY(-1px);
         }
 
@@ -686,10 +886,10 @@ export default function Dashboard() {
         .tabs {
           display: flex;
           gap: 0.25rem;
-          background: #F1F5F9;
+          background: var(--surface-alt);
           padding: 0.25rem;
           border-radius: 8px;
-          border: 1px solid #E2E8F0;
+          border: 1px solid var(--card-border);
         }
 
         .tab-btn {
@@ -703,7 +903,7 @@ export default function Dashboard() {
 
         .tab-btn:hover {
           color: var(--foreground);
-          background: rgba(255, 255, 255, 0.5);
+          background: var(--tab-hover);
         }
 
         .tab-btn.active {
@@ -729,7 +929,7 @@ export default function Dashboard() {
           font-weight: 700;
           color: var(--text-muted);
           font-size: 0.8rem;
-          background: #F8FAFC;
+          background: var(--surface-muted);
           letter-spacing: 0.05em;
           text-transform: uppercase;
         }
@@ -755,17 +955,17 @@ export default function Dashboard() {
           display: grid;
           grid-template-columns: 120px 1fr 250px 120px;
           padding: 1.1rem 1.5rem;
-          border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+          border-bottom: 1px solid var(--row-border);
           align-items: center;
           transition: background-color 150ms ease;
         }
 
         .table-row:hover {
-          background: #F8FAFC !important;
+          background: var(--surface-hover) !important;
         }
 
         .table-row:nth-child(even) {
-          background: rgba(248, 250, 252, 0.5);
+          background: var(--row-stripe);
         }
 
         .table-row:last-child {
@@ -812,10 +1012,10 @@ export default function Dashboard() {
           font-weight: 600;
           padding: 0.15rem 0.4rem;
           border-radius: 4px;
-          background: #F1F5F9;
+          background: var(--surface-alt);
           color: var(--text-muted);
           width: fit-content;
-          border: 1px solid #E2E8F0;
+          border: 1px solid var(--card-border);
         }
 
         .apply-link {
@@ -856,12 +1056,86 @@ export default function Dashboard() {
         .text-cyan { color: #2563EB; }
 
         @media (max-width: 1200px) {
+          .sap-filter-bar {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+          }
+
           .stats-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
+
+        @media (max-width: 768px) {
+          .header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+          }
+
+          .header-actions {
+            width: 100%;
+            flex-wrap: wrap;
+          }
+
+          .search-box {
+            width: 100%;
+          }
+
+          .sap-filter-bar {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
       `}</style>
     </main>
+  );
+}
+
+function FilterSelect({ label, value, onChange, options, alignRight = false }) {
+  return (
+    <label className={`sap-filter ${alignRight ? 'align-right' : ''}`}>
+      <span>{label}</span>
+      <select value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((option) => {
+          const item = typeof option === 'string' ? { value: option, label: option } : option;
+          return (
+            <option key={item.value} value={item.value}>
+              {item.label}
+            </option>
+          );
+        })}
+      </select>
+      <style jsx>{`
+        .sap-filter {
+          display: flex;
+          align-items: center;
+          gap: 0.45rem;
+          min-width: 0;
+          padding: 0.2rem 0.35rem;
+          border-radius: 8px;
+        }
+
+        .sap-filter.align-right {
+          justify-content: flex-end;
+        }
+
+        .sap-filter span {
+          font-size: 0.74rem;
+          color: var(--text-muted);
+          white-space: nowrap;
+        }
+
+        .sap-filter select {
+          min-width: 0;
+          width: 100%;
+          background: transparent;
+          border: none;
+          color: var(--foreground);
+          font-size: 0.78rem;
+          outline: none;
+          cursor: pointer;
+        }
+      `}</style>
+    </label>
   );
 }
 
@@ -890,7 +1164,7 @@ function StatCard({ label, value, icon, onClick }) {
         }
         .stat-card.clickable:hover {
           transform: translateY(-2px);
-          border-color: #CBD5E1;
+          border-color: var(--border-strong);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
         }
         .stat-card:hover:not(.clickable) {
@@ -898,7 +1172,7 @@ function StatCard({ label, value, icon, onClick }) {
         }
         .stat-icon {
           padding: 0.75rem;
-          background: #F1F5F9;
+          background: var(--surface-alt);
           border-radius: 10px;
           display: flex;
           align-items: center;
