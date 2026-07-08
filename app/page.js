@@ -356,7 +356,6 @@ export default function Dashboard() {
         <StatCard label="Indexed Events" value={stats.total} icon={<Calendar className="text-blue" />} onClick={() => setActiveTab('Explore all events')} />
         <StatCard label="Future Opportunities" value={stats.upcoming} icon={<Clock className="text-purple" />} onClick={() => setActiveTab('Upcoming')} />
         <StatCard label="Online Tracks" value={stats.virtual} icon={<Monitor className="text-green" />} onClick={() => setActiveTab('Virtual - Live')} />
-        <StatCard label="Applications Logged" value={stats.applied} icon={<CheckCircle2 className="text-blue" />} onClick={() => setActiveTab('Applied')} />
       </section>
 
       <div className="main-content">
@@ -370,8 +369,7 @@ export default function Dashboard() {
                 { label: 'Upcoming', value: 'Upcoming' },
                 { label: 'In-Person', value: 'In-person' },
                 { label: 'Virtual (Live)', value: 'Virtual - Live' },
-                { label: 'On-Demand', value: 'Virtual - On-demand' },
-                { label: 'Applied Log', value: 'Applied' }
+                { label: 'On-Demand', value: 'Virtual - On-demand' }
               ].map(tab => (
                 <button
                   key={tab.value}
@@ -395,9 +393,6 @@ export default function Dashboard() {
               <div className="col sortable" onClick={() => requestSort('location')}>
                 Location & Type {sortConfig.key === 'location' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
-              <div className="col sortable" onClick={() => requestSort('status')}>
-                Action Tracker {sortConfig.key === 'status' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
-              </div>
               <div className="col">Official Link</div>
             </div>
             <div className="table-body">
@@ -417,17 +412,6 @@ export default function Dashboard() {
                     <MapPin size={12} className="loc-pin" />
                     <span className="loc-text">{event.location}</span>
                   </div>
-                  <div className="col status">
-                    <select
-                      value={event.status}
-                      onChange={(e) => updateStatus(event.id, e.target.value)}
-                      className="status-select"
-                    >
-                      <option value="not_applied">Not Applied</option>
-                      <option value="applied">Applied</option>
-                      <option value="to_be_applied">To be Applied</option>
-                    </select>
-                  </div>
                   <div className="col action">
                     <a href={event.link} target="_blank" rel="noopener noreferrer" className="apply-link">
                       Apply <ExternalLink size={14} />
@@ -438,51 +422,6 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-
-        {/* To Be Applied Section - Moves here */}
-        <aside className="watchlist-section">
-          <div className="section-header">
-            <h2>Your Watchlist Pipeline</h2>
-            <span className="count-badge">{toBeAppliedEvents.length}</span>
-          </div>
-          <div className="watchlist-scroll">
-            {toBeAppliedEvents.length === 0 ? (
-              <div className="empty-state glass-panel">
-                <PlusCircle size={32} />
-                <p>Watchlist pipeline is empty. Mark interesting events as "To be Applied" to track them here.</p>
-              </div>
-            ) : (
-              toBeAppliedEvents.map(event => (
-                <div key={event.id} className="event-card glass-panel">
-                  <div className="card-top">
-                    <span className={`company-badge ${(event.company || 'SAP').toLowerCase()}`} style={{ marginRight: '0.4rem' }}>
-                      {event.company || 'SAP'}
-                    </span>
-                    <span className="card-badge">{event.type}</span>
-                    <button className="remove-btn" onClick={() => updateStatus(event.id, 'not_applied')}>×</button>
-                  </div>
-                  <h3>{event.title}</h3>
-                  <div className="card-meta">
-                    <div className="meta-item"><Calendar size={14} /> {event.date}</div>
-                    <div className="meta-item"><MapPin size={14} /> {event.location}</div>
-                  </div>
-                  <div className="card-spacer"></div>
-                  <div className="card-actions">
-                    <button
-                      className="mark-applied-btn"
-                      onClick={() => updateStatus(event.id, 'applied')}
-                    >
-                      Mark as Applied
-                    </button>
-                    <a href={event.link} target="_blank" rel="noopener noreferrer" className="details-link">
-                      External Link <ChevronRight size={16} />
-                    </a>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        </aside>
       </div>
 
       <style jsx>{`
@@ -713,13 +652,13 @@ export default function Dashboard() {
 
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 1.5rem;
         }
 
         .main-content {
           display: grid;
-          grid-template-columns: 1fr 400px;
+          grid-template-columns: 1fr;
           gap: 2rem;
           align-items: start;
         }
@@ -764,7 +703,7 @@ export default function Dashboard() {
 
         .table-header {
           display: grid;
-          grid-template-columns: 120px 1fr 200px 180px 120px;
+          grid-template-columns: 120px 1fr 250px 120px;
           padding: 1rem 1.5rem;
           border-bottom: 1px solid var(--card-border);
           font-weight: 700;
@@ -791,7 +730,7 @@ export default function Dashboard() {
 
         .table-row {
           display: grid;
-          grid-template-columns: 120px 1fr 200px 180px 120px;
+          grid-template-columns: 120px 1fr 250px 120px;
           padding: 1.2rem 1.5rem;
           border-bottom: 1px solid rgba(255, 255, 255, 0.05);
           align-items: center;
