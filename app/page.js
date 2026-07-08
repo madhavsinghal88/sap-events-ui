@@ -48,14 +48,29 @@ export default function Dashboard() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('All');
   const [selectedCountry, setSelectedCountry] = useState('All');
-  
+  const [selectedCompany, setSelectedCompany] = useState('All');
+
+  // Filter events by selected company first
+  const companyFilteredEvents = useMemo(() => {
+    if (selectedCompany === 'All') return events;
+    return events.filter(e => (e.company || 'SAP').toLowerCase() === selectedCompany.toLowerCase());
+  }, [events, selectedCompany]);
+
+  // Derive available countries list dynamically from company-filtered events
   const countriesList = useMemo(() => {
     const list = new Set();
-    events.forEach(e => {
+    companyFilteredEvents.forEach(e => {
       list.add(getCountryFromLocation(e.location));
     });
     return Array.from(list).sort();
-  }, [events]);
+  }, [companyFilteredEvents]);
+
+  // Reset filters when switching companies to prevent empty states
+  useEffect(() => {
+    setSelectedCountry('All');
+    setActiveTab('Explore all events');
+  }, [selectedCompany]);
+
   const [lastRefreshed, setLastRefreshed] = useState('');
   const [syncMessage, setSyncMessage] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
@@ -184,7 +199,7 @@ export default function Dashboard() {
     return new Date(`${month} 1, ${year}`);
   };
 
-  const sortedEvents = [...events].sort((a, b) => {
+  const sortedEvents = [...companyFilteredEvents].sort((a, b) => {
     if (sortConfig.key === 'date') {
       const dateA = parseDateForSort(a.date);
       const dateB = parseDateForSort(b.date);
@@ -242,13 +257,13 @@ export default function Dashboard() {
     return matchesTab && matchesMonth && matchesCountry && matchesSearch;
   });
 
-  const toBeAppliedEvents = events.filter(e => e.status === 'to_be_applied');
+  const toBeAppliedEvents = companyFilteredEvents.filter(e => e.status === 'to_be_applied');
 
   const stats = {
-    total: events.length,
-    upcoming: events.filter(e => parseDateForSort(e.date) > new Date()).length,
-    virtual: events.filter(e => e.type.includes('Virtual')).length,
-    applied: events.filter(e => e.status === 'applied').length
+    total: companyFilteredEvents.length,
+    upcoming: companyFilteredEvents.filter(e => parseDateForSort(e.date) > new Date()).length,
+    virtual: companyFilteredEvents.filter(e => e.virtualLive || e.virtualOnDemand).length,
+    applied: companyFilteredEvents.filter(e => e.status === 'applied').length
   };
 
   if (loading) return <div className="loading-screen">Loading SAP Events...</div>;
@@ -316,6 +331,23 @@ export default function Dashboard() {
         </div>
       </header>
 
+      {/* Company Selector Tab Bar */}
+      <div className="company-selector glass-panel">
+        {['ALL COMPANIES', 'SAP EVENTS', 'ORACLE EVENTS', 'XYZ EVENTS', 'MICROSOFT EVENTS', 'SALESFORCE EVENTS'].map(compTab => {
+          const compValue = compTab.replace(' EVENTS', '').replace('ALL ', 'All');
+          const isSelected = selectedCompany === compValue;
+          return (
+            <button
+              key={compTab}
+              onClick={() => setSelectedCompany(compValue)}
+              className={`company-tab-btn ${isSelected ? 'active' : ''} ${compValue.toLowerCase()}`}
+            >
+              {compTab}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Stats Section */}
       <section className="stats-grid">
         <StatCard label="Total Events" value={stats.total} icon={<Calendar className="text-blue" />} onClick={() => setActiveTab('Explore all events')} />
@@ -363,7 +395,12 @@ export default function Dashboard() {
                 <div key={event.id} className="table-row">
                   <div className="col date">{event.date}</div>
                   <div className="col title">
-                    <span className="event-title-text">{event.title}</span>
+                    <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem' }}>
+                      <span className={`company-badge ${(event.company || 'SAP').toLowerCase()}`}>
+                        {event.company || 'SAP'}
+                      </span>
+                      <span className="event-title-text">{event.title}</span>
+                    </div>
                   </div>
                   <div className="col location">
                     <span className="badge">{event.type}</span>
@@ -408,6 +445,9 @@ export default function Dashboard() {
               toBeAppliedEvents.map(event => (
                 <div key={event.id} className="event-card glass-panel">
                   <div className="card-top">
+                    <span className={`company-badge ${(event.company || 'SAP').toLowerCase()}`} style={{ marginRight: '0.4rem' }}>
+                      {event.company || 'SAP'}
+                    </span>
                     <span className="card-badge">{event.type}</span>
                     <button className="remove-btn" onClick={() => updateStatus(event.id, 'not_applied')}>×</button>
                   </div>
@@ -443,6 +483,107 @@ export default function Dashboard() {
           display: flex;
           flex-direction: column;
           gap: 2rem;
+        }
+
+        .company-selector {
+          display: flex;
+          gap: 0.8rem;
+          padding: 0.8rem 1.5rem;
+          border-radius: 12px;
+          flex-wrap: wrap;
+        }
+
+        .company-tab-btn {
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: var(--text-muted);
+          padding: 0.5rem 1.2rem;
+          border-radius: 8px;
+          font-weight: 700;
+          font-size: 0.75rem;
+          cursor: pointer;
+          transition: all 0.2s;
+          letter-spacing: 0.05em;
+        }
+
+        .company-tab-btn:hover {
+          color: white;
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .company-tab-btn.active.all {
+          border-color: rgba(255, 255, 255, 0.3);
+          color: white;
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .company-tab-btn.active.sap {
+          border-color: #008ff4;
+          color: #008ff4;
+          background: rgba(0, 143, 244, 0.1);
+        }
+
+        .company-tab-btn.active.oracle {
+          border-color: #ef4444;
+          color: #ef4444;
+          background: rgba(239, 68, 68, 0.1);
+        }
+
+        .company-tab-btn.active.xyz {
+          border-color: #10b981;
+          color: #10b981;
+          background: rgba(16, 185, 129, 0.1);
+        }
+
+        .company-tab-btn.active.microsoft {
+          border-color: #f59e0b;
+          color: #f59e0b;
+          background: rgba(245, 158, 11, 0.1);
+        }
+
+        .company-tab-btn.active.salesforce {
+          border-color: #8b5cf6;
+          color: #8b5cf6;
+          background: rgba(139, 92, 246, 0.1);
+        }
+
+        .company-badge {
+          font-size: 0.6rem;
+          font-weight: 700;
+          padding: 0.15rem 0.4rem;
+          border-radius: 4px;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+
+        .company-badge.sap {
+          background: rgba(0, 143, 244, 0.12);
+          color: #008ff4;
+          border: 1px solid rgba(0, 143, 244, 0.2);
+        }
+
+        .company-badge.oracle {
+          background: rgba(239, 68, 68, 0.12);
+          color: #ef4444;
+          border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .company-badge.xyz {
+          background: rgba(16, 185, 129, 0.12);
+          color: #10b981;
+          border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .company-badge.microsoft {
+          background: rgba(245, 158, 11, 0.12);
+          color: #f59e0b;
+          border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .company-badge.salesforce {
+          background: rgba(139, 92, 246, 0.12);
+          color: #8b5cf6;
+          border: 1px solid rgba(139, 92, 246, 0.2);
         }
 
         .header {

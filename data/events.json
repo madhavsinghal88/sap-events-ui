@@ -10,7 +10,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-08-de-pe-at-wearedevelopers-world-congress-europe/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "2",
@@ -23,7 +24,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-13-sg-academic-community-conference-apac/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "3",
@@ -36,7 +38,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-14-us-academic-community-conference-na/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "4",
@@ -49,7 +52,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-14-uk-connect-day-for-customer-experience/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "5",
@@ -62,7 +66,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-15-de-exploration-workshop-for-cloud-erp-stuttgart/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "6",
@@ -75,7 +80,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-21-us-sales-performance-summit-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "7",
@@ -88,7 +94,8 @@
     "sapId": "/content/sapdx/countries/en_za/events/2026-07-21-za-connect-day-for-southern-africa/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "8",
@@ -101,7 +108,8 @@
     "sapId": "/content/sapdx/countries/en_za/events/2026-07-30-za-connect-day-for-east-africa-nairobi/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "9",
@@ -114,7 +122,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-08-04-us-aem-roadshow/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "10",
@@ -127,7 +136,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-08-12-ch-connect-day-fur-kmu-bodensee/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "11",
@@ -140,7 +150,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-08-12-au-sap-now-ai-tour-anz/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "12",
@@ -153,7 +164,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-08-12-au-sap-now-ai-tour-australia-new-zealand/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "13",
@@ -166,7 +178,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-08-27-ch-connect-day-for-customer-service-in-discrete-manufacturing-industries/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "14",
@@ -179,7 +192,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-08-27-ch-connect-day-fur-kmu-bern/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "15",
@@ -192,7 +206,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-09-01-au-sap-hr-connect-sydney/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "16",
@@ -205,7 +220,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-09-01-au-executive-exchange-for-hr-sydney/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "17",
@@ -218,7 +234,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-07-ch-sap-academic-community-conference-dach-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "18",
@@ -231,7 +248,8 @@
     "sapId": "/content/sapdx/countries/fr_ch/events/2026-09-09-ch-connect-day-romandie/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "19",
@@ -244,7 +262,8 @@
     "sapId": "/content/sapdx/countries/da_dk/events/2026-09-09-dk-ewm-afternoon-briefing-with-knapp/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "20",
@@ -257,7 +276,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-10-ch-pe-breakfast-4-success/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "21",
@@ -270,7 +290,8 @@
     "sapId": "/content/sapdx/countries/fr_be/events/2026-09-10-be-hr-connect/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "22",
@@ -283,7 +304,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-09-13-us-pe-controlling/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "23",
@@ -296,7 +318,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-14-ch-hackathon-business-meets-ai/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "24",
@@ -309,7 +332,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-14-de-pe-28-kongress-immobilien-und-facility-management/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "25",
@@ -322,7 +346,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-15-ch-connect-day-for-consumer-products-and-retail/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "26",
@@ -335,7 +360,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-15-ch-pe-transformation-now/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "27",
@@ -348,7 +374,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-30-de-exploration-workshop-for-cloud-erp-hamburg/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "28",
@@ -361,7 +388,8 @@
     "sapId": "/content/sapdx/countries/sv_se/events/2026-09-15-se-connect-day/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "29",
@@ -374,7 +402,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-17-de-pe-bdc-roadshow-nutzen-sie-das-volle-potenzial-ihrer-daten-mit-business-data-cloud-and-ai-termin-valantic/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "30",
@@ -387,7 +416,8 @@
     "sapId": "/content/sapdx/countries/da_dk/events/2026-09-17-dk-connect-day-for-spend-travel-and-expense/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "31",
@@ -400,7 +430,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-22-ch-exploration-workshop-for-hr-we-love-payroll-and-time/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "32",
@@ -413,7 +444,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-22-de-online-pe-espresso-tutorial-forum-fur-finance-tax-und-compliance/jcr:content",
     "inPerson": true,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "33",
@@ -426,7 +458,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-22-de-inventory-optimization-days/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "34",
@@ -439,7 +472,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-23-de-pe-espresso-tutorial-forum-global-trade-services/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "35",
@@ -452,7 +486,8 @@
     "sapId": "/content/sapdx/countries/pt_pt/events/2026-09-23-pt-pe-gusp-annual-event/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "36",
@@ -465,7 +500,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-24-de-pe-innovationstage-mittelstand-die-business-suite-und-eine-ki-gestutzte-supply-chain/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "37",
@@ -478,7 +514,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-24-de-pe-espresso-tutorial-forum-fur-iam-security/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "38",
@@ -491,7 +528,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-24-de-pe-bdc-roadshow-nutzen-sie-das-volle-potenzial-Ihrer-daten-mit-business-data-cloud-ai-termin-all-for-one/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "39",
@@ -504,7 +542,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-24-ch-pe-cnt-autonomous-enterprise-leadership-exchange/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "40",
@@ -517,7 +556,8 @@
     "sapId": "/content/sapdx/countries/de_at/events/2026-09-29-at-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-cnt/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "41",
@@ -530,7 +570,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-30-de-integrated-toolchain-forum/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "42",
@@ -543,7 +584,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-30-de-pe-vorausschauend-planen-fur-eine-resiliente-supply-chain-termin-ey/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "43",
@@ -556,7 +598,8 @@
     "sapId": "/content/sapdx/countries/cs_cz/events/2026-10-01-cz-pe-bdc-roadshow-nutzen-sie-das-volle-potenzial-ihrer-daten-mit-business-data-cloud-a-ai-termin-bibcon/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "44",
@@ -569,7 +612,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-10-01-de-pe-vom-upgrade-zum-gamechanger-insights-zum-einstieg-in-die-cloud-erp/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "45",
@@ -582,7 +626,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-10-01-de-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-innovabee/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "46",
@@ -595,7 +640,8 @@
     "sapId": "/content/sapdx/countries/pl_pl/events/2026-10-08-pl-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-leverx/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "47",
@@ -608,7 +654,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-10-14-de-der-maintenance-munchen/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "48",
@@ -621,7 +668,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-10-20-de-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-cenit/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "49",
@@ -634,7 +682,8 @@
     "sapId": "/content/sapdx/countries/nl_be/events/2026-10-22-be-now-ai-tour-brussels/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "50",
@@ -647,7 +696,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-10-22-uk-now-ai-tour-uki/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "51",
@@ -660,7 +710,8 @@
     "sapId": "/content/sapdx/countries/hu_hu/events/2026-10-27-hu-academic-community-conference-emea/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "52",
@@ -673,7 +724,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-10-27-us-pe-asset-and-service-management-conference-presented-by-tac-insights/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "53",
@@ -686,7 +738,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-10-27-de-online-sap-teched-berlin-and-virtual/jcr:content",
     "inPerson": true,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "54",
@@ -699,7 +752,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-10-27-de-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-sophistex/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "55",
@@ -712,7 +766,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-11-10-de-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-cideon/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "56",
@@ -725,7 +780,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-11-18-de-connect-day-lager-und-transportmanagement/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "57",
@@ -738,7 +794,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-11-24-online-inventory-optimization-days/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "58",
@@ -751,7 +808,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-11-25-de-security-forum-jetzt-sicherheitsstrategie-zukunftssicher-machen/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "59",
@@ -764,7 +822,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-11-25-de-26-jahrestagung-enterprise-portfolio-und-projektmanagement-mit/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "60",
@@ -777,7 +836,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2027-01-19-de-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-dsc/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "61",
@@ -790,7 +850,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2027-01-28-de-pe-plm-roadshow-fachvortrage-kundenberichte-dialog-und-austausch-termin-bdf/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "62",
@@ -803,7 +864,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2027-03-04-ch-public-services-forum/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "63",
@@ -816,7 +878,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2027-04-14-ch-connect-day-for-supply-chain/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "64",
@@ -829,7 +892,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2027-04-15-ch-hr-connect-aarau/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "65",
@@ -842,7 +906,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-07-07-ch-life-science-supply-chain-roundtable/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "66",
@@ -855,7 +920,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-uk-critical-industries-summit/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "67",
@@ -868,7 +934,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-01-de-cloud-exchange/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "68",
@@ -881,7 +948,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-30-ch-pe-breakfast-briefing-schweiz-bereit-fur-ki-agenten-und-autonomous-suite/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "69",
@@ -894,7 +962,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-29-ch-customer-experience-customer-community-swiss-cx-solutions/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "70",
@@ -907,7 +976,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-24-online-pe-procurement-summit/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "71",
@@ -920,7 +990,8 @@
     "sapId": "/content/sapdx/countries/en_za/events/2026-06-24-za-supply-chain-management-connect-day/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "72",
@@ -933,7 +1004,8 @@
     "sapId": "/content/sapdx/countries/nl_nl/events/2026-06-23-nl-connect-day-for-customer-experience-netherlands/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "73",
@@ -946,7 +1018,8 @@
     "sapId": "/content/sapdx/countries/nl_nl/events/2026-06-18-nl-connect-day-finance-and-spend-management/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "74",
@@ -959,7 +1032,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-17-de-pe-dsag-personaltage/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "75",
@@ -972,7 +1046,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-06-17-fr-pe-at-vivatech/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "76",
@@ -985,7 +1060,8 @@
     "sapId": "/content/sapdx/countries/pl_pl/events/2026-06-16-pl-connect-day/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "77",
@@ -998,7 +1074,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-16-de-customer-experience-customer-community-commerce-cloud/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "78",
@@ -1011,7 +1088,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-06-16-fr-hr-connect-paris/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "79",
@@ -1024,7 +1102,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-15-us-pe-databricks-data-ai-summit/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "80",
@@ -1037,7 +1116,8 @@
     "sapId": "/content/sapdx/countries/nl_be/events/2026-06-11-be-connect-day-for-spend-management/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "81",
@@ -1050,7 +1130,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-11-ch-pe-supply-chain-excellence/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "82",
@@ -1063,7 +1144,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-11-de-online-learning-and-adoption/jcr:content",
     "inPerson": true,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "83",
@@ -1076,7 +1158,8 @@
     "sapId": "/content/sapdx/countries/no_no/events/2026-06-10-no-hr-connect-oslo/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "84",
@@ -1089,7 +1172,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-10-de-online-transformation-days/jcr:content",
     "inPerson": true,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "85",
@@ -1102,7 +1186,8 @@
     "sapId": "/content/sapdx/countries/de_at/events/2026-06-09-at-hr-connect-vienna/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "86",
@@ -1115,7 +1200,8 @@
     "sapId": "/content/sapdx/countries/en_za/events/2026-06-09-za-connect-day-botswana/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "87",
@@ -1128,7 +1214,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-06-04-au-spend-connect/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "88",
@@ -1141,7 +1228,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-06-04-au-mastering-connect/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "89",
@@ -1154,7 +1242,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-03-connect-day-for-luxembourg/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "90",
@@ -1167,7 +1256,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-02-ch-swiss-customer-day-business-one/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "91",
@@ -1180,7 +1270,8 @@
     "sapId": "/content/sapdx/countries/fi_fi/events/2026-06-02-fi-hr-connect-helsinki/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "92",
@@ -1193,7 +1284,8 @@
     "sapId": "/content/sapdx/countries/fi_fi/events/2026-06-02-fi-connect-day-for-spend-helsinki/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "93",
@@ -1206,7 +1298,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-01-us-pe-snowflake-summit-26/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "94",
@@ -1219,7 +1312,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/solr-ktt/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "95",
@@ -1232,7 +1326,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-05-27-ch-pe-cfo-day-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "96",
@@ -1245,7 +1340,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-05-21-de-pe-operate-and-service-road-to-value/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "97",
@@ -1258,7 +1354,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-05-20-de-pe-it-connect/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "98",
@@ -1271,7 +1368,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-05-19-es-sap-sapphire-madrid-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "99",
@@ -1284,7 +1382,8 @@
     "sapId": "/content/sapdx/countries/it_it/events/2026-05-13-it-pe-cloud-ai-e-sovranita-digitale-linnovazione-con-e-aws/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "100",
@@ -1297,7 +1396,8 @@
     "sapId": "/content/sapdx/countries/nl_be/events/2026-05-12-be-connect-day-for-customer-experience-brussels/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "101",
@@ -1310,7 +1410,8 @@
     "sapId": "/content/sapdx/countries/en_sa/events/2026-05-12-sa-connect-day-uae/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "102",
@@ -1323,7 +1424,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-05-11-us-sap-sapphire-asug-annual-conference-orlando-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "103",
@@ -1336,7 +1438,8 @@
     "sapId": "/content/sapdx/countries/it_it/events/2026-05-06-it-hr-connect/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "104",
@@ -1349,7 +1452,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-05-05-ch-exploration-workshop-for-hr/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "105",
@@ -1362,7 +1466,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-05-05-de-pe-hpc-innovation-day/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "106",
@@ -1375,7 +1480,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-05-05-de-pe-evu-prozess-it-tage/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "107",
@@ -1388,7 +1494,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-05-05-au-connect-day-for-data-and-it-anz-auckland/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "108",
@@ -1401,7 +1508,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-29-de-pe-dsag-thementage-customer-experience/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "109",
@@ -1414,7 +1522,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-27-de-online-financials-forum/jcr:content",
     "inPerson": true,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "110",
@@ -1427,7 +1536,8 @@
     "sapId": "/content/sapdx/countries/en_za/events/2026-04-23-za-hr-connect/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "111",
@@ -1440,7 +1550,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-04-22-au-pe-saug-perth-regional-conference/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "112",
@@ -1453,7 +1564,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-04-21-us-pe-at-google-cloud-next-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "113",
@@ -1466,7 +1578,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-21-de-pe-sap-auf-der-emea/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "114",
@@ -1479,7 +1592,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-20-de-pe-hannover-messe/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "115",
@@ -1492,7 +1606,8 @@
     "sapId": "/content/sapdx/countries/it_it/events/2026-04-16-it-connect-day-for-supply-chain/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "116",
@@ -1505,7 +1620,8 @@
     "sapId": "/content/sapdx/countries/pl_pl/events/2026-04-16-pl-hr-connect/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "117",
@@ -1518,7 +1634,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-16-de-pe-vor-ort-roundtable-mit-edel-music-entertainment-die-erpfolge-ist-geregelt/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "118",
@@ -1531,7 +1648,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-04-15-ch-sap-connect-day-for-finance-and-spend-management/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "119",
@@ -1544,7 +1662,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-15-de-pe-zukunft-service-nahtlos-zum-erfolg-mit-service-transformation-durch-end-to-end-prozesse/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "120",
@@ -1557,7 +1676,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-04-14-ch-sap-connect-day-for-data-and-it/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "121",
@@ -1570,7 +1690,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-04-13-us-sap-alm-summit-na-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "122",
@@ -1583,7 +1704,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-14-de-customer-experience-customer-community-digital-marketing/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "123",
@@ -1596,7 +1718,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-04-13-ch-sap-hr-connect-central-swiss-edition/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "124",
@@ -1609,7 +1732,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-04-09-ch-sap-connect-day-for-customer-experience-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "125",
@@ -1622,7 +1746,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-04-09-es-pe-ausape-transformation-day/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "126",
@@ -1635,7 +1760,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-04-08-ch-sap-connect-day-for-supply-chain/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "127",
@@ -1648,7 +1774,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-04-07-us-connect-day-to-events-finder/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "128",
@@ -1661,7 +1788,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-04-02-us-connect-day-chicago/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "129",
@@ -1674,7 +1802,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-26-de-pe-innovationstage-mittelstand-die-business-suite-und-eine-ki-gestutzte-supply-chain/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "130",
@@ -1687,7 +1816,8 @@
     "sapId": "/content/sapdx/countries/en_za/events/2026-03-26-za-pe-afsug-insight-to-impact-support-event/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "131",
@@ -1700,7 +1830,8 @@
     "sapId": "/content/sapdx/countries/de_at/events/2026-03-24-at-sap-connect-day-vienna-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "132",
@@ -1713,7 +1844,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-24-de-sap-auf-der-logimat-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "133",
@@ -1726,7 +1858,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-03-24-au-connect-day-for-data-and-it-melbourne/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "134",
@@ -1739,7 +1872,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-03-23-ch-hackathon-business-meets-ai/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "135",
@@ -1752,7 +1886,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-03-19-au-connect-day-for-data-it-brisbane/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "136",
@@ -1765,7 +1900,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-03-10-fr-connect-day-paris/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "137",
@@ -1778,7 +1914,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-03-18-ch-exploration-workshop-for-hr-smartrecruiters/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "138",
@@ -1791,7 +1928,8 @@
     "sapId": "/content/sapdx/countries/hu_hu/events/2026-03-17-hu-connect-day-budapest/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "139",
@@ -1804,7 +1942,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-03-17-ch-btp-exploration-workshop/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "140",
@@ -1817,7 +1956,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-17-de-pe-dsag-technology-days-teched-stop/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "141",
@@ -1830,7 +1970,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-03-17-au-connect-for-supply-chain/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "142",
@@ -1843,7 +1984,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-03-17-au-connect-day-for-data-and-it/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "143",
@@ -1856,7 +1998,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-03-12-es-pe-techxchange-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "144",
@@ -1869,7 +2012,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-03-10-ch-sap-cloud-erp-workshop/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "145",
@@ -1882,7 +2026,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-03-10-uk-sap-connect-day-for-data-and-it-dublin/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "146",
@@ -1895,7 +2040,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-09-de-customer-experience-customer-community-dach/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "147",
@@ -1908,7 +2054,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-09-de-connect-day-for-cloud-transformation/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "148",
@@ -1921,7 +2068,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-03-04-us-customer-support-summit-north-america/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "149",
@@ -1934,7 +2082,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-04-de-connect-day-for-finance/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "150",
@@ -1947,7 +2096,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-02-de-sap-connect-days-for-supply-chain/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "151",
@@ -1960,7 +2110,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-02-de-connect-days-supply-chain-plm/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "152",
@@ -1973,7 +2124,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-02-de-connect-days-supply-chain-asset-service-management/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "153",
@@ -1986,7 +2138,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-02-25-de-sap-auf-der-maintenance/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "154",
@@ -1999,7 +2152,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-02-23-us-next-generation-sap-enterprise-architect-learning-forum/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "155",
@@ -2012,7 +2166,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-02-11-de-pe-die-zukunft-von-sap-data-analytics/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "156",
@@ -2025,7 +2180,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-02-05-ch-pe-analytics-neujahrs-apero/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "157",
@@ -2038,7 +2194,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-01-23-us-pe-asug-volunteer-meeting-atlanta/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "158",
@@ -2051,7 +2208,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-01-20-de-konsumkompass-2026/jcr:content",
     "inPerson": true,
     "virtualLive": false,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "159",
@@ -2064,7 +2222,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-08-online-from-preventive-to-autonomous-the-future-of-asset-management/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "160",
@@ -2077,7 +2236,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-08-online-autonomous-finance-is-your-destination-your-journey-from-cloud-erp-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "161",
@@ -2090,7 +2250,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-08-online-amplify-your-agents-and-applications-with-the-ai-database-introduction-to-hana-cloud/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "162",
@@ -2103,7 +2264,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-07-08-online-preparing-for-the-spanish-e-invoicing-mandate/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "163",
@@ -2116,7 +2278,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-07-08-online-preparacion-para-el-mandato-de-facturacion-electronica-en-espana/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "164",
@@ -2129,7 +2292,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-07-08-online-ausape-hr-and-successfactors-working-group/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "165",
@@ -2142,7 +2306,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-08-online-amplify-your-agents-and-applications-with-the-ai-database/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "166",
@@ -2155,7 +2320,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-08-online-autonomous-finance-is-your-destination-your-journey-from-cloud-erp-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "167",
@@ -2168,7 +2334,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-08-online-amplify-your-agents-and-applications-with-the-ai-database-introduction-to-hana-cloud-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "168",
@@ -2181,7 +2348,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-08-online-autonomous-finance-is-your-destination-your-journey-from-cloud-erp-emea-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "169",
@@ -2194,7 +2362,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-08-online-how-to-turn-ideas-faster-into-ai-powered-solutions-with-new-intent-based-development-offering/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "170",
@@ -2207,7 +2376,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-08-online-move-before-youre-moved-mit-cloud-erp-wird-aus-strategie-eine-gewonnene-partie/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "171",
@@ -2220,7 +2390,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-07-08-online-successfactors-customer-onboarding-webinar-portugues-lac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "172",
@@ -2233,7 +2404,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-08-online-amplify-your-agents-and-applications-with-the-ai-database/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "173",
@@ -2246,7 +2418,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-08-online-amplify-your-agents-and-applications-with-the-ai-database-introduction-to-hana-cloud-emea-and-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "174",
@@ -2259,7 +2432,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-08-online-automating-employee-termination-events-with-business-ai-platform-and-event-driven-integration/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "175",
@@ -2272,7 +2446,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-08-online-cpq-onboarding-webcast/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "176",
@@ -2285,7 +2460,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-09-online-getting-holiday-ready-with-commerce-cloud-payments/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "177",
@@ -2298,7 +2474,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-09-online-powering-enterprise-ai-with-integration-suite-enhanced-edition/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "178",
@@ -2311,7 +2488,8 @@
     "sapId": "/content/sapdx/countries/en_in/events/2026-07-09-online-security-administration-of-abap-environment-in-btp/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "179",
@@ -2324,7 +2502,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-09-online-real-world-ai-applications-in-sap-cloud-erp/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "180",
@@ -2337,7 +2516,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-09-online-ai-agent-led-transformation-fast-track-to-cloud-erp-private/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "181",
@@ -2350,7 +2530,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-09-online-real-world-ai-applications-in-sap-cloud-erp/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "182",
@@ -2363,7 +2544,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-09-online-ai-agent-led-transformation-fast-track-to-cloud-erp-private/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "183",
@@ -2376,7 +2558,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-09-online-cloud-identity-access-governance-onboarding-webcast/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "184",
@@ -2389,7 +2572,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-09-online-smart-supply-chains-in-action-real-world-ai-applications-in-sap-cloud-erp-emea-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "185",
@@ -2402,7 +2586,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-09-online-ai-agent-led-transformation-fast-track-to-cloud-erp-private/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "186",
@@ -2415,7 +2600,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-07-09-online-el-futuro-de-la-contratacion-inteligente-con-smartrecruiters-para-successfactors/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "187",
@@ -2428,7 +2614,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-07-13-online-the-invisible-cost-of-doing-nothing-a-business-case-for-cloud-erp-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "188",
@@ -2441,7 +2628,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-13-online-the-invisible-cost-of-doing-nothing-a-business-case-for-cloud-erp/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "189",
@@ -2454,7 +2642,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-13-online-the-invisible-cost-of-doing-nothing-a-business-case-for-cloud-erp/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "190",
@@ -2467,7 +2656,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-14-online-sap-successfactors-get-started-plan-your-implementation/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "191",
@@ -2480,7 +2670,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-14-online-configure-smarter-and-transform-faster-with-configuration-support-assistant/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "192",
@@ -2493,7 +2684,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-14-online-how-to-prepare-and-manage-multi-bank-connectivity-migration-to-the-new-swift-business-connect-alliance-cloud-service/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "193",
@@ -2506,7 +2698,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-14-online-autonomous-project-delivery-how-industry-ai-transforms-proserve/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "194",
@@ -2519,7 +2712,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-14-online-when-ai-runs-front-office/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "195",
@@ -2532,7 +2726,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-14-online-make-vibe-coding-ready-for-the-enterprise/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "196",
@@ -2545,7 +2740,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-14-online-when-ai-runs-the-front-office-5-hidden-erp-signals-of-b2c-engagement-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "197",
@@ -2558,7 +2754,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-14-online-make-vibe-coding-ready-for-the-enterprise/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "198",
@@ -2571,7 +2768,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-14-online-subscription-billing-onboarding-webcast/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "199",
@@ -2584,7 +2782,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-14-online-when-ai-runs-the-front-office-5-hidden-erp-signals-of-b2c-engagement-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "200",
@@ -2597,7 +2796,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-14-online-operational-and-revenue-clarity-an-end-to-end-visibility-for-coos-and-cros/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "201",
@@ -2610,7 +2810,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-14-online-make-vibe-coding-ready-for-the-enterprise/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "202",
@@ -2623,7 +2824,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-14-online-technical-deep-dive-session-executing-migrations-integration-suite-apac-edition/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "203",
@@ -2636,7 +2838,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-14-online-enterprise-integration-Integration-that-fits-an-industry-specific-deep-dive/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "204",
@@ -2649,7 +2852,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-14-online-successfactors-part-1-get-started-and-plan-for-your-implementation/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "205",
@@ -2662,7 +2866,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-15-online-accelerate-utilities-transformation/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "206",
@@ -2675,7 +2880,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-15-online-expanding-workforce-planning-with-connected-contingent-workforce-management-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "207",
@@ -2688,7 +2894,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-15-online-expanding-workforce-planning-with-connected-contingent-workforce-management-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "208",
@@ -2701,7 +2908,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-15-online-expanding-workforce-planning-with-connected-contingent-workforce-management-emea-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "209",
@@ -2714,7 +2922,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-15-online-esg-disclosure-and-sustainability-performance-measurement-reporting-and-accountability/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "210",
@@ -2727,7 +2936,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2026-07-15-online-successfactors-customer-onboarding-webinar/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "211",
@@ -2740,7 +2950,8 @@
     "sapId": "/content/sapdx/countries/zh_cn/events/2026-07-16-online-successfactors-customer-onboarding-webcast/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "212",
@@ -2753,7 +2964,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-16-online-unlocking-efficiency-in-real-estate-and-facilities-management-and-planon/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "213",
@@ -2766,7 +2978,8 @@
     "sapId": "/content/sapdx/countries/zh_cn/events/2026-07-16-online-technical-deep-dive-session-how-to-perform-pi-po-migration-to-integration-suite/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "214",
@@ -2779,7 +2992,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-16-online-commerce-cloud-q2-release-recap/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "215",
@@ -2792,7 +3006,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-16-online-cloud-migration-bei-strama-mps/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "216",
@@ -2805,7 +3020,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-20-online-advanced-financial-closing-onboarding-webcast/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "217",
@@ -2818,7 +3034,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-21-online-sap-successfactors-get-enabled-prepare-go-live/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "218",
@@ -2831,7 +3048,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-07-21-online-sap-successfactors-customer-onboarding-webinar/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "219",
@@ -2844,7 +3062,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-21-online-ai-data-and-experience-the-new-blueprint-for-hr-service-delivery/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "220",
@@ -2857,7 +3076,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-21-online-successfactors-customer-onboarding-webcast-deutsch-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "221",
@@ -2870,7 +3090,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-21-online-enterprise-integration-with-integration-suite-from-activation-to-running/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "222",
@@ -2883,7 +3104,8 @@
     "sapId": "/content/sapdx/countries/en_sa/events/2026-07-22-online-simpler-processes-stronger-decisions-a-success-story-in-energy/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "223",
@@ -2896,7 +3118,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-22-online-two-tier-erp-business-success/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "224",
@@ -2909,7 +3132,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-22-online-bulk-logistics-automation-in-oil-gas-energy-and-process-industries/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "225",
@@ -2922,7 +3146,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-22-online-neo-to-multi-cloud-migrate-smarter-scale-faster-with-integration-suite/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "226",
@@ -2935,7 +3160,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-23-online-commerce-cloud-q2-tech-focused-update/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "227",
@@ -2948,7 +3174,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-28-online-sap-successfactors-get-enabled-prepare-go-live/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "228",
@@ -2961,7 +3188,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-28-online-accelerate-migrations-with-data-quality-assistant/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "229",
@@ -2974,7 +3202,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-28-online-enterprise-integration-integration-suite-lab-from-zero-to-deployed/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "230",
@@ -2987,7 +3216,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-28-online-sales-cloud-sales-and-foundation-topics-q2-2026-release-overview/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "231",
@@ -3000,7 +3230,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-29-online-cloud-erp-victrola-innovative-technology-electronics-llc/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "232",
@@ -3013,7 +3244,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-29-online-service-cloud-utilities-and-enterprise-service-management/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "233",
@@ -3026,7 +3258,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-05-27-online-designing-the-real-time-enterprise-with-event-driven-architecture-webinar-1/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "234",
@@ -3039,7 +3272,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-30-online-sap-successfactors-build-your-adoption-program-maximize-results/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "235",
@@ -3052,7 +3286,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-30-online-successfactors-build-your-adoption-program-to-maximize-results-europe-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "236",
@@ -3065,7 +3300,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-08-03-online-data-without-boundaries-unlocking-trusted-intelligence-with-and-snowflake-session-1-the-strategic-imperative/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "237",
@@ -3078,7 +3314,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-03-online-future-ready-enterprise-integration-modernise-orchestrate-automate-webinar-2/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "238",
@@ -3091,7 +3328,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-08-06-online-nachhaltigkeit-in-der-it-architektur-strategien-fur-einen-integrierten-esg-ansatz/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "239",
@@ -3104,7 +3342,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-08-10-online-integration-suite-accelerate-your-integration-modernization-with-pipeline-concept-in-migration-tooling/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "240",
@@ -3117,7 +3356,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-08-11-online-migration-from-c4c-to-service-cloud-version-2-utilities-add-on/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "241",
@@ -3130,7 +3370,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-08-11-online-enablement-on-new-ai-based-user-experience-in-joule-work-mobile-app-and-build-work-zone-experience/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "242",
@@ -3143,7 +3384,8 @@
     "sapId": "/content/sapdx/countries/en_ca/events/2026-08-12-online-build-enterprise-ai-transformation-roadmap-on-business-ai-platform/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "243",
@@ -3156,7 +3398,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-10-online-ai-powered-integration-accelerate-optimise-automate-webinar-3/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "244",
@@ -3169,7 +3412,8 @@
     "sapId": "/content/sapdx/countries/en_ca/events/2026-08-19-online-designing-high-impact-ai-use-cases-on-business-ai-platform/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "245",
@@ -3182,7 +3426,8 @@
     "sapId": "/content/sapdx/countries/en_sa/events/2026-08-26-online-from-threads-to-technology-a-success-story-in-textile-manufacturing/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "246",
@@ -3195,7 +3440,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-09-01-online-from-esg-reporting-to-business-steering/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "247",
@@ -3208,7 +3454,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-09-02-online-integrated-business-planning-cargill-Inc/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "248",
@@ -3221,7 +3468,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-09-03-online-business-ai-platform-pour-capitaliser-sur-vos-donnees-a-lere-de-lia-agentique/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "249",
@@ -3234,7 +3482,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-09-08-online-webinar-top-5-qrc-analytics-cloud/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "250",
@@ -3247,7 +3496,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-08-online-discovery-day-for-planning-analysieren-planen-handeln/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "251",
@@ -3260,7 +3510,8 @@
     "sapId": "/content/sapdx/countries/de_at/events/2026-09-08-online-beyond-compliance-a-cfo-blueprint-for-turning-sustainability-into-business-value/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "252",
@@ -3273,7 +3524,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-09-08-online-beyond-compliance-a-cfo-blueprint-for-turning-sustainability-into-business-value/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "253",
@@ -3286,7 +3538,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-09-08-online-beyond-compliance-a-cfo-blueprint-for-turning-sustainability-into-business-value/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "254",
@@ -3299,7 +3552,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-08-online-ai4it-a-product-management-deep-dive-for-ai-in-integration-suite/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "255",
@@ -3312,7 +3566,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-09-08-online-securisez-vos-marges-et-optimisez-la-conformite-de-vos-flux-avec-global-trade-services/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "256",
@@ -3325,7 +3580,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-09-08-online-data-without-boundaries-unlocking-trusted-intelligence-with-snowflake/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "257",
@@ -3338,7 +3594,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-09-09-online-get-onboarded-with-digital-manufacturing/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "258",
@@ -3351,7 +3608,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-09-14-online-project-management-network-vom-hype-zur-realitat/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "259",
@@ -3364,7 +3622,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-16-online-get-ready-for-the-german-e-invoicing-mandate-with-business-network-for-buyers-a-deep-dive/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "260",
@@ -3377,7 +3636,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-09-16-online-bereit-fur-die-e-rechnungspflicht-in-deutschland-deep-dive-so-unterstutzt-sie-business-network-for-buyers/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "261",
@@ -3390,7 +3650,8 @@
     "sapId": "/content/sapdx/countries/en_ca/events/2026-09-16-online-successfactors-olymel/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "262",
@@ -3403,7 +3664,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-10-22-online-trusted-intelligence-with-snowflake/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "263",
@@ -3416,7 +3678,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-11-25-online-data-without-boundaries-unlocking-trusted-intelligence-innovation-lab/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "264",
@@ -3429,7 +3692,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-reduce-tco-and-prepare-for-agentic-and-autonomous-commerce-with-commerce-cloud/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "265",
@@ -3442,7 +3706,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-realize-event-driven-architecture-through-sap-advanced-event-mesh/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "266",
@@ -3455,7 +3720,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-from-billing-to-collection-intelligence/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "267",
@@ -3468,7 +3734,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "268",
@@ -3481,7 +3748,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-online-the-next-level-of-forecasting-and-replenishment-demand-and-inventory-planning/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "269",
@@ -3494,7 +3762,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-utilities-cx-reloaded-the-new-sales-process-explained/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "270",
@@ -3507,7 +3776,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-robust-clean-core-extensibility-with-custom-code-assistant/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "271",
@@ -3520,7 +3790,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-plm-community-call/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "272",
@@ -3533,7 +3804,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-07-06-online-making-sap-ewm-deliver/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "273",
@@ -3546,7 +3818,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-emea-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "274",
@@ -3559,7 +3832,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-erp-modernisierung-in-einem-regulierten-umfeld-acredias/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "275",
@@ -3572,7 +3846,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "276",
@@ -3585,7 +3860,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-online-enterprise-integration-a-product-management-deep-dive/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "277",
@@ -3598,7 +3874,8 @@
     "sapId": "/content/sapdx/countries/de_at/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "278",
@@ -3611,7 +3888,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "279",
@@ -3624,7 +3902,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-06-online-ai-adoption-and-learning-week/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "280",
@@ -3637,7 +3916,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-06-online-ai-adoption-and-learning-week/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "281",
@@ -3650,7 +3930,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-06-online-france-b2b-e-invoicing-and-e-Reporting-latest-regulatory-updates-and-compliance-readiness-with-document-and-reporting-compliance/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "282",
@@ -3663,7 +3944,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-02-online-inside-sovereign-cloud-key-differentiators-and-architecture-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "283",
@@ -3676,7 +3958,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-02-online-inside-sovereign-cloud-key-differentiators-and-architecture-emea/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "284",
@@ -3689,7 +3972,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-07-02-online-sapphire-bring-it-home-webinar/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "285",
@@ -3702,7 +3986,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-02-online-webinar-un-webinar-msg-global-solutions-pwc-comment-piloter-en-continu-la-marge-des-flux-intragroupe-et-etre-capable-de-la-defendre-lorsque-cela-devient-necessaire/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "286",
@@ -3715,7 +4000,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-07-01-online-como-la-ia-transforma-la-atencion-al-cliente-en-una-experiencia-sin-fricciones/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "287",
@@ -3728,7 +4014,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-01-online-accelerate-agentic-ai-with-an-open-data-ecosystem/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "288",
@@ -3741,7 +4028,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-07-01-online-accelerate-agentic-ai-with-an-open-data-ecosystem-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "289",
@@ -3754,7 +4042,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-07-01-online-meet-the-expert-execution-and-generation-of-complementary-settlements-for-sld/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "290",
@@ -3767,7 +4056,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-07-01-online-revenue-growth-management-q2-2026-live-quarterly-update-webinar/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "291",
@@ -3780,7 +4070,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-01-online-empowering-the-office-of-the-cfo/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "292",
@@ -3793,7 +4084,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-07-01-online-cloud-erp-vom-template-zur-skalierbaren-transformation-bei-der-karl-schmidt-spedition-gmbh-co-kg-mit-axians/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "293",
@@ -3806,7 +4098,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-01-online-accelerate-agentic-ai-with-an-open-data-ecosystem/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "294",
@@ -3819,7 +4112,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-30-online-advanced-success-plan-fur-partner-praxisbericht-mit-innovabee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "295",
@@ -3832,7 +4126,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-30-online-agentic-ai-the-shift-hr-cant-afford-to-miss-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "296",
@@ -3845,7 +4140,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-30-online-agentic-ai-the-shift-hr-cant-afford-to-miss-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "297",
@@ -3858,7 +4154,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-30-online-agentic-ai-the-shift-hr-can-not-afford-to-miss-emea/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "298",
@@ -3871,7 +4168,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-30-online-shaping-the-autonomous-enterprise/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "299",
@@ -3884,7 +4182,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-30-online-5-lessons-from-own-transformation-to-an-agentic-ai-enterprise/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "300",
@@ -3897,7 +4196,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-30-online-from-platform-to-cloud-wie-eos-mit-rise-die-technologische-basis-fur-innovation/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "301",
@@ -3910,7 +4210,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-30-online-api-policy-overview/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "302",
@@ -3923,7 +4224,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-29-online-erp-ai-and-the-clarity-to-scale-inside-pwc-transformation-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "303",
@@ -3936,7 +4238,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-06-29-online-erp-ai-and-the-clarity-to-scale-Inside-pwc-s-transformation-emea-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "304",
@@ -3949,7 +4252,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-29-online-erp-ai-and-the-clarity-to-scale-inside-pwc-transformation-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "305",
@@ -3962,7 +4266,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-29-online-bearingpoint-webinar-competitive-advantage-and-resilience-through-data-based-decarbonization/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "306",
@@ -3975,7 +4280,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-26-online-comply-and-automate-customer-and-supplier-invoices-in-germany-with-document-and-reporting-compliance0/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "307",
@@ -3988,7 +4294,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2026-06-26-online-expert-series-dx-eye-ai-business-data-platform-in-the-era-of-agents-latest-updates-on-business-data-cloud/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "308",
@@ -4001,7 +4308,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-25-online-ai-for-mid-sized-companies/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "309",
@@ -4014,7 +4322,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-25-online-leading-the-firm-the-future-of-procurement/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "310",
@@ -4027,7 +4336,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-25-online-leading-the-firm-the-future-of-procurement/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "311",
@@ -4040,7 +4350,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-24-online-unlocking-the-value-of-digital-hr-document-management-with-idc/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "312",
@@ -4053,7 +4364,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-25-online-from-plan-to-progress-the-advanced-success-plan-explained/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "313",
@@ -4066,7 +4378,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-25-online-runs-bdc-unleashing-human-and-artificial-intelligence-with-data-products/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "314",
@@ -4079,7 +4392,8 @@
     "sapId": "/content/sapdx/countries/da_dk/events/2026-06-25-online-leading-the-firm-the-future-of-procurement/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "315",
@@ -4092,7 +4406,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-06-24-online-como-transformar-su-cadena-de-suministro-con-inteligencia-artificial/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "316",
@@ -4105,7 +4420,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-24-online-swiss-business-innovation-series/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "317",
@@ -4118,7 +4434,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-24-online-build-the-data-foundation-for-agentic-ai-with-a-business-data-fabric/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "318",
@@ -4131,7 +4448,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-24-online-migrating-to-cloud-hcm-insights-from-cameco-s-success/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "319",
@@ -4144,7 +4462,8 @@
     "sapId": "/content/sapdx/countries/nl_nl/events/2026-06-24-online-leveraging-the-erp-in-the-cloud/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "320",
@@ -4157,7 +4476,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-24-online-migrating-to-cloud-hcm-insights-from-camecos-success/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "321",
@@ -4170,7 +4490,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-24-online-build-the-data-foundation-for-agentic-ai-with-a-business-data-fabric/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "322",
@@ -4183,7 +4504,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-24-online-migrating-to-cloud-hcm-insights-from-camecos-success/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "323",
@@ -4196,7 +4518,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-24-online-wie-vahle-mit-cloud-erp-organisation-fuhrung-und-zukunftsfahigkeit-neu-ausgerichtet-hat-mit-ntt/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "324",
@@ -4209,7 +4532,8 @@
     "sapId": "/content/sapdx/countries/en_ca/events/2026-06-24-online-an-introduction-to-integration-suite-ai-features/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "325",
@@ -4222,7 +4546,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-06-24-online-build-the-data-foundation-for-agentic-ai-with-a-business-data-fabric/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "326",
@@ -4235,7 +4560,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-06-24-online-build-the-data-foundation-for-agentic-ai-with-a-business-data-fabric-emea-and-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "327",
@@ -4248,7 +4574,8 @@
     "sapId": "/content/sapdx/countries/en_sa/events/2026-06-23-online-smarter-projects-stronger-people-a-success-story-in-construction/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "328",
@@ -4261,7 +4588,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-23-online-the-state-of-digitalization-and-ai-in-swiss-companies/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "329",
@@ -4274,7 +4602,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-23-online-accelerating-the-transition-to-cloud-erp-with-icustomer-evolution-kit/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "330",
@@ -4287,7 +4616,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-23-online-ai4it-intelligent-docs-to-automated-workflows-live-demo/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "331",
@@ -4300,7 +4630,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-23-online-new-in-for-me-your-intelligent-way-to-navigate/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "332",
@@ -4313,7 +4644,8 @@
     "sapId": "/content/sapdx/countries/pt_br/events/2026-23-06-online-como-a-uau-ingleza-esta-transformando-o-supply-chain-com-inteligencia-artificial/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "333",
@@ -4326,7 +4658,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-18-online-security-webcast-in-june-trust-by-design-a-practical-framework/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "334",
@@ -4339,7 +4672,8 @@
     "sapId": "/content/sapdx/countries/es_es/events/2026-06-18-online-ley-crea-y-crece/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "335",
@@ -4352,7 +4686,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-18-online-sap-s4hanacloud-public-edition-test-automation-tool/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "336",
@@ -4365,7 +4700,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-18-online-from-ai-driven-insights-to-automated-operations-with-automation-pilot-and-cloud-alm/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "337",
@@ -4378,7 +4714,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-18-online-transforming-end-to-end-mro-planning-with-integrated-business-planning/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "338",
@@ -4391,7 +4728,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-05-20-online-transforma-la-gestion-financiera-automatizacion-y-compliance-fiscal-en-el-nuevo-entorno-digital-latinoamericano/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "339",
@@ -4404,7 +4742,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-06-17-online-transforme-la-gestion-financiera/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "340",
@@ -4417,7 +4756,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-17-online-sapphire-2026-unpacked-cto-insights-and-highlights-swiss-edition/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "341",
@@ -4430,7 +4770,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-06-17-online-inside-field-logistics-what-s-new-and-what-s-next/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "342",
@@ -4443,7 +4784,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-18-online-agentic-b2b-commerce-finding-the-fast-track-to-profitable-growth-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "343",
@@ -4456,7 +4798,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-18-online-agentic-b2b-commerce-finding-the-fast-track-to-profitable-growth-emea-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "344",
@@ -4469,7 +4812,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-17-online-accelerate-an-agentic-ready-enterprise-with-unified-api-governance-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "345",
@@ -4482,7 +4826,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-17-online-accelerate-an-agentic-ready-enterprise-with-unified-api-governance-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "346",
@@ -4495,7 +4840,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-17-online-integration-suite-can-help-optimize-your-s4hana-connectivity/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "347",
@@ -4508,7 +4854,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-17-online-reimagining-invoice-processing-ai-powered-automation-for-the-modern-enterprise/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "348",
@@ -4521,7 +4868,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-17-online-accelerate-an-agentic-ready-enterprise-with-unified-api-governance-emea-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "349",
@@ -4534,7 +4882,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-17-online-bereit-fur-die-e-rechnungspflicht-in-deutschland-so-unterstutzt-sie-das-business-network-for-buyers/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "350",
@@ -4547,7 +4896,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-17-online-get-ready-for-the-german-e-invoicing-mandate-with-business-network-for-buyers/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "351",
@@ -4560,7 +4910,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-16-online-unlocking-energy-flexibility-with-distributed-energy-resources/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "352",
@@ -4573,7 +4924,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-16-accelerate-cloud-migrations-with-migration-assistants/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "353",
@@ -4586,7 +4938,8 @@
     "sapId": "/content/sapdx/countries/pt_br/events/2026-06-16-online-do-planejamento-a-performance-como-conectar-estrategias-execucao-e-resultados/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "354",
@@ -4599,7 +4952,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-06-11-online-business-suite-finanzas-innovadoras/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "355",
@@ -4612,7 +4966,8 @@
     "sapId": "/content/sapdx/countries/sk_sk/events/2026-06-11-online-prepare-for-mandatory-electronic-invoicing-5-corner-model-in-slovakia-with-document-and-reporting-compliance/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "356",
@@ -4625,7 +4980,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-11-online-engagement-cloud-product-release-q2-recap/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "357",
@@ -4638,7 +4994,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-11-online-from-ai-subscription-to-ai-consumption-the-new-commercial-model-after-sapphire/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "358",
@@ -4651,7 +5008,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-11-online-smarter-real-estate-andfm-for-better-business-results/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "359",
@@ -4664,7 +5022,8 @@
     "sapId": "/content/sapdx/countries/es_co/events/2026-06-10-online-ei-manual-de-ia-para-lideres-de-experiencia-del-cliente-ios-secretos-de-su-exito/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "360",
@@ -4677,7 +5036,8 @@
     "sapId": "/content/sapdx/countries/en_sg/events/2026-06-10-online-build-and-scale-ai-agents-across-the-enterprise-apac/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "361",
@@ -4690,7 +5050,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-06-10-online-build-and-scale-ai-agents-across-the-enterprise-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "362",
@@ -4703,7 +5064,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-10-online-build-and-scale-ai-agents-across-the-enterprise-emea-plus-mee/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "363",
@@ -4716,7 +5078,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-10-online-the-trust-triad-a-playbook-for-architecting-secure-and-sovereign-landscapes/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "364",
@@ -4729,7 +5092,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-06-10-online-get-ready-for-france-e-invoicing-mandate-with-business-network-for-buyers/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "365",
@@ -4742,7 +5106,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-06-10-online-preparez-vous-a-la-reforme-francaise-de-la-facturation-electronique/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "366",
@@ -4755,7 +5120,8 @@
     "sapId": "/content/sapdx/countries/pt_br/events/2026-06-10-online-playbook-de-ia-dos-lideres-em-experiencia-do-cliente-os-segredos-do-sucesso/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "367",
@@ -4768,7 +5134,8 @@
     "sapId": "/content/sapdx/countries/en_gb/events/2026-06-09-online-enterprise-integration-suite-lab-from-zero-to-deployed/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "368",
@@ -4781,7 +5148,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-09-online-accelerate-cloud-transformation/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "369",
@@ -4794,7 +5162,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-06-09-online-new-integration-paradigms-in-sales-and-service-cloud/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "370",
@@ -4807,7 +5176,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-05-13-online-get-onboarded-with-ibp/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "371",
@@ -4820,7 +5190,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-04-29-online-how-brown-forman-modernizes-its-business-warehouse-for-the-ai-era-americas/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "372",
@@ -4833,7 +5204,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-29-online-utilities-innovation-update-insights-demos-roadmap/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "373",
@@ -4846,7 +5218,8 @@
     "sapId": "/content/sapdx/countries/pt_br/events/2026-04-23-online-transformando-as-vendas-b2b-como-turbinar-seus-principais-recursos/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "374",
@@ -4859,7 +5232,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-04-14-online-accelerate-your-integration-modernization-with-pipeline-concept-in-migration-tooling/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "375",
@@ -4872,7 +5246,8 @@
     "sapId": "/content/sapdx/countries/fr_fr/events/2026-02-04-online-bdc-business-data-cloud-onboarding-webcast/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "376",
@@ -4885,7 +5260,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-19-online-data-product-studio/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "377",
@@ -4898,7 +5274,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-12-online-the-next-era-of-business-data/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "378",
@@ -4911,7 +5288,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-02-19-online-the-next-era-of-business-data/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "379",
@@ -4924,7 +5302,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-02-17-online-sap-business-content-accelerators/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "380",
@@ -4937,7 +5316,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-02-04-online-business-technology-platform-onboarding-webinar/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "381",
@@ -4950,7 +5330,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-02-04-de-online-insights-into-the-extension-of-compatibility-packs/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "382",
@@ -4963,7 +5344,8 @@
     "sapId": "/content/sapdx/countries/zh_tw/events/2026-02-05-online-sap-expert-lecture-series-business-ai-second-lesson-of-the-business-ai-accelerator/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "383",
@@ -4976,7 +5358,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-01-19-sap-ariba-get-started-webinar/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "384",
@@ -4989,7 +5372,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-01-13-sap-fieldglass-get-started-webcast/jcr:content",
     "inPerson": false,
     "virtualLive": true,
-    "virtualOnDemand": false
+    "virtualOnDemand": false,
+    "company": "SAP"
   },
   {
     "id": "385",
@@ -5002,7 +5386,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2026-03-09-online-oge-unser-eeg-zur-btp-als-zentrale-erweiterungsplatform/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "386",
@@ -5015,7 +5400,8 @@
     "sapId": "/content/sapdx/countries/de_ch/events/2026-02-27-online-talking-ai-with-sap-connecting-the-dots/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "387",
@@ -5028,7 +5414,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-02-26-online-talking-ai-with-sap/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "388",
@@ -5041,7 +5428,8 @@
     "sapId": "/content/sapdx/countries/en_au/events/2026-02-26-online-from-ecc-to-cloud-erp-your-30-minute-crash-course-to-a-safer-sap-future/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "389",
@@ -5054,7 +5442,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-02-25-online-talking-ai-with-sap-code-generation-and-automation-with-sap-joule-for-developers/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "390",
@@ -5067,7 +5456,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-02-24-online-talking-ai-with-sap-automating-document-processing/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "391",
@@ -5080,7 +5470,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2026-02-23-online-ai-agents-and-joule-studio/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "392",
@@ -5093,7 +5484,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2025-10-15-online-from-foundation-to-future/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "393",
@@ -5106,7 +5498,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-10-10-online-enterprise-planning-in-the-ai-era/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "394",
@@ -5119,7 +5512,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-10-03-online-hello-joule-webinar/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "395",
@@ -5132,7 +5526,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2025-09-25-online-erfahrungen-aus-der-praxis/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "396",
@@ -5145,7 +5540,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-09-19-online-sap-btp-expert-series/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "397",
@@ -5158,7 +5554,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2025-09-18-online-power-of-business-ai/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "398",
@@ -5171,7 +5568,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-09-04-online-hello-joule/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "399",
@@ -5184,7 +5582,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-08-18-online-the-key-to-human-capital-management/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "400",
@@ -5197,7 +5596,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-07-18-online-sap-btp-expert-series-dx-eye-sap-business-data-cloud/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "401",
@@ -5210,7 +5610,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-07-18-online-sap-btp-expert-series-dx-eye-sap-business-data-cloud-session1/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "402",
@@ -5223,7 +5624,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-07-17-online-digital-transformation-in-the-near-future/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "403",
@@ -5236,7 +5638,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-07-03-online-take-the-future-of-your-business-one-step-ahead/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "404",
@@ -5249,7 +5652,8 @@
     "sapId": "/content/sapdx/countries/ja_jp/events/2025-07-02-online-the-future-of-ai-in-talent-management/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "405",
@@ -5262,7 +5666,8 @@
     "sapId": "/content/sapdx/countries/en_us/events/2025-06-26-online-discover-ai/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "406",
@@ -5275,7 +5680,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2025-01-30-online-webseminar-ki-fuers-business/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "407",
@@ -5288,7 +5694,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2025-01-24-online-webseminar-sap-maximieren-sie-ihren-b2b-erfolg/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "408",
@@ -5301,7 +5708,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2025-01-23-online-webseminar-sap-mehr-als-nur-online-einkaufen/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "409",
@@ -5314,7 +5722,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2025-01-22-online-webseminar-sap-ki-als-gamechanger-im-kundenservice/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "410",
@@ -5327,7 +5736,8 @@
     "sapId": "/content/sapdx/countries/de_de/events/2025-01-21-online-webseminar-sap-effizienz-und-umsatzoptimierung-in-der-mobile-first-era/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
   },
   {
     "id": "411",
@@ -5340,6 +5750,215 @@
     "sapId": "/content/sapdx/countries/de_de/events/2025-01-20-online-webseminar-sap-mit-ki-den-fachkraftemangel-meistern/jcr:content",
     "inPerson": false,
     "virtualLive": false,
-    "virtualOnDemand": true
+    "virtualOnDemand": true,
+    "company": "SAP"
+  },
+  {
+    "id": "412",
+    "title": "Oracle CloudWorld 2026",
+    "date": "October 12–15, 2026",
+    "location": "Las Vegas, United States",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://www.oracle.com/cloudworld/",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "413",
+    "title": "Oracle DevLive: Build with AI & Java",
+    "date": "August 22, 2026",
+    "location": "Online - Global",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://developer.oracle.com/devlive/",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "414",
+    "title": "JavaOne 2026 Developer Conference",
+    "date": "November 9–12, 2026",
+    "location": "Redwood City, United States",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://www.oracle.com/javaone/",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "415",
+    "title": "Oracle Database 23c: Next-Gen App Development",
+    "date": "July 28, 2026",
+    "location": "Online - Europe",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://www.oracle.com/database/",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "416",
+    "title": "Introduction to OCI Generative AI Service",
+    "date": "January 25, 2025",
+    "location": "Online - Global",
+    "type": "Virtual - On-demand",
+    "inPerson": false,
+    "virtualLive": false,
+    "virtualOnDemand": true,
+    "link": "https://www.oracle.com/artificial-intelligence/",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "417",
+    "title": "XYZ Innovations Summit 2026",
+    "date": "September 20–22, 2026",
+    "location": "Zürich, Switzerland",
+    "type": "Hybrid",
+    "inPerson": true,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://www.xyz.com/summit",
+    "status": "not_applied",
+    "company": "XYZ"
+  },
+  {
+    "id": "418",
+    "title": "XYZ Developer Day: Next-Gen APIs & Microservices",
+    "date": "July 15, 2026",
+    "location": "Online - Global",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://www.xyz.com/devday",
+    "status": "not_applied",
+    "company": "XYZ"
+  },
+  {
+    "id": "419",
+    "title": "Modernizing Legacy Apps with XYZ Cloud Platform",
+    "date": "June 10, 2026",
+    "location": "London, United Kingdom",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://www.xyz.com/events",
+    "status": "not_applied",
+    "company": "XYZ"
+  },
+  {
+    "id": "420",
+    "title": "XYZ Webinar: Security in Serverless Architectures",
+    "date": "February 5, 2025",
+    "location": "Online - Global",
+    "type": "Virtual - On-demand",
+    "inPerson": false,
+    "virtualLive": false,
+    "virtualOnDemand": true,
+    "link": "https://www.xyz.com/webinars",
+    "status": "not_applied",
+    "company": "XYZ"
+  },
+  {
+    "id": "421",
+    "title": "Microsoft Build 2026",
+    "date": "May 19–21, 2026",
+    "location": "Seattle, United States",
+    "type": "Hybrid",
+    "inPerson": true,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://build.microsoft.com/",
+    "status": "not_applied",
+    "company": "Microsoft"
+  },
+  {
+    "id": "422",
+    "title": "Microsoft Ignite 2026",
+    "date": "November 16–20, 2026",
+    "location": "Chicago, United States",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://ignite.microsoft.com/",
+    "status": "not_applied",
+    "company": "Microsoft"
+  },
+  {
+    "id": "423",
+    "title": "Azure Cosmos DB Conf 2026",
+    "date": "April 15, 2026",
+    "location": "Online - Global",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://www.cosmosdbconf.com/",
+    "status": "not_applied",
+    "company": "Microsoft"
+  },
+  {
+    "id": "424",
+    "title": "Copilot Studio: Build Custom Agents",
+    "date": "March 11, 2026",
+    "location": "Online - Global",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://www.microsoft.com/events",
+    "status": "not_applied",
+    "company": "Microsoft"
+  },
+  {
+    "id": "425",
+    "title": "Dreamforce 2026",
+    "date": "September 15–18, 2026",
+    "location": "San Francisco, United States",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://www.salesforce.com/dreamforce/",
+    "status": "not_applied",
+    "company": "Salesforce"
+  },
+  {
+    "id": "426",
+    "title": "Salesforce World Tour London",
+    "date": "June 18, 2026",
+    "location": "London, United Kingdom",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://www.salesforce.com/uk/events/",
+    "status": "not_applied",
+    "company": "Salesforce"
+  },
+  {
+    "id": "427",
+    "title": "Salesforce Developer Kickoff: Agentforce 2.0",
+    "date": "August 12, 2026",
+    "location": "Online - Global",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://www.salesforce.com/developers/",
+    "status": "not_applied",
+    "company": "Salesforce"
   }
 ]

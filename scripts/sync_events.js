@@ -77,7 +77,9 @@ async function syncEvents() {
 
   let finalEvents = [];
   if (source === 'sap_api') {
-    finalEvents = mergeWithExistingStatuses(fetchedEvents, existingEvents);
+    const nonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP');
+    const sapEvents = mergeWithExistingStatuses(fetchedEvents, existingEvents.filter(e => !e.company || e.company === 'SAP'));
+    finalEvents = [...sapEvents, ...nonSapEvents];
   } else {
     finalEvents = existingEvents;
   }

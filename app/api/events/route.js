@@ -86,7 +86,9 @@ export async function PATCH() {
 
     try {
       const fetchedEvents = await fetchAllSapEvents();
-      const events = mergeWithExistingStatuses(fetchedEvents, existingEvents);
+      const nonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP');
+      const sapEvents = mergeWithExistingStatuses(fetchedEvents, existingEvents.filter(e => !e.company || e.company === 'SAP'));
+      const events = [...sapEvents, ...nonSapEvents];
       
       const timestamp = new Date().toISOString();
       if (useGoogle) {
