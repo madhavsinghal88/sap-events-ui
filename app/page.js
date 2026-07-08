@@ -273,10 +273,13 @@ export default function Dashboard() {
       {/* Header */}
       <header className="header glass-panel">
         <div className="header-left">
-          <h1 className="gradient-text">SAP Events</h1>
+          <div onClick={() => setView('landing')} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', marginBottom: '0.4rem' }}>
+            <Globe className="text-cyan animate-pulse" size={24} />
+            <h1 className="gradient-text" style={{ fontSize: '1.8rem', fontWeight: 800 }}>EventAll</h1>
+          </div>
           <div className="last-updated">
-            <Clock size={14} />
-             <span>Last synced: {lastRefreshed} (Auto-syncs every 24 hours)</span>
+            <Clock size={14} className="text-cyan" />
+             <span className="status-indicator">Last intelligence sync: {lastRefreshed}</span>
             {syncMessage ? <span className="sync-message">{syncMessage}</span> : null}
           </div>
         </div>
@@ -288,7 +291,7 @@ export default function Dashboard() {
               onChange={(e) => setSelectedCountry(e.target.value)}
               className="month-select"
             >
-              <option value="All">All Countries</option>
+              <option value="All">Filter by Location</option>
               {countriesList.map(country => (
                 <option key={country} value={country}>{country}</option>
               ))}
@@ -301,7 +304,7 @@ export default function Dashboard() {
               onChange={(e) => setSelectedMonth(e.target.value)}
               className="month-select"
             >
-              <option value="All">All Months</option>
+              <option value="All">Filter by Month</option>
               <option value="0">January</option>
               <option value="1">February</option>
               <option value="2">March</option>
@@ -320,13 +323,13 @@ export default function Dashboard() {
             <Search size={18} />
             <input
               type="text"
-              placeholder="Search events or locations..."
+              placeholder="Search titles, keywords, cities..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
           <button onClick={refreshData} className="refresh-btn glass-panel">
-            Refresh Now
+            Trigger Intel Sync
           </button>
         </div>
       </header>
@@ -350,25 +353,32 @@ export default function Dashboard() {
 
       {/* Stats Section */}
       <section className="stats-grid">
-        <StatCard label="Total Events" value={stats.total} icon={<Calendar className="text-blue" />} onClick={() => setActiveTab('Explore all events')} />
-        <StatCard label="Upcoming" value={stats.upcoming} icon={<Clock className="text-purple" />} onClick={() => setActiveTab('Upcoming')} />
-        <StatCard label="Virtual" value={stats.virtual} icon={<Monitor className="text-green" />} onClick={() => setActiveTab('Virtual - Live')} />
-        <StatCard label="Applied" value={stats.applied} icon={<CheckCircle2 className="text-blue" />} onClick={() => setActiveTab('Applied')} />
+        <StatCard label="Indexed Events" value={stats.total} icon={<Calendar className="text-blue" />} onClick={() => setActiveTab('Explore all events')} />
+        <StatCard label="Future Opportunities" value={stats.upcoming} icon={<Clock className="text-purple" />} onClick={() => setActiveTab('Upcoming')} />
+        <StatCard label="Online Tracks" value={stats.virtual} icon={<Monitor className="text-green" />} onClick={() => setActiveTab('Virtual - Live')} />
+        <StatCard label="Applications Logged" value={stats.applied} icon={<CheckCircle2 className="text-blue" />} onClick={() => setActiveTab('Applied')} />
       </section>
 
       <div className="main-content">
         {/* Explore Section */}
         <section className="explore-section">
           <div className="section-header">
-            <h2>Explore Events <span className="results-count">({filteredEvents.length} results)</span></h2>
+            <h2>Explore Feed <span className="results-count">({filteredEvents.length} opportunities)</span></h2>
             <div className="tabs">
-              {['Explore all events', 'Upcoming', 'In-person', 'Virtual - Live', 'Virtual - On-demand', 'Applied'].map(tab => (
+              {[
+                { label: 'Explore All', value: 'Explore all events' },
+                { label: 'Upcoming', value: 'Upcoming' },
+                { label: 'In-Person', value: 'In-person' },
+                { label: 'Virtual (Live)', value: 'Virtual - Live' },
+                { label: 'On-Demand', value: 'Virtual - On-demand' },
+                { label: 'Applied Log', value: 'Applied' }
+              ].map(tab => (
                 <button
-                  key={tab}
-                  className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
-                  onClick={() => setActiveTab(tab)}
+                  key={tab.value}
+                  className={`tab-btn ${activeTab === tab.value ? 'active' : ''}`}
+                  onClick={() => setActiveTab(tab.value)}
                 >
-                  {tab}
+                  {tab.label}
                 </button>
               ))}
             </div>
@@ -377,18 +387,18 @@ export default function Dashboard() {
           <div className="events-table glass-panel">
             <div className="table-header">
               <div className="col sortable" onClick={() => requestSort('date')}>
-                Date {sortConfig.key === 'date' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                Date & Time {sortConfig.key === 'date' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
               <div className="col sortable" onClick={() => requestSort('title')}>
-                Event Name {sortConfig.key === 'title' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                Event Title {sortConfig.key === 'title' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
               <div className="col sortable" onClick={() => requestSort('location')}>
-                Location {sortConfig.key === 'location' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                Location & Type {sortConfig.key === 'location' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
               <div className="col sortable" onClick={() => requestSort('status')}>
-                Status {sortConfig.key === 'status' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                Action Tracker {sortConfig.key === 'status' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
-              <div className="col">Link</div>
+              <div className="col">Official Link</div>
             </div>
             <div className="table-body">
               {filteredEvents.map((event) => (
@@ -432,14 +442,14 @@ export default function Dashboard() {
         {/* To Be Applied Section - Moves here */}
         <aside className="watchlist-section">
           <div className="section-header">
-            <h2>Tracked (To Be Applied)</h2>
+            <h2>Your Watchlist Pipeline</h2>
             <span className="count-badge">{toBeAppliedEvents.length}</span>
           </div>
           <div className="watchlist-scroll">
             {toBeAppliedEvents.length === 0 ? (
               <div className="empty-state glass-panel">
                 <PlusCircle size={32} />
-                <p>No events in watchlist. Mark some as "To be Applied".</p>
+                <p>Watchlist pipeline is empty. Mark interesting events as "To be Applied" to track them here.</p>
               </div>
             ) : (
               toBeAppliedEvents.map(event => (
@@ -465,7 +475,7 @@ export default function Dashboard() {
                       Mark as Applied
                     </button>
                     <a href={event.link} target="_blank" rel="noopener noreferrer" className="details-link">
-                      Details <ChevronRight size={16} />
+                      External Link <ChevronRight size={16} />
                     </a>
                   </div>
                 </div>
@@ -502,13 +512,14 @@ export default function Dashboard() {
           font-weight: 700;
           font-size: 0.75rem;
           cursor: pointer;
-          transition: all 0.2s;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           letter-spacing: 0.05em;
         }
 
         .company-tab-btn:hover {
           color: white;
           background: rgba(255, 255, 255, 0.05);
+          transform: translateY(-1px);
         }
 
         .company-tab-btn.active.all {
@@ -521,30 +532,35 @@ export default function Dashboard() {
           border-color: #008ff4;
           color: #008ff4;
           background: rgba(0, 143, 244, 0.1);
+          box-shadow: 0 0 15px rgba(0, 143, 244, 0.25);
         }
 
         .company-tab-btn.active.oracle {
           border-color: #ef4444;
           color: #ef4444;
           background: rgba(239, 68, 68, 0.1);
+          box-shadow: 0 0 15px rgba(239, 68, 68, 0.25);
         }
 
         .company-tab-btn.active.xyz {
           border-color: #10b981;
           color: #10b981;
           background: rgba(16, 185, 129, 0.1);
+          box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
         }
 
         .company-tab-btn.active.microsoft {
           border-color: #f59e0b;
           color: #f59e0b;
           background: rgba(245, 158, 11, 0.1);
+          box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
         }
 
         .company-tab-btn.active.salesforce {
           border-color: #8b5cf6;
           color: #8b5cf6;
           background: rgba(139, 92, 246, 0.1);
+          box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
         }
 
         .company-badge {
@@ -608,6 +624,27 @@ export default function Dashboard() {
           flex-wrap: wrap;
         }
 
+        @keyframes status-pulse {
+          0%, 100% { opacity: 0.6; }
+          50% { opacity: 1; filter: drop-shadow(0 0 4px #10b981); }
+        }
+
+        .status-indicator {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+        }
+
+        .status-indicator::before {
+          content: '';
+          display: inline-block;
+          width: 7px;
+          height: 7px;
+          background-color: #10b981;
+          border-radius: 50%;
+          animation: status-pulse 2s infinite;
+        }
+
         .sync-message {
           color: #f59e0b;
         }
@@ -661,12 +698,16 @@ export default function Dashboard() {
         .refresh-btn {
           padding: 0.6rem 1.2rem;
           font-weight: 600;
-          color: var(--primary);
-          transition: all 0.2s;
+          color: #00f2fe;
+          border: 1px solid rgba(0, 242, 254, 0.2);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
         }
 
         .refresh-btn:hover {
-          background: rgba(59, 130, 246, 0.1);
+          background: rgba(0, 242, 254, 0.05);
+          border-color: #00f2fe;
+          box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
           transform: translateY(-2px);
         }
 
@@ -712,135 +753,102 @@ export default function Dashboard() {
         }
 
         .tab-btn.active {
-          background: var(--primary);
-          color: white;
+          background: #00f2fe;
+          color: #090a15;
+          font-weight: 700;
         }
 
         .events-table {
           overflow: hidden;
-          max-height: 800px;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .table-body {
-          overflow-y: auto;
-          flex: 1;
-        }
-
-        .results-count {
-          font-size: 0.9rem;
-          color: var(--text-muted);
-          font-weight: 400;
-          margin-left: 0.5rem;
-        }
-
-        .table-row {
-          display: grid;
-          grid-template-columns: 180px 1fr 300px 220px 120px;
-          padding: 1.2rem;
-          align-items: center;
-          border-bottom: 1px solid var(--card-border);
-          transition: background 0.2s;
         }
 
         .table-header {
           display: grid;
-          grid-template-columns: 180px 1fr 300px 220px 120px;
-          padding: 1.2rem;
-          background: rgba(255, 255, 255, 0.02);
-          font-weight: 500;
-          color: var(--text-muted);
-          font-size: 0.9rem;
+          grid-template-columns: 120px 1fr 200px 180px 120px;
+          padding: 1rem 1.5rem;
           border-bottom: 1px solid var(--card-border);
-        }
-
-        .col.status {
-          padding-right: 2rem;
-        }
-
-        .col.location {
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-        }
-
-        .loc-pin {
-          color: var(--text-muted);
-          min-width: 12px;
-        }
-
-        .loc-text {
+          font-weight: 700;
           color: var(--text-muted);
           font-size: 0.9rem;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
         }
 
-        .col.index {
-          color: var(--text-muted);
-          font-size: 0.8rem;
-          font-family: monospace;
-        }
-
-        .event-title-text {
-          line-height: 1.4;
-        }
-
-        .table-row:hover {
-          background: rgba(255, 255, 255, 0.02);
-        }
-
-        .table-row:last-child {
-          border-bottom: none;
-        }
-
-        .table-header .col {
-          display: flex;
-          align-items: center;
-          gap: 0.4rem;
-        }
-
-        .col.sortable {
+        .table-header .col.sortable {
           cursor: pointer;
           user-select: none;
           transition: color 0.2s;
         }
 
-        .col.sortable:hover {
-          color: var(--primary);
-        }
-
-        .date {
-          font-weight: 700;
-          color: #3b82f6;
-          font-size: 1rem;
-        }
-
-        .title {
-          font-weight: 700;
+        .table-header .col.sortable:hover {
           color: white;
+        }
+
+        .table-body {
+          display: flex;
+          flex-direction: column;
+          max-height: 800px;
+          overflow-y: auto;
+        }
+
+        .table-row {
+          display: grid;
+          grid-template-columns: 120px 1fr 200px 180px 120px;
+          padding: 1.2rem 1.5rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          align-items: center;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .table-row:hover {
+          background: rgba(255, 255, 255, 0.02) !important;
+        }
+
+        .table-row:nth-child(even) {
+          background: rgba(255, 255, 255, 0.01);
+        }
+
+        .col {
           padding-right: 1rem;
         }
 
-        .badge {
-          font-size: 0.65rem;
+        .col.date {
           font-weight: 600;
-          padding: 0.2rem 0.6rem;
-          border-radius: 4px;
-          background: rgba(255, 255, 255, 0.1);
-          color: #a1a1aa;
-          white-space: nowrap;
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          color: #008ff4;
+          font-size: 0.9rem;
         }
 
-        .location {
+        .col.title {
+          font-weight: 700;
+          font-size: 1rem;
+          line-height: 1.4;
+        }
+
+        .col.location {
           display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: var(--text-muted);
+          flex-direction: column;
+          gap: 0.4rem;
           font-size: 0.9rem;
+        }
+
+        .loc-pin {
+          color: var(--text-muted);
+          margin-right: 0.3rem;
+          vertical-align: middle;
+        }
+
+        .loc-text {
+          color: var(--text-muted);
+          vertical-align: middle;
+        }
+
+        .badge {
+          font-size: 0.75rem;
+          font-weight: 600;
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          background: rgba(255, 255, 255, 0.05);
+          color: var(--text-muted);
+          width: fit-content;
+          border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .status-select {
@@ -854,18 +862,23 @@ export default function Dashboard() {
         }
 
         .apply-link {
-          display: flex;
-          align-items: center;
-          gap: 0.4rem;
-          color: #3b82f6;
+          background: linear-gradient(135deg, #00f2fe, #008ff4);
+          color: #090a15 !important;
+          padding: 0.4rem 1rem;
+          border-radius: 6px;
           font-weight: 700;
-          font-size: 1rem;
-          transition: opacity 0.2s;
+          font-size: 0.85rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.3rem;
+          box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .apply-link:hover {
-          opacity: 0.8;
-          text-decoration: underline;
+          transform: translateY(-2px);
+          box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+          text-decoration: none;
         }
 
         .watchlist-section {
@@ -873,35 +886,34 @@ export default function Dashboard() {
           top: 2rem;
         }
 
+        .watchlist-section .section-header {
+          margin-bottom: 1.5rem;
+        }
+
         .count-badge {
-          background: var(--secondary);
+          background: var(--primary);
           color: white;
-          padding: 0.2rem 0.6rem;
-          border-radius: 99px;
           font-size: 0.8rem;
           font-weight: 700;
+          padding: 0.2rem 0.6rem;
+          border-radius: 20px;
         }
 
         .watchlist-scroll {
           display: flex;
           flex-direction: column;
           gap: 1rem;
-          max-height: calc(100vh - 250px);
+          max-height: 800px;
           overflow-y: auto;
           padding-right: 0.5rem;
         }
 
         .event-card {
-          padding: 1.5rem;
+          padding: 1.25rem;
+          border-radius: 12px;
           display: flex;
           flex-direction: column;
-          gap: 1rem;
-          transition: transform 0.2s;
-        }
-
-        .event-card:hover {
-          transform: translateX(-5px);
-          border-color: var(--secondary);
+          gap: 0.8rem;
         }
 
         .card-top {
@@ -911,14 +923,17 @@ export default function Dashboard() {
         }
 
         .card-badge {
-          font-size: 0.75rem;
+          font-size: 0.7rem;
           font-weight: 600;
-          color: var(--secondary);
+          padding: 0.1rem 0.4rem;
+          border-radius: 4px;
+          background: rgba(255, 255, 255, 0.05);
+          color: var(--text-muted);
         }
 
         .remove-btn {
-          font-size: 1.5rem;
           color: var(--text-muted);
+          font-size: 1.2rem;
           transition: color 0.2s;
         }
 
@@ -927,22 +942,28 @@ export default function Dashboard() {
         }
 
         .event-card h3 {
-          font-size: 1.1rem;
+          font-size: 1rem;
+          font-weight: 700;
+          color: white;
           line-height: 1.4;
         }
 
         .card-meta {
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
-          color: var(--text-muted);
-          font-size: 0.9rem;
+          gap: 0.4rem;
         }
 
-        .meta-item {
+        .card-meta .meta-item {
           display: flex;
           align-items: center;
           gap: 0.5rem;
+          font-size: 0.8rem;
+          color: var(--text-muted);
+        }
+
+        .card-spacer {
+          flex-grow: 1;
         }
 
         .card-actions {
@@ -953,20 +974,28 @@ export default function Dashboard() {
         }
 
         .mark-applied-btn {
-          background: var(--primary);
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: #00f2fe;
+          transition: color 0.2s;
+        }
+
+        .mark-applied-btn:hover {
           color: white;
-          padding: 0.5rem 1rem;
-          border-radius: 6px;
-          font-weight: 600;
-          font-size: 0.85rem;
         }
 
         .details-link {
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--text-muted);
           display: flex;
           align-items: center;
-          color: var(--text-muted);
-          font-size: 0.85rem;
-          font-weight: 600;
+          gap: 0.2rem;
+          transition: color 0.2s;
+        }
+
+        .details-link:hover {
+          color: white;
         }
 
         .empty-state {
