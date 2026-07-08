@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import LandingPage from './components/LandingPage';
 import {
   Calendar,
   MapPin,
@@ -42,6 +43,7 @@ const getCountryFromLocation = (location) => {
 };
 
 export default function Dashboard() {
+  const [view, setView] = useState('landing');
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('Explore all events');
@@ -266,6 +268,16 @@ export default function Dashboard() {
     applied: companyFilteredEvents.filter(e => e.status === 'applied').length
   };
 
+  if (view === 'landing') {
+    return (
+      <LandingPage
+        events={events}
+        onExplore={() => setView('dashboard')}
+        onSelectCategory={(term) => setSearchTerm(term)}
+      />
+    );
+  }
+
   if (loading) return <div className="loading-screen">Loading SAP Events...</div>;
 
   return (
@@ -273,7 +285,10 @@ export default function Dashboard() {
       {/* Header */}
       <header className="header glass-panel">
         <div className="header-left">
-          <h1 className="gradient-text">SAP Events</h1>
+          <div onClick={() => setView('landing')} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', marginBottom: '0.3rem' }}>
+            <Globe className="text-cyan animate-pulse" size={20} />
+            <h1 className="gradient-text" style={{ fontSize: '1.5rem', fontWeight: 800 }}>EventAll</h1>
+          </div>
           <div className="last-updated">
             <Clock size={14} />
              <span>Last synced: {lastRefreshed} (Auto-syncs every 24 hours)</span>
