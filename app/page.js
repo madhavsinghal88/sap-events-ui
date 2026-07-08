@@ -13,29 +13,164 @@ import {
   Award
 } from 'lucide-react';
 
-const getCountryFromLocation = (location) => {
-  if (!location) return 'Global';
-  let loc = location.trim();
-  if (loc.toLowerCase() === 'online') return 'Online';
-  if (loc.toLowerCase() === 'global') return 'Global';
-  
-  if (loc.includes('Online - ')) {
-    loc = loc.replace('Online - ', '').trim();
-  } else if (loc.includes(',')) {
-    const parts = loc.split(',');
-    loc = parts[parts.length - 1].trim();
+const KNOWN_COUNTRIES = new Set([
+  'Algeria',
+  'Australia',
+  'Austria',
+  'Azerbaijan',
+  'Belgium',
+  'Botswana',
+  'Brazil',
+  'Canada',
+  'Czech Republic',
+  'Denmark',
+  'Egypt',
+  'Finland',
+  'France',
+  'Germany',
+  'Ghana',
+  'Hungary',
+  'India',
+  'Indonesia',
+  'Ireland',
+  'Italy',
+  'Japan',
+  'Kazakhstan',
+  'Kenya',
+  'Latvia',
+  'Luxembourg',
+  'Malaysia',
+  'Malta',
+  'Netherlands',
+  'New Zealand',
+  'Nigeria',
+  'Norway',
+  'Philippines',
+  'Poland',
+  'Portugal',
+  'Singapore',
+  'Slovakia',
+  'South Africa',
+  'South Korea',
+  'Spain',
+  'Sweden',
+  'Switzerland',
+  'Taiwan',
+  'Uganda',
+  'United Arab Emirates',
+  'United Kingdom',
+  'United States',
+  'Vietnam',
+]);
+
+const COUNTRY_ALIASES = {
+  swiss: 'Switzerland',
+  uk: 'United Kingdom',
+  'united states of america': 'United States',
+  usa: 'United States',
+  sk: 'Slovakia',
+};
+
+const CITY_TO_COUNTRY = {
+  accra: 'Ghana',
+  algiers: 'Algeria',
+  amsterdam: 'Netherlands',
+  astana: 'Kazakhstan',
+  baku: 'Azerbaijan',
+  barcelona: 'Spain',
+  bengaluru: 'India',
+  copenhagen: 'Denmark',
+  fukuoka: 'Japan',
+  hyderabad: 'India',
+  krakow: 'Poland',
+  'kuala lumpur': 'Malaysia',
+  london: 'United Kingdom',
+  madrid: 'Spain',
+  manila: 'Philippines',
+  munich: 'Germany',
+  nairobi: 'Kenya',
+  osaka: 'Japan',
+  paris: 'France',
+  rome: 'Italy',
+  seoul: 'South Korea',
+  singapore: 'Singapore',
+  tokyo: 'Japan',
+  utrecht: 'Netherlands',
+  zurich: 'Switzerland',
+};
+
+const LOCATION_HINTS = [
+  ['gitex ai asia', 'Singapore'],
+  ['hall c', 'Singapore'],
+  ['mbs', 'Singapore'],
+  ['bayview foyer', 'Singapore'],
+  ['guoco midtown', 'Singapore'],
+  ['one-north', 'Singapore'],
+  ['julius baer office', 'Singapore'],
+  ['hsbc office', 'Singapore'],
+  ['quanterra classroom equinet', 'Singapore'],
+  ['singapore land tower', 'Singapore'],
+  ['tx - austin', 'United States'],
+];
+
+const LINK_HINTS = [
+  ['/germany/', 'Germany'],
+  ['/swiss/', 'Switzerland'],
+  ['/uk/', 'United Kingdom'],
+  ['/australia/', 'Australia'],
+  ['/france/', 'France'],
+  ['/spain/', 'Spain'],
+  ['/india/', 'India'],
+  ['/latinamerica/', null],
+  ['/sea/', null],
+  ['/africa/', null],
+];
+
+function normalizeCountryCandidate(value) {
+  const cleaned = String(value || '')
+    .replace(/^online\s*-\s*/i, '')
+    .replace(/\s*\(hybrid\)\s*$/i, '')
+    .trim();
+
+  if (!cleaned) return null;
+
+  const alias = COUNTRY_ALIASES[cleaned.toLowerCase()];
+  const normalized = alias || cleaned;
+  return KNOWN_COUNTRIES.has(normalized) ? normalized : null;
+}
+
+const getCountryFromLocation = (event) => {
+  const location = typeof event === 'string' ? event : event?.location;
+  const title = typeof event === 'object' ? event?.title || '' : '';
+  const link = typeof event === 'object' ? event?.link || '' : '';
+  const rawLocation = String(location || '').trim();
+  const searchText = `${rawLocation} ${title} ${link}`.toLowerCase();
+
+  if (!rawLocation || /^online$/i.test(rawLocation) || /^global$/i.test(rawLocation) || /^tbc$/i.test(rawLocation)) {
+    return null;
   }
-  
-  if (loc.includes('Germany')) return 'Germany';
-  if (loc === 'Swiss') return 'Switzerland';
-  if (loc === 'Uk') return 'United Kingdom';
-  if (loc === 'Sk') return 'Slovakia';
-  if (loc === 'Latinamerica') return 'Latin America';
-  if (loc === 'United States of America') return 'United States';
-  if (loc === 'Sea') return 'South East Asia';
-  if (loc === 'Mena') return 'Middle East & North Africa';
-  
-  return loc;
+
+  const directMatch = normalizeCountryCandidate(rawLocation);
+  if (directMatch) return directMatch;
+
+  const locationParts = rawLocation.split(',').map((part) => part.trim()).filter(Boolean);
+  for (const part of [...locationParts].reverse()) {
+    const countryMatch = normalizeCountryCandidate(part);
+    if (countryMatch) return countryMatch;
+
+    const cityMatch = CITY_TO_COUNTRY[part.toLowerCase()];
+    if (cityMatch) return cityMatch;
+  }
+
+  for (const [needle, country] of LOCATION_HINTS) {
+    if (searchText.includes(needle)) return country;
+  }
+
+  for (const [needle, country] of LINK_HINTS) {
+    if (searchText.includes(needle)) return country;
+  }
+
+  return null;
 };
 
 const PRODUCT_CATEGORY_RULES = [
@@ -186,7 +321,6 @@ export default function Dashboard() {
   const [selectedSolution, setSelectedSolution] = useState('');
   const [selectedFocusIndustry, setSelectedFocusIndustry] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
-  const [selectedCloudCompetency, setSelectedCloudCompetency] = useState(false);
   const [partnersSort, setPartnersSort] = useState('bestmatch');
 
   useEffect(() => {
@@ -266,7 +400,6 @@ export default function Dashboard() {
       if (selectedSolution) filterParts.push(`products:${selectedSolution}`);
       if (selectedFocusIndustry) filterParts.push(`industry:${selectedFocusIndustry}`);
       if (selectedLocation) filterParts.push(`location:${selectedLocation}`);
-      if (selectedCloudCompetency) filterParts.push(`isCompetency:true`);
       const filterStr = filterParts.join(';');
 
       const url = `/api/partners?q=${encodeURIComponent(searchTerm)}&page=${partnersPage}&filter=${encodeURIComponent(filterStr)}&order=${partnersSort}`;
@@ -290,12 +423,12 @@ export default function Dashboard() {
     if (currentView === 'partners') {
       fetchPartners();
     }
-  }, [currentView, searchTerm, partnersPage, selectedPartnerType, selectedSolution, selectedFocusIndustry, selectedLocation, selectedCloudCompetency, partnersSort]);
+  }, [currentView, searchTerm, partnersPage, selectedPartnerType, selectedSolution, selectedFocusIndustry, selectedLocation, partnersSort]);
 
   // Reset page number on search or filter change
   useEffect(() => {
     setPartnersPage(0);
-  }, [searchTerm, selectedPartnerType, selectedSolution, selectedFocusIndustry, selectedLocation, selectedCloudCompetency, partnersSort]);
+  }, [searchTerm, selectedPartnerType, selectedSolution, selectedFocusIndustry, selectedLocation, partnersSort]);
 
   useEffect(() => {
     const initialFetch = setTimeout(() => {
@@ -354,7 +487,7 @@ export default function Dashboard() {
       return {
         ...normalized,
         parsedDate,
-        regionCountry: getCountryFromLocation(normalized.location),
+        regionCountry: getCountryFromLocation(normalized),
         productCategory: getProductCategory(normalized),
         industry: getIndustry(normalized),
         eventCategory: getEventCategory(normalized),
@@ -370,10 +503,22 @@ export default function Dashboard() {
     return enrichedEvents.filter(e => (e.company || 'SAP').toLowerCase() === selectedCompany.toLowerCase());
   }, [enrichedEvents, selectedCompany]);
 
-  const countriesList = useMemo(() => {
-    const list = new Set();
-    companyFilteredEvents.forEach((e) => list.add(e.regionCountry));
-    return Array.from(list).sort();
+  const countryOptions = useMemo(() => {
+    const counts = new Map();
+    companyFilteredEvents.forEach((event) => {
+      if (!event.regionCountry) return;
+      counts.set(event.regionCountry, (counts.get(event.regionCountry) || 0) + 1);
+    });
+
+    return [
+      { value: 'All', label: 'All' },
+      ...Array.from(counts.entries())
+        .sort(([countryA], [countryB]) => countryA.localeCompare(countryB))
+        .map(([country, count]) => ({
+          value: country,
+          label: `${country} (${count})`,
+        })),
+    ];
   }, [companyFilteredEvents]);
 
   const productCategories = useMemo(() => (
@@ -619,7 +764,7 @@ export default function Dashboard() {
           label="Region/Country"
           value={selectedCountry}
           onChange={setSelectedCountry}
-          options={['All', ...countriesList]}
+          options={countryOptions}
         />
         <FilterSelect
           label="Event Type"
@@ -781,27 +926,6 @@ export default function Dashboard() {
                 { value: 'title:desc', label: 'Alphabetical Z-A' }
               ]}
             />
-            
-            {/* Cloud Competency toggle */}
-            <div 
-              style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '0.6rem', 
-                background: 'var(--surface-alt)', 
-                padding: '0.45rem 1rem', 
-                borderRadius: '8px', 
-                border: '1px solid var(--card-border)', 
-                cursor: 'pointer', 
-                userSelect: 'none',
-                height: '38px',
-                marginTop: '1.2rem'
-              }} 
-              onClick={() => setSelectedCloudCompetency(!selectedCloudCompetency)}
-            >
-              <input type="checkbox" checked={selectedCloudCompetency} readOnly style={{ cursor: 'pointer' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--foreground)' }}>Cloud Competency</span>
-            </div>
           </div>
 
           <section className="explore-section">
