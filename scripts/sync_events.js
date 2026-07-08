@@ -10,10 +10,20 @@ const {
   hasGoogleCredentials,
   readEventsFromSheet,
   writeEventsToSheet,
+  writeLastSyncToSheet,
   getCredentialHelp,
 } = require('../lib/googleSheets');
 
 const DATA_PATH = path.join(process.cwd(), 'data/events.json');
+const LAST_SYNC_PATH = path.join(process.cwd(), 'data/last_sync.json');
+
+function writeLocalLastSync(timestamp) {
+  try {
+    fs.writeFileSync(LAST_SYNC_PATH, JSON.stringify({ lastSynced: timestamp }, null, 2));
+  } catch (e) {
+    console.warn(`Could not write last sync locally: ${e.message}`);
+  }
+}
 
 function readLocalEvents() {
   return JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
@@ -72,14 +82,17 @@ async function syncEvents() {
     finalEvents = existingEvents;
   }
 
+  const timestamp = new Date().toISOString();
   if (useGoogle) {
     try {
       await writeEventsToSheet(finalEvents);
+      await writeLastSyncToSheet(timestamp);
     } catch (error) {
       console.error(`Google Sheets upload failed: ${error.message}`);
     }
   } else {
     writeLocalEvents(finalEvents);
+    writeLocalLastSync(timestamp);
   }
 
   return { source, count: finalEvents.length };

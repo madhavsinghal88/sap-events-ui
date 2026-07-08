@@ -1,32 +1,6 @@
 [
   {
     "id": "1",
-    "title": "Life Science Supply Chain Roundtable powered by SAP Business Network",
-    "date": "July 7, 2026",
-    "location": "Zürich, Switzerland",
-    "type": "In-person",
-    "link": "https://www.sap.com/swiss/events/2026-07-07-ch-life-science-supply-chain-roundtable.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_ch/events/2026-07-07-ch-life-science-supply-chain-roundtable/jcr:content",
-    "inPerson": true,
-    "virtualLive": false,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "2",
-    "title": "Critical Industries Summit",
-    "date": "July 7, 2026",
-    "location": "London, United Kingdom",
-    "type": "In-person",
-    "link": "https://www.sap.com/uk/events/2026-07-07-uk-critical-industries-summit.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-uk-critical-industries-summit/jcr:content",
-    "inPerson": true,
-    "virtualLive": false,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "3",
     "title": "SAP at WeAreDevelopers World Congress Europe",
     "date": "8–10 July, 2026",
     "location": "Berlin, Germany",
@@ -39,7 +13,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "4",
+    "id": "2",
     "title": "SAP Academic Community Conference APAC 2026",
     "date": "13–17 July, 2026",
     "location": "Tangerang, Indonesia",
@@ -52,7 +26,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "5",
+    "id": "3",
     "title": "SAP Academic Community Conference North America 2026",
     "date": "14–16 July, 2026",
     "location": "Irvine, United States",
@@ -65,7 +39,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "6",
+    "id": "4",
     "title": "SAP Connect Day for Customer Experience",
     "date": "July 14, 2026",
     "location": "London, United Kingdom",
@@ -78,7 +52,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "7",
+    "id": "5",
     "title": "SAP Exploration Workshop for Cloud ERP Stuttgart",
     "date": "July 15, 2026",
     "location": "Stuttgart, Germany",
@@ -91,7 +65,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "8",
+    "id": "6",
     "title": "Sales Performance Summit 2026",
     "date": "21–23 July, 2026",
     "location": "Newtown Square,  Pennsylvania, United States",
@@ -104,7 +78,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "9",
+    "id": "7",
     "title": "SAP Connect Day Southern Africa",
     "date": "July 21, 2026",
     "location": "Johannesburg, South Africa",
@@ -117,7 +91,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "10",
+    "id": "8",
     "title": "SAP Connect Day for East Africa, Nairobi",
     "date": "July 30, 2026",
     "location": "Nairobi, Kenya",
@@ -130,7 +104,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "11",
+    "id": "9",
     "title": "SAP Advanced Event Mesh Roadshow - Atlanta",
     "date": "4–5 August, 2026",
     "location": "Atlanta, Georgia, United States",
@@ -143,7 +117,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "12",
+    "id": "10",
     "title": "SAP Connect Day für KMU Bodensee",
     "date": "August 12, 2026",
     "location": "Romanshorn, Switzerland",
@@ -156,7 +130,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "13",
+    "id": "11",
     "title": "You are invited to SAP NOW AI Tour in Sydney",
     "date": "August 12, 2026",
     "location": "Sydney, Australia",
@@ -169,7 +143,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "14",
+    "id": "12",
     "title": "SAP NOW AI Tour Australia & New Zealand",
     "date": "August 12, 2026",
     "location": "Sydney, Australia",
@@ -182,7 +156,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "15",
+    "id": "13",
     "title": "SAP Connect Day for Customer Service in Discrete Manufacturing Industries",
     "date": "August 27, 2026",
     "location": "Zürich, Switzerland",
@@ -195,7 +169,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "16",
+    "id": "14",
     "title": "SAP Connect Day für KMU Bern",
     "date": "August 27, 2026",
     "location": "Muri bei Bern, Switzerland",
@@ -208,7 +182,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "17",
+    "id": "15",
     "title": "SAP HR Connect - Sydney",
     "date": "September 1, 2026",
     "location": "Sydney, Australia",
@@ -221,7 +195,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "18",
+    "id": "16",
     "title": "SAP Executive Exchange for HR - Sydney",
     "date": "September 1, 2026",
     "location": "Sydney, Australia",
@@ -234,7 +208,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "19",
+    "id": "17",
     "title": "SAP Academic Community Conference DACH 2026",
     "date": "7–8 September, 2026",
     "location": "Rorschach, Switzerland",
@@ -247,7 +221,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "20",
+    "id": "18",
     "title": "SAP Connect Day Romandie",
     "date": "September 9, 2026",
     "location": "Crissier, Switzerland",
@@ -260,7 +234,20 @@
     "virtualOnDemand": false
   },
   {
-    "id": "21",
+    "id": "19",
+    "title": "EWM Afternoon Briefing with SAP and KNAPP",
+    "date": "September 9, 2026",
+    "location": "København, Denmark",
+    "type": "In-person",
+    "link": "https://www.sap.com/denmark/events/2026-09-09-dk-ewm-afternoon-briefing-with-knapp.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/da_dk/events/2026-09-09-dk-ewm-afternoon-briefing-with-knapp/jcr:content",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "20",
     "title": "Breakfast 4 Success",
     "date": "September 10, 2026",
     "location": "Winterthur, Switzerland",
@@ -273,7 +260,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "22",
+    "id": "21",
     "title": "HR Connect Belgium",
     "date": "September 10, 2026",
     "location": "Affligem, Belgium",
@@ -286,7 +273,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "23",
+    "id": "22",
     "title": "SAP CONTROLLING 2026",
     "date": "13–15 September, 2026",
     "location": "San Diego, United States",
@@ -299,7 +286,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "24",
+    "id": "23",
     "title": "SAP Hackathon - Business meets AI",
     "date": "September 14, 2026",
     "location": "Zurich, Switzerland",
@@ -312,7 +299,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "25",
+    "id": "24",
     "title": "28. Kongress Immobilien- und Facility Management mit SAP",
     "date": "September 14, 2026",
     "location": "Berlin, Germany",
@@ -325,7 +312,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "26",
+    "id": "25",
     "title": "SAP Connect Day for Consumer Products & Retail",
     "date": "September 15, 2026",
     "location": "Zürich, Switzerland",
@@ -338,7 +325,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "27",
+    "id": "26",
     "title": "Transformation NOW!",
     "date": "September 15, 2026",
     "location": "Zürich-Flughafen, Switzerland",
@@ -351,7 +338,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "28",
+    "id": "27",
     "title": "SAP Exploration Workshop for Cloud ERP Hamburg",
     "date": "September 15, 2026",
     "location": "Hamburg, Germany",
@@ -364,7 +351,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "29",
+    "id": "28",
     "title": "SAP Connect Day",
     "date": "September 15, 2026",
     "location": "Stockholm, Sweden",
@@ -377,7 +364,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "30",
+    "id": "29",
     "title": "BDC Roadshow: Nutzen Sie das volle Potenzial Ihrer Daten – mit SAP Business Data Cloud & AI | Termin valantic",
     "date": "September 17, 2026",
     "location": "Hamburg, Germany",
@@ -390,7 +377,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "31",
+    "id": "30",
     "title": "SAP Connect Day for Spend, Travel and Expense",
     "date": "September 17, 2026",
     "location": "Copenhagen, Denmark",
@@ -403,7 +390,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "32",
+    "id": "31",
     "title": "SAP Exploration Workshop for HR: We love Payroll & Time",
     "date": "September 22, 2026",
     "location": "Zürich, Switzerland",
@@ -416,7 +403,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "33",
+    "id": "32",
     "title": "Espresso Tutorials Forum für SAP Finance, Tax & Compliance",
     "date": "September 22, 2026",
     "location": "Sankt Leon-Rot, Baden-Württemberg, Germany (Hybrid)",
@@ -429,7 +416,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "34",
+    "id": "33",
     "title": "SAP Inventory Optimization Days",
     "date": "22–23 September, 2026",
     "location": "Walldorf, Germany",
@@ -442,7 +429,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "35",
+    "id": "34",
     "title": "Espresso Tutorials Forum für SAP Global Trade Services",
     "date": "September 23, 2026",
     "location": "St. Leon-Rot, Germany",
@@ -455,7 +442,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "36",
+    "id": "35",
     "title": "GUSP Annual Event",
     "date": "23–24 September, 2026",
     "location": "Braga, Portugal",
@@ -468,7 +455,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "37",
+    "id": "36",
     "title": "Innovationstage Mittelstand | Die SAP Business Suite und eine KI-gestützte Supply Chain | Termin Valantic",
     "date": "September 24, 2026",
     "location": "Walldorf, Germany",
@@ -481,7 +468,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "38",
+    "id": "37",
     "title": "Espresso Tutorials Forum für SAP IAM & Security",
     "date": "September 24, 2026",
     "location": "St. Leon-Rot, Germany",
@@ -494,7 +481,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "39",
+    "id": "38",
     "title": "BDC Roadshow: Nutzen Sie das volle Potenzial Ihrer Daten – mit SAP Business Data Cloud & AI | Termin All for One",
     "date": "September 24, 2026",
     "location": "Filderstadt, Baden-Württemberg, Germany",
@@ -507,7 +494,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "40",
+    "id": "39",
     "title": "SAPxCNT - Autonomous Enterprise Leadership Exchange",
     "date": "September 24, 2026",
     "location": "Kemptthal, Switzerland",
@@ -520,7 +507,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "41",
+    "id": "40",
     "title": "PLM Roadshow 2026  | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin CNT",
     "date": "September 29, 2026",
     "location": "Innsbruck, Austria",
@@ -533,7 +520,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "42",
+    "id": "41",
     "title": "Agent-Led Toolchain Forum",
     "date": "30 September – 1 October, 2026",
     "location": "Walldorf, Germany",
@@ -546,7 +533,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "43",
+    "id": "42",
     "title": "Plan Ahead | Vorausschauend planen für eine resiliente Supply Chain | Termin EY",
     "date": "September 30, 2026",
     "location": "Eschborn , Germany",
@@ -559,7 +546,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "44",
+    "id": "43",
     "title": "BDC Roadshow: Nutzen Sie das volle Potenzial Ihrer Daten – mit SAP Business Data Cloud & AI | Termin bibcon",
     "date": "October 1, 2026",
     "location": "Praha, Czech Republic",
@@ -572,7 +559,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "45",
+    "id": "44",
     "title": "Vom Upgrade zum Gamechanger: Insights zum Einstieg in die SAP Cloud ERP",
     "date": "October 1, 2026",
     "location": "Walldorf, Germany",
@@ -585,7 +572,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "46",
+    "id": "45",
     "title": "PLM Roadshow 2026 | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin innovabee",
     "date": "October 1, 2026",
     "location": "Waiblingen, Germany",
@@ -598,7 +585,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "47",
+    "id": "46",
     "title": "PLM Roadshow 2026 | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin LeverX",
     "date": "October 8, 2026",
     "location": "Wroclaw oder Warschau, Poland",
@@ -611,7 +598,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "48",
+    "id": "47",
     "title": "SAP und Partner auf der maintenance München 2026",
     "date": "14–15 October, 2026",
     "location": "München, Germany",
@@ -624,7 +611,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "49",
+    "id": "48",
     "title": "PLM Roadshow 2026 | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin Cenit",
     "date": "October 20, 2026",
     "location": "Kemptthal, Germany",
@@ -637,7 +624,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "50",
+    "id": "49",
     "title": "SAP NOW AI Tour Brussels",
     "date": "October 22, 2026",
     "location": "Groot Bijgaarden, Belgium",
@@ -650,7 +637,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "51",
+    "id": "50",
     "title": "SAP NOW AI Tour UKI",
     "date": "October 22, 2026",
     "location": "Birmingham, United Kingdom",
@@ -663,7 +650,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "52",
+    "id": "51",
     "title": "SAP Academic Community Conference EMEA 2026",
     "date": "27–29 October, 2026",
     "location": "Budapest, Hungary",
@@ -676,7 +663,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "53",
+    "id": "52",
     "title": "SAP for Asset and Service Management Conference, presented by TAC Insights",
     "date": "27–29 October, 2026",
     "location": "Sevilla, Spain",
@@ -689,7 +676,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "54",
+    "id": "53",
     "title": "SAP TechEd Berlin & Virtual",
     "date": "27–29 October, 2026",
     "location": "Berlin, Germany (Hybrid)",
@@ -702,7 +689,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "55",
+    "id": "54",
     "title": "PLM Roadshow 2026 | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin sophisTex",
     "date": "October 27, 2026",
     "location": "Walldorf, Germany",
@@ -715,7 +702,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "56",
+    "id": "55",
     "title": "PLM Roadshow 2026 | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin Cideon",
     "date": "November 10, 2026",
     "location": "Sinsheim-Dühren, Germany",
@@ -728,7 +715,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "57",
+    "id": "56",
     "title": "SAP Connect Day Lager- und Transportmanagement",
     "date": "November 18, 2026",
     "location": "Heidelberg, Germany",
@@ -741,7 +728,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "58",
+    "id": "57",
     "title": "SAP Inventory Optimization Days",
     "date": "24–25 November, 2026",
     "location": "Online - Germany",
@@ -754,7 +741,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "59",
+    "id": "58",
     "title": "SAP Security Forum: Jetzt Sicherheitsstrategie zukunftssicher machen",
     "date": "25–26 November, 2026",
     "location": "Walldorf, Germany",
@@ -767,7 +754,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "60",
+    "id": "59",
     "title": "26. Jahrestagung Enterprise Portfolio- und Projektmanagement mit SAP",
     "date": "25–26 November, 2026",
     "location": "Mannheim, Germany",
@@ -780,7 +767,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "61",
+    "id": "60",
     "title": "PLM Roadshow 2026 | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin DSC",
     "date": "January 19, 2027",
     "location": "Karlsruhe, Germany",
@@ -793,7 +780,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "62",
+    "id": "61",
     "title": "PLM Roadshow 2026 | Fachvorträge, Kundenberichte, Dialog und Austausch. | Termin BDF",
     "date": "January 28, 2027",
     "location": "Walldorf, Germany",
@@ -806,7 +793,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "63",
+    "id": "62",
     "title": "SAP Public Services Forum",
     "date": "March 4, 2027",
     "location": "Bern, Switzerland",
@@ -819,7 +806,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "64",
+    "id": "63",
     "title": "SAP Connect Day for Supply Chain",
     "date": "April 14, 2027",
     "location": "Aarau, Switzerland",
@@ -832,7 +819,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "65",
+    "id": "64",
     "title": "SAP HR Connect 2027 - Aarau",
     "date": "April 15, 2027",
     "location": "Aarau, Switzerland",
@@ -845,7 +832,33 @@
     "virtualOnDemand": false
   },
   {
+    "id": "65",
+    "title": "Life Science Supply Chain Roundtable powered by SAP Business Network",
+    "date": "July 7, 2026",
+    "location": "Zürich, Switzerland",
+    "type": "In-person",
+    "link": "https://www.sap.com/swiss/events/2026-07-07-ch-life-science-supply-chain-roundtable.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_ch/events/2026-07-07-ch-life-science-supply-chain-roundtable/jcr:content",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false
+  },
+  {
     "id": "66",
+    "title": "Critical Industries Summit",
+    "date": "July 7, 2026",
+    "location": "London, United Kingdom",
+    "type": "In-person",
+    "link": "https://www.sap.com/uk/events/2026-07-07-uk-critical-industries-summit.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-uk-critical-industries-summit/jcr:content",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "67",
     "title": "SAP Cloud Exchange 2026, - Manufaktur, Mannheim",
     "date": "1–2 July, 2026",
     "location": "Mannheim, Germany",
@@ -858,7 +871,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "67",
+    "id": "68",
     "title": "Breakfast Briefing Schweiz: Bereit für KI-Agenten und Autonomous Suite?",
     "date": "June 30, 2026",
     "location": "Zurich, Switzerland",
@@ -871,7 +884,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "68",
+    "id": "69",
     "title": "SAP Customer Experience Customer Community Swiss - SAP CX Solutions",
     "date": "29–30 June, 2026",
     "location": "Kilchberg, Switzerland",
@@ -884,7 +897,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "69",
+    "id": "70",
     "title": "Procurement Summit 2026",
     "date": "24–25 June, 2026",
     "location": "Online - Germany",
@@ -897,7 +910,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "70",
+    "id": "71",
     "title": "SAP Supply Chain Management Connect Day",
     "date": "June 24, 2026",
     "location": "Cairo, Egypt",
@@ -910,7 +923,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "71",
+    "id": "72",
     "title": "SAP Connect Day for Customer Experience Netherlands 2026",
     "date": "June 23, 2026",
     "location": "Utrecht, Netherlands",
@@ -923,7 +936,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "72",
+    "id": "73",
     "title": "SAP Connect Day Finance & Spend Management",
     "date": "June 18, 2026",
     "location": "Amsterdam, Netherlands",
@@ -936,7 +949,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "73",
+    "id": "74",
     "title": "DSAG-Personaltage 2026",
     "date": "17–18 June, 2026",
     "location": "Heidelberg, Germany",
@@ -949,7 +962,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "74",
+    "id": "75",
     "title": "SAP at VivaTech 2026",
     "date": "17–20 June, 2026",
     "location": "Paris, France",
@@ -962,7 +975,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "75",
+    "id": "76",
     "title": "SAP Connect Day",
     "date": "16–17 June, 2026",
     "location": "Łódź, Poland",
@@ -975,7 +988,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "76",
+    "id": "77",
     "title": "SAP Customer Experience Customer Community - SAP Commerce Cloud",
     "date": "16–17 June, 2026",
     "location": "Berlin, Germany",
@@ -988,7 +1001,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "77",
+    "id": "78",
     "title": "HR Connect Paris",
     "date": "June 16, 2026",
     "location": "Paris, France",
@@ -1001,7 +1014,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "78",
+    "id": "79",
     "title": "Databricks: Data + AI Summit",
     "date": "15–18 June, 2026",
     "location": "San Francisco, United States",
@@ -1014,7 +1027,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "79",
+    "id": "80",
     "title": "SAP Connect Day for Spend Management - Brussels",
     "date": "June 11, 2026",
     "location": "Brussels, Belgium",
@@ -1027,7 +1040,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "80",
+    "id": "81",
     "title": "Supply Chain Excellence",
     "date": "June 11, 2026",
     "location": "Basel, Switzerland",
@@ -1040,7 +1053,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "81",
+    "id": "82",
     "title": "SAP Learning and Adoption Forum",
     "date": "June 11, 2026",
     "location": "Walldorf, Germany (Hybrid)",
@@ -1053,7 +1066,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "82",
+    "id": "83",
     "title": "HR Connect Oslo",
     "date": "June 10, 2026",
     "location": "Oslo, Norway",
@@ -1066,7 +1079,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "83",
+    "id": "84",
     "title": "SAP Transformation Days",
     "date": "10–11 June, 2026",
     "location": "Walldorf, Germany (Hybrid)",
@@ -1079,7 +1092,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "84",
+    "id": "85",
     "title": "HR Connect Vienna 2026",
     "date": "June 9, 2026",
     "location": "Wien, Austria",
@@ -1092,7 +1105,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "85",
+    "id": "86",
     "title": "SAP Connect Day Botswana",
     "date": "June 9, 2026",
     "location": "Gaborone, Botswana",
@@ -1105,7 +1118,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "86",
+    "id": "87",
     "title": "SAP Spend Connect",
     "date": "June 4, 2026",
     "location": "Gold Coast Queensland, Australia",
@@ -1118,7 +1131,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "87",
+    "id": "88",
     "title": "Mastering SAP Connect",
     "date": "4–5 June, 2026",
     "location": "Gold Coast, Queensland, Australia",
@@ -1131,7 +1144,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "88",
+    "id": "89",
     "title": "SAP Connect Day for Luxembourg 2026",
     "date": "June 3, 2026",
     "location": "Wickrange, Luxembourg",
@@ -1144,7 +1157,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "89",
+    "id": "90",
     "title": "Swiss Customer Day - Business One",
     "date": "June 2, 2026",
     "location": "Luzern, Switzerland",
@@ -1157,7 +1170,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "90",
+    "id": "91",
     "title": "HR Connect Helsinki",
     "date": "June 2, 2026",
     "location": "Helsinki, Finland",
@@ -1170,7 +1183,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "91",
+    "id": "92",
     "title": "SAP Connect Day for Spend - Helsinki",
     "date": "June 2, 2026",
     "location": "Helsinki, Finland",
@@ -1183,7 +1196,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "92",
+    "id": "93",
     "title": "Snowflake Summit 26",
     "date": "1–4 June, 2026",
     "location": "San Francisco, United States",
@@ -1196,7 +1209,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "93",
+    "id": "94",
     "title": "solr-ktt",
     "date": "28–30 May, 2026",
     "location": "Riga, Latvia",
@@ -1209,7 +1222,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "94",
+    "id": "95",
     "title": "CFO Day 2026",
     "date": "May 27, 2026",
     "location": "Wallisellen, Switzerland",
@@ -1222,7 +1235,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "95",
+    "id": "96",
     "title": "SAP Operate & Service Road To Value w/ Proaxia & Cumulocity: Maximum uptime, measurable impact – Asset & Field Service Management neu gedacht",
     "date": "May 21, 2026",
     "location": "München, Germany",
@@ -1235,7 +1248,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "96",
+    "id": "97",
     "title": "iT.CONnect",
     "date": "20–21 May, 2026",
     "location": "München, Germany",
@@ -1248,7 +1261,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "97",
+    "id": "98",
     "title": "SAP Sapphire Madrid 2026",
     "date": "19–21 May, 2026",
     "location": "Madrid, Spain",
@@ -1261,7 +1274,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "98",
+    "id": "99",
     "title": "Cloud, AI e Sovranità digitale: l'innovazione con SAP e AWS",
     "date": "May 13, 2026",
     "location": "Milano, Italy",
@@ -1274,7 +1287,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "99",
+    "id": "100",
     "title": "SAP Connect Day for Customer Experience Brussels 2026",
     "date": "May 12, 2026",
     "location": "Zaventem, Belgium",
@@ -1287,7 +1300,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "100",
+    "id": "101",
     "title": "SAP Connect Day UAE",
     "date": "May 12, 2026",
     "location": "Dubai,, United Arab Emirates",
@@ -1300,7 +1313,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "101",
+    "id": "102",
     "title": "SAP Sapphire & ASUG Annual Conference Orlando 2026",
     "date": "11–13 May, 2026",
     "location": "Orlando, FL, Global",
@@ -1313,7 +1326,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "102",
+    "id": "103",
     "title": "HR Connect",
     "date": "May 6, 2026",
     "location": "Milano, Italy",
@@ -1326,7 +1339,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "103",
+    "id": "104",
     "title": "SAP Exploration Workshop for HR",
     "date": "May 5, 2026",
     "location": "Zürich, Switzerland",
@@ -1339,7 +1352,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "104",
+    "id": "105",
     "title": "HPC x SAP Innovation Day – Die Zukunft von Cloud ERP erleben",
     "date": "May 5, 2026",
     "location": "Düsseldorf-Ratingen, Germany",
@@ -1352,7 +1365,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "105",
+    "id": "106",
     "title": "EVU Prozess & IT Tage",
     "date": "May 5, 2026",
     "location": "Berlin, Germany",
@@ -1365,7 +1378,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "106",
+    "id": "107",
     "title": "SAP Connect Day for Data & IT ANZ - Auckland",
     "date": "May 5, 2026",
     "location": "Auckland Central, Auckland, New Zealand",
@@ -1378,7 +1391,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "107",
+    "id": "108",
     "title": "DSAG-Thementage Customer Experience",
     "date": "29–30 April, 2026",
     "location": "St. Leon-Rot, Germany",
@@ -1391,7 +1404,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "108",
+    "id": "109",
     "title": "SAP Financials Forum",
     "date": "27–29 April, 2026",
     "location": "69190 Walldorf, Germany (Hybrid)",
@@ -1404,7 +1417,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "109",
+    "id": "110",
     "title": "SAP HR Connect",
     "date": "April 23, 2026",
     "location": "Johannesburg, South Africa",
@@ -1417,7 +1430,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "110",
+    "id": "111",
     "title": "SAUG Perth Regional Conference",
     "date": "April 22, 2026",
     "location": "Perth, WA 6000, Australia",
@@ -1430,7 +1443,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "111",
+    "id": "112",
     "title": "SAP at Google Cloud Next 2026",
     "date": "21–24 April, 2026",
     "location": "Las Vegas, Nevada, United States",
@@ -1443,7 +1456,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "112",
+    "id": "113",
     "title": "SAP auf der DMEA",
     "date": "April 21, 2026",
     "location": "Berlin, Germany",
@@ -1456,7 +1469,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "113",
+    "id": "114",
     "title": "HANNOVER MESSE",
     "date": "20–24 April, 2026",
     "location": "Hannover, Germany",
@@ -1469,7 +1482,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "114",
+    "id": "115",
     "title": "SAP Connect Day for Supply Chain",
     "date": "April 16, 2026",
     "location": "Milano, Italy",
@@ -1482,7 +1495,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "115",
+    "id": "116",
     "title": "SAP HR Connect",
     "date": "April 16, 2026",
     "location": "Warszawa, Poland",
@@ -1495,7 +1508,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "116",
+    "id": "117",
     "title": "Vor-Ort-Roundtable mit Edel Music & Entertainment: „Die ERPfolge ist geregelt – so migrieren Sie schnell und zielgerichtet von SAP ERP zu SAP Cloud ERP",
     "date": "April 16, 2026",
     "location": "Hamburg, Germany",
@@ -1508,7 +1521,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "117",
+    "id": "118",
     "title": "SAP Connect Day for Finance and Spend Management 2026",
     "date": "April 15, 2026",
     "location": "Aarau, Switzerland",
@@ -1521,7 +1534,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "118",
+    "id": "119",
     "title": "SAP Operate & Service Road To Value w/ All for One & TeamViewer – Zukunft Service: Nahtlos zum Erfolg mit Service Transformation durch End-to-End-Prozesse",
     "date": "April 15, 2026",
     "location": "Stuttgart, Germany",
@@ -1534,7 +1547,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "119",
+    "id": "120",
     "title": "SAP Connect Day for Data and IT - Switzerland",
     "date": "April 14, 2026",
     "location": "Aarau, Switzerland",
@@ -1547,7 +1560,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "120",
+    "id": "121",
     "title": "SAP ALM Summit North America 2026",
     "date": "14–16 April, 2026",
     "location": "Newtown Square, Pennsylvania, United States",
@@ -1560,7 +1573,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "121",
+    "id": "122",
     "title": "SAP Customer Experience Customer Community - Digital Marketing",
     "date": "14–15 April, 2026",
     "location": "Mannheim, Germany",
@@ -1573,7 +1586,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "122",
+    "id": "123",
     "title": "SAP HR Connect 2026",
     "date": "April 13, 2026",
     "location": "Aarau, Switzerland",
@@ -1586,7 +1599,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "123",
+    "id": "124",
     "title": "SAP Connect Day for Customer Experience 2026",
     "date": "April 9, 2026",
     "location": "Aarau, Switzerland",
@@ -1599,7 +1612,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "124",
+    "id": "125",
     "title": "AUSAPE - SAP Transformation Day",
     "date": "April 9, 2026",
     "location": "Sevilla, Spain",
@@ -1612,7 +1625,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "125",
+    "id": "126",
     "title": "SAP Connect Day for Supply Chain",
     "date": "April 8, 2026",
     "location": "Aarau, Switzerland",
@@ -1625,7 +1638,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "126",
+    "id": "127",
     "title": "SAP Connect Day Dallas",
     "date": "April 7, 2026",
     "location": "Dallas, United States",
@@ -1638,7 +1651,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "127",
+    "id": "128",
     "title": "SAP Connect Day Chicago",
     "date": "April 2, 2026",
     "location": "Chicago, United States",
@@ -1651,7 +1664,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "128",
+    "id": "129",
     "title": "Innovationstage Mittelstand | Die SAP Business Suite und eine KI-gestützte Supply Chain | Termin Syntax",
     "date": "March 26, 2026",
     "location": "Weinheim, Germany",
@@ -1664,7 +1677,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "129",
+    "id": "130",
     "title": "AFSUG Insight to Impact Support Event",
     "date": "March 26, 2026",
     "location": "Cape Town, Europe",
@@ -1677,7 +1690,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "130",
+    "id": "131",
     "title": "SAP Connect Day Vienna 2026",
     "date": "March 24, 2026",
     "location": "Vienna, Austria",
@@ -1690,7 +1703,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "131",
+    "id": "132",
     "title": "SAP auf der LogiMAT 2026",
     "date": "24–26 March, 2026",
     "location": "Stuttgart, Germany",
@@ -1703,7 +1716,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "132",
+    "id": "133",
     "title": "SAP Connect Day for Data & IT - Melbourne",
     "date": "March 24, 2026",
     "location": "Melbourne, Australia",
@@ -1716,7 +1729,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "133",
+    "id": "134",
     "title": "SAP Hackathon Business meets AI",
     "date": "23–27 March, 2026",
     "location": "Zurich-Airport, Switzerland",
@@ -1729,7 +1742,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "134",
+    "id": "135",
     "title": "SAP Connect Day for Data & IT - Brisbane",
     "date": "March 19, 2026",
     "location": "Brisbane, Australia",
@@ -1742,7 +1755,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "135",
+    "id": "136",
     "title": "SAP Connect Day Paris",
     "date": "March 19, 2026",
     "location": "Paris, France",
@@ -1755,7 +1768,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "136",
+    "id": "137",
     "title": "SAP Exploration Workshop for HR: SmartRecruiters - Zurich",
     "date": "March 18, 2026",
     "location": "Zürich, Switzerland",
@@ -1768,7 +1781,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "137",
+    "id": "138",
     "title": "SAP Connect Day - Budapest 2026",
     "date": "March 17, 2026",
     "location": "Budapest, Hungary",
@@ -1781,7 +1794,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "138",
+    "id": "139",
     "title": "SAP BTP Exploration Workshop: Future-Ready with Joule Studio and AI Agents",
     "date": "March 17, 2026",
     "location": "Zurich, Switzerland",
@@ -1794,7 +1807,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "139",
+    "id": "140",
     "title": "DSAG Technology Days + Teched Stop",
     "date": "17–19 March, 2026",
     "location": "Hamburg, Germany",
@@ -1807,7 +1820,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "140",
+    "id": "141",
     "title": "SAP Connect for Supply Chain",
     "date": "March 17, 2026",
     "location": "Perth, Australia",
@@ -1820,7 +1833,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "141",
+    "id": "142",
     "title": "SAP Connect Day for Data & IT - Sydney",
     "date": "March 17, 2026",
     "location": "Sydney,, Australia",
@@ -1833,7 +1846,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "142",
+    "id": "143",
     "title": "AUSAPE TechXChange 2026",
     "date": "March 12, 2026",
     "location": "Barcelona, Spain",
@@ -1846,7 +1859,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "143",
+    "id": "144",
     "title": "SAP Cloud ERP Workshop",
     "date": "March 10, 2026",
     "location": "Zürich, Switzerland",
@@ -1859,7 +1872,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "144",
+    "id": "145",
     "title": "SAP Connect Day for Data and IT - Dublin",
     "date": "March 10, 2026",
     "location": "Dublin, Ireland",
@@ -1872,7 +1885,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "145",
+    "id": "146",
     "title": "SAP Customer Experience Customer Community DACH - SAP Sales & Service Cloud",
     "date": "9–10 March, 2026",
     "location": "Walldorf (WDF05), Germany",
@@ -1885,7 +1898,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "146",
+    "id": "147",
     "title": "SAP Connect Day for Cloud Transformation 2026",
     "date": "9–10 March, 2026",
     "location": "Meerbusch, Düsseldorf, Germany",
@@ -1898,7 +1911,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "147",
+    "id": "148",
     "title": "Customer Support Summit - North America",
     "date": "March 4, 2026",
     "location": "San Ramon, California, United States",
@@ -1911,7 +1924,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "148",
+    "id": "149",
     "title": "SAP Connect Day for Finance & Spend Management",
     "date": "March 4, 2026",
     "location": "Düsseldorf, Germany",
@@ -1924,7 +1937,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "149",
+    "id": "150",
     "title": "SAP Connect Days for Supply Chain - Planung, Produktion & Logistik",
     "date": "2–3 March, 2026",
     "location": "Düsseldorf, Germany",
@@ -1937,7 +1950,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "150",
+    "id": "151",
     "title": "SAP Connect Days for Supply Chain - PLM",
     "date": "2–3 March, 2026",
     "location": "Düsseldorf, Germany",
@@ -1950,7 +1963,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "151",
+    "id": "152",
     "title": "SAP Connect Days for Supply Chain - Asset & Service Management",
     "date": "2–3 March, 2026",
     "location": "Düsseldorf, Germany",
@@ -1963,7 +1976,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "152",
+    "id": "153",
     "title": "SAP und Partner auf der maintenance 2026",
     "date": "25–26 February, 2026",
     "location": "Dortmund, Germany",
@@ -1976,7 +1989,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "153",
+    "id": "154",
     "title": "Next Generation SAP Enterprise Architect Learning Forum 2026",
     "date": "23–26 February, 2026",
     "location": "Newtown Square, Pennsylvania, United States",
@@ -1989,7 +2002,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "154",
+    "id": "155",
     "title": "Die Zukunft von SAP Data & Analytic",
     "date": "February 11, 2026",
     "location": "Frankfurt, Germany",
@@ -2002,7 +2015,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "155",
+    "id": "156",
     "title": "Analytics Neujahrs-Apéro",
     "date": "February 5, 2026",
     "location": "Zurich, Switzerland",
@@ -2015,7 +2028,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "156",
+    "id": "157",
     "title": "2026 ASUG Volunteer Meeting Atlanta",
     "date": "23–25 January, 2026",
     "location": "Atlanta, Georgia, United States",
@@ -2028,7 +2041,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "157",
+    "id": "158",
     "title": "Konsumkompass 2026",
     "date": "20–21 January, 2026",
     "location": "Berlin, Germany",
@@ -2041,202 +2054,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "158",
-    "title": "From vision to value: Driving customer satisfaction with an AI-powered supply chain",
-    "date": "July 7, 2026",
-    "location": "Online - Austria",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/austria/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_at/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
     "id": "159",
-    "title": "Reduce TCO and Prepare for Agentic & Autonomous Commerce with SAP Commerce Cloud",
-    "date": "July 7, 2026",
-    "location": "Online - Germany",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/germany/events/2026-07-07-online-reduce-tco-and-prepare-for-agentic-and-autonomous-commerce-with-commerce-cloud.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-reduce-tco-and-prepare-for-agentic-and-autonomous-commerce-with-commerce-cloud/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "160",
-    "title": "Adoption Webinar: SAP Integration Suite | Realize Event-Driven Architecture through SAP Advanced Event Mesh",
-    "date": "July 7, 2026",
-    "location": "Online - Germany",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/germany/events/2026-07-07-online-realize-event-driven-architecture-through-sap-advanced-event-mesh.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-realize-event-driven-architecture-through-sap-advanced-event-mesh/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "161",
-    "title": "Unlock faster cash flow with AI in SAP Cloud ERP (APAC)",
-    "date": "July 7, 2026",
-    "location": "Online - Sea",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/sea/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-from-billing-to-collection-intelligence.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_sg/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-from-billing-to-collection-intelligence/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "162",
-    "title": "From vision to value: Driving customer satisfaction with an AI-powered supply chain",
-    "date": "July 7, 2026",
-    "location": "Online - Sea",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/sea/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_sg/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "163",
-    "title": "Unlock faster cash flow with AI in SAP Cloud ERP (Americas)",
-    "date": "July 7, 2026",
-    "location": "Online",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-americas.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_us/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-americas/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "164",
-    "title": "From vision to value: Driving customer satisfaction with an AI-powered supply chain",
-    "date": "July 7, 2026",
-    "location": "Online",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_us/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "165",
-    "title": "The next level of forecasting & replenishment: Demand and Inventory Planning",
-    "date": "July 7, 2026",
-    "location": "Online - Uk",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/uk/events/2026-07-07-online-the-next-level-of-forecasting-and-replenishment-demand-and-inventory-planning.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-online-the-next-level-of-forecasting-and-replenishment-demand-and-inventory-planning/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "166",
-    "title": "Enterprise Integration - A Product Management deep dive",
-    "date": "July 7, 2026",
-    "location": "Online - Uk",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/uk/events/2026-07-07-online-enterprise-integration-a-product-management-deep-dive.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-online-enterprise-integration-a-product-management-deep-dive/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "167",
-    "title": "Utilities CX Reloaded: The New Sales Process Explained",
-    "date": "July 7, 2026",
-    "location": "Online - Germany",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/germany/events/2026-07-07-online-utilities-cx-reloaded-the-new-sales-process-explained.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-utilities-cx-reloaded-the-new-sales-process-explained/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "168",
-    "title": "Robust clean core extensibility with Custom Code Assistant",
-    "date": "July 7, 2026",
-    "location": "Online - Germany",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/germany/events/2026-07-07-online-robust-clean-core-extensibility-with-custom-code-assistant.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-robust-clean-core-extensibility-with-custom-code-assistant/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "169",
-    "title": "SAPs quarterly PLM Community Call",
-    "date": "July 7, 2026",
-    "location": "Online - Germany",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/germany/events/2026-07-07-online-plm-community-call.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-plm-community-call/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "170",
-    "title": "From Implementation to Impact: Making SAP EWM Deliver",
-    "date": "July 7, 2026",
-    "location": "Online - Australia",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/australia/events/2026-07-06-online-making-sap-ewm-deliver.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/en_au/events/2026-07-06-online-making-sap-ewm-deliver/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "171",
-    "title": "Unlock faster cash flow with AI in SAP Cloud ERP (EMEA/MEE)",
-    "date": "July 7, 2026",
-    "location": "Online - France",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/france/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-emea-mee.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-emea-mee/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "172",
-    "title": "SAP-ERP-Modernisierung in einem regulierten Umfeld: ACREDIAS Weg in die SAP Public Cloud in 12 Monaten (mit adesso)",
-    "date": "July 7, 2026",
-    "location": "Online - Germany",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/germany/events/2026-07-07-online-erp-modernisierung-in-einem-regulierten-umfeld-acredias.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-erp-modernisierung-in-einem-regulierten-umfeld-acredias/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "173",
     "title": "From Preventive to Autonomous: The Future of SAP Asset Management",
     "date": "July 8, 2026",
     "location": "Online - Germany",
@@ -2249,7 +2067,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "174",
+    "id": "160",
     "title": "Autonomous Finance is your destination: Your Journey from SAP Cloud ERP to AI-Powered Operations - APAC",
     "date": "July 8, 2026",
     "location": "Online - Sea",
@@ -2262,7 +2080,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "175",
+    "id": "161",
     "title": "Amplify your agents and applications with the AI database: Introduction to SAP HANA Cloud (APAC)",
     "date": "July 8, 2026",
     "location": "Online - Sea",
@@ -2275,7 +2093,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "176",
+    "id": "162",
     "title": "Preparing for the Spanish E Invoicing Mandate: What You Need to Know",
     "date": "July 8, 2026",
     "location": "Online - Spain",
@@ -2288,7 +2106,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "177",
+    "id": "163",
     "title": "Preparación para el mandato de facturación electrónica en España (Ley Crea y Crece): lo que necesitas saber",
     "date": "July 8, 2026",
     "location": "Online - Spain",
@@ -2301,7 +2119,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "178",
+    "id": "164",
     "title": "AUSAPE HR & SuccessFactors Working Group",
     "date": "July 8, 2026",
     "location": "Online - Spain",
@@ -2314,7 +2132,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "179",
+    "id": "165",
     "title": "Amplify your agents and applications with the AI database: Introduction to SAP HANA Cloud",
     "date": "July 8, 2026",
     "location": "Online",
@@ -2327,7 +2145,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "180",
+    "id": "166",
     "title": "Autonomous Finance is your destination: Your Journey from SAP Cloud ERP to AI-Powered Operations - Americas",
     "date": "July 8, 2026",
     "location": "Online",
@@ -2340,7 +2158,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "181",
+    "id": "167",
     "title": "Amplify your agents and applications with the AI database: Introduction to SAP HANA Cloud (Americas)",
     "date": "July 8, 2026",
     "location": "Online",
@@ -2353,7 +2171,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "182",
+    "id": "168",
     "title": "Autonomous Finance is your destination: Your Journey from SAP Cloud ERP to AI-Powered Operations - EMEA/MEE",
     "date": "July 8, 2026",
     "location": "Online - Uk",
@@ -2366,7 +2184,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "183",
+    "id": "169",
     "title": "How to turn ideas faster into AI-powered solutions with SAP's new intent-based development offering",
     "date": "July 8, 2026",
     "location": "Online - Germany",
@@ -2379,7 +2197,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "184",
+    "id": "170",
     "title": "Move before you’re moved – Mit SAP Cloud ERP wird aus Strategie eine gewonnene Partie",
     "date": "July 8, 2026",
     "location": "Online - Germany",
@@ -2392,7 +2210,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "185",
+    "id": "171",
     "title": "SAP SuccessFactors Customer Onboarding Webinar (Português / LAC)",
     "date": "July 8, 2026",
     "location": "Online - Latinamerica",
@@ -2405,7 +2223,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "186",
+    "id": "172",
     "title": "Amplify your agents and applications with the AI database: Introduction to SAP HANA Cloud",
     "date": "July 8, 2026",
     "location": "Online - France",
@@ -2418,7 +2236,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "187",
+    "id": "173",
     "title": "Amplify your agents and applications with the AI database: Introduction to SAP HANA Cloud (EMEA&MEE)",
     "date": "July 8, 2026",
     "location": "Online - France",
@@ -2431,7 +2249,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "188",
+    "id": "174",
     "title": "Automating Employee Termination Events with SAP Business AI Platform and Event-Driven Integration",
     "date": "July 8, 2026",
     "location": "Online",
@@ -2444,7 +2262,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "189",
+    "id": "175",
     "title": "SAP CPQ Onboarding Webcast",
     "date": "July 8, 2026",
     "location": "Online",
@@ -2457,20 +2275,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "190",
-    "title": "El Futuro de la Contratación Inteligente con SmartRecruiters para SAP SuccessFactors",
-    "date": "July 9, 2026",
-    "location": "Online - Latinamerica",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/latinamerica/events/2026-07-09-online-el-futuro-de-la-contratacion-inteligente-con-smartrecruiters-para-successfactors.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/es_co/events/2026-07-09-online-el-futuro-de-la-contratacion-inteligente-con-smartrecruiters-para-successfactors/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "191",
+    "id": "176",
     "title": "Getting Holiday-Ready with SAP Commerce Cloud Payments: Unlocking Peak Season Success with Open Payment Framework and Leading Payment Partners",
     "date": "July 9, 2026",
     "location": "Online - Germany",
@@ -2483,7 +2288,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "192",
+    "id": "177",
     "title": "Powering Enterprise AI with SAP Integration Suite, Enhanced Edition",
     "date": "July 9, 2026",
     "location": "Online - Germany",
@@ -2496,7 +2301,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "193",
+    "id": "178",
     "title": "Security & Administration of ABAP Environment in SAP BTP",
     "date": "July 9, 2026",
     "location": "Online - India",
@@ -2509,7 +2314,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "194",
+    "id": "179",
     "title": "Smart supply chains in action: Real-world AI applications in SAP Cloud ERP (APAC)",
     "date": "July 9, 2026",
     "location": "Online - Sea",
@@ -2522,7 +2327,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "195",
+    "id": "180",
     "title": "AI Agent-Led Transformation: Fast Track to SAP Cloud ERP Private",
     "date": "July 9, 2026",
     "location": "Online - Sea",
@@ -2535,7 +2340,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "196",
+    "id": "181",
     "title": "Smart supply chains in action: Real-world AI applications in SAP Cloud ERP (Americas)",
     "date": "July 9, 2026",
     "location": "Online",
@@ -2548,7 +2353,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "197",
+    "id": "182",
     "title": "AI Agent-Led Transformation: Fast Track to SAP Cloud ERP Private",
     "date": "July 9, 2026",
     "location": "Online",
@@ -2561,7 +2366,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "198",
+    "id": "183",
     "title": "SAP Cloud Identity Access Governance Onboarding Webcast",
     "date": "July 9, 2026",
     "location": "Online",
@@ -2574,7 +2379,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "199",
+    "id": "184",
     "title": "Smart supply chains in action: Real-world AI applications in SAP Cloud ERP (EMEA/MEE)",
     "date": "July 9, 2026",
     "location": "Online - Germany",
@@ -2587,7 +2392,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "200",
+    "id": "185",
     "title": "AI Agent-Led Transformation: Fast Track to SAP Cloud ERP Private",
     "date": "July 9, 2026",
     "location": "Online - Germany",
@@ -2600,7 +2405,20 @@
     "virtualOnDemand": false
   },
   {
-    "id": "201",
+    "id": "186",
+    "title": "El Futuro de la Contratación Inteligente con SmartRecruiters para SAP SuccessFactors",
+    "date": "July 9, 2026",
+    "location": "Online - Latinamerica",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/latinamerica/events/2026-07-09-online-el-futuro-de-la-contratacion-inteligente-con-smartrecruiters-para-successfactors.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/es_co/events/2026-07-09-online-el-futuro-de-la-contratacion-inteligente-con-smartrecruiters-para-successfactors/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "187",
     "title": "The Invisible Cost of Doing Nothing: A Business Case for Cloud ERP (Americas)",
     "date": "July 13, 2026",
     "location": "Online - Latinamerica",
@@ -2613,7 +2431,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "202",
+    "id": "188",
     "title": "The Invisible Cost of Doing Nothing: A Business Case for Cloud ERP (APAC)",
     "date": "July 13, 2026",
     "location": "Online - Sea",
@@ -2626,7 +2444,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "203",
+    "id": "189",
     "title": "The Invisible Cost of Doing Nothing: A Business Case for Cloud ERP (EMEA/MEE)",
     "date": "July 13, 2026",
     "location": "Online - Germany",
@@ -2639,7 +2457,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "204",
+    "id": "190",
     "title": "SAP SuccessFactors - Get started and Plan for your implementation",
     "date": "July 14, 2026",
     "location": "Online - Sea",
@@ -2652,7 +2470,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "205",
+    "id": "191",
     "title": "Configure smarter and transform faster with Configuration Support Assistant",
     "date": "July 14, 2026",
     "location": "Online - Germany",
@@ -2665,7 +2483,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "206",
+    "id": "192",
     "title": "How to prepare and manage SAP Multi-Bank Connectivity migration to the new SWIFT Business Connect (Alliance Cloud) service",
     "date": "July 14, 2026",
     "location": "Online - Germany",
@@ -2678,7 +2496,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "207",
+    "id": "193",
     "title": "Autonomous Project Delivery: How SAP Industry AI Transforms ProServe",
     "date": "July 14, 2026",
     "location": "Online - Germany",
@@ -2691,7 +2509,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "208",
+    "id": "194",
     "title": "When AI runs the front office: 5 hidden ERP signals of B2C engagement (EMEA/MEE)",
     "date": "July 14, 2026",
     "location": "Online - Germany",
@@ -2704,7 +2522,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "209",
+    "id": "195",
     "title": "Make vibe coding ready for the enterprise (APAC)",
     "date": "July 14, 2026",
     "location": "Online - Sea",
@@ -2717,7 +2535,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "210",
+    "id": "196",
     "title": "When AI runs the front office: 5 hidden ERP signals of B2C engagement (APAC)",
     "date": "July 14, 2026",
     "location": "Online - Sea",
@@ -2730,7 +2548,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "211",
+    "id": "197",
     "title": "Make vibe coding ready for the enterprise (Americas)",
     "date": "July 14, 2026",
     "location": "Online",
@@ -2743,7 +2561,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "212",
+    "id": "198",
     "title": "SAP Subscription Billing Onboarding Webcast",
     "date": "July 14, 2026",
     "location": "Online",
@@ -2756,7 +2574,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "213",
+    "id": "199",
     "title": "When AI runs the front office: 5 hidden ERP signals of B2C engagement (Americas)",
     "date": "July 14, 2026",
     "location": "Online",
@@ -2769,7 +2587,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "214",
+    "id": "200",
     "title": "Operational and Revenue Clarity: An End-to-End Visibility for COOs & CROs",
     "date": "July 14, 2026",
     "location": "Online - Uk",
@@ -2782,7 +2600,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "215",
+    "id": "201",
     "title": "Make vibe coding ready for the enterprise (EMEA+MEE)",
     "date": "July 14, 2026",
     "location": "Online - Uk",
@@ -2795,7 +2613,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "216",
+    "id": "202",
     "title": "Technical Deep Dive Session: Executing SAP PI/PO Migrations to SAP Integration Suite – APAC Edition",
     "date": "July 14, 2026",
     "location": "Online - Germany",
@@ -2808,7 +2626,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "217",
+    "id": "203",
     "title": "Enterprise Integration - Integration That Fits: An Industry-Specific Deep Dive",
     "date": "July 14, 2026",
     "location": "Online - Germany",
@@ -2821,7 +2639,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "218",
+    "id": "204",
     "title": "SAP SuccessFactors: Part 1 - Get Started and Plan for your implementation",
     "date": "July 14, 2026",
     "location": "Online",
@@ -2834,7 +2652,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "219",
+    "id": "205",
     "title": "Accelerate Utilities Transformation with SAP Signavio, SAP LeanIX & SAP Cloud ALM",
     "date": "July 15, 2026",
     "location": "Online - Germany",
@@ -2847,7 +2665,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "220",
+    "id": "206",
     "title": "Expanding workforce planning with connected contingent workforce management - APAC",
     "date": "July 15, 2026",
     "location": "Online - Sea",
@@ -2860,7 +2678,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "221",
+    "id": "207",
     "title": "Expanding workforce planning with connected contingent workforce management - Americas",
     "date": "July 15, 2026",
     "location": "Online",
@@ -2873,7 +2691,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "222",
+    "id": "208",
     "title": "Expanding workforce planning with connected contingent workforce management - EMEA/MEE",
     "date": "July 15, 2026",
     "location": "Online - Uk",
@@ -2886,7 +2704,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "223",
+    "id": "209",
     "title": "ESG Disclosure and Sustainability Performance: Measurement, Reporting, and Accountability",
     "date": "July 15, 2026",
     "location": "Online - Germany",
@@ -2899,7 +2717,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "224",
+    "id": "210",
     "title": "SAP SuccessFactors Customer Onboarding Webinar (日本語)",
     "date": "July 15, 2026",
     "location": "Online - Japan",
@@ -2912,7 +2730,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "225",
+    "id": "211",
     "title": "SAP SuccessFactors Customer Onboarding Webcast (中文)",
     "date": "July 16, 2026",
     "location": "Online",
@@ -2925,7 +2743,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "226",
+    "id": "212",
     "title": "Unlocking Efficiency in Real Estate & Facilities Management with SAP and Planon",
     "date": "July 16, 2026",
     "location": "Online - Germany",
@@ -2938,7 +2756,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "227",
+    "id": "213",
     "title": "技术深度探讨会议：怎样执行 SAP PI/PO 向 SAP 集成套件的迁移",
     "date": "July 16, 2026",
     "location": "Online",
@@ -2951,7 +2769,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "228",
+    "id": "214",
     "title": "SAP Commerce Cloud Q2 2026 Release Recap",
     "date": "July 16, 2026",
     "location": "Online - Germany",
@@ -2964,7 +2782,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "229",
+    "id": "215",
     "title": "S/4HANA Cloud-Migration bei Strama-MPS (mit T.CON)",
     "date": "July 16, 2026",
     "location": "Online - Germany",
@@ -2977,7 +2795,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "230",
+    "id": "216",
     "title": "SAP Advanced Financial Closing Onboarding Webcast",
     "date": "July 20, 2026",
     "location": "Online",
@@ -2990,7 +2808,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "231",
+    "id": "217",
     "title": "SAP SuccessFactors: Get Enabled and Prepare for Go Live (English, APAC/ MENA)",
     "date": "July 21, 2026",
     "location": "Online - Sea",
@@ -3003,7 +2821,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "232",
+    "id": "218",
     "title": "SAP SuccessFactors Customer Onboarding Webinar (Español / Europe & LAC)",
     "date": "July 21, 2026",
     "location": "Online - Latinamerica",
@@ -3016,7 +2834,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "233",
+    "id": "219",
     "title": "AI, Data, and Experience: The New Blueprint for HR Service Delivery",
     "date": "July 21, 2026",
     "location": "Online - Germany",
@@ -3029,7 +2847,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "234",
+    "id": "220",
     "title": "SAP SuccessFactors Customer Onboarding Webcast (Deutsch / MEE)",
     "date": "July 21, 2026",
     "location": "Online - Germany",
@@ -3042,7 +2860,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "235",
+    "id": "221",
     "title": "AI4IT - AI Coding, SAP Style: Live Demo & Overview",
     "date": "July 21, 2026",
     "location": "Online - Germany",
@@ -3055,7 +2873,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "236",
+    "id": "222",
     "title": "Simpler Processes, Stronger Decisions: A Success Story in Energy",
     "date": "July 22, 2026",
     "location": "Online - Mena",
@@ -3068,7 +2886,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "237",
+    "id": "223",
     "title": "Two-Tier ERP Business Success",
     "date": "July 22, 2026",
     "location": "Online - Uk",
@@ -3081,7 +2899,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "238",
+    "id": "224",
     "title": "Bulk Logistics Automation in Oil, Gas, Energy and Process Industries",
     "date": "July 22, 2026",
     "location": "Online - Germany",
@@ -3094,7 +2912,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "239",
+    "id": "225",
     "title": "Neo to Multi-Cloud: Migrate Smarter, Scale Faster with SAP Integration Suite",
     "date": "July 22, 2026",
     "location": "Online - Germany",
@@ -3107,7 +2925,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "240",
+    "id": "226",
     "title": "SAP Commerce Cloud Q2 2026 Tech-Focused Update",
     "date": "July 23, 2026",
     "location": "Online - Germany",
@@ -3120,7 +2938,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "241",
+    "id": "227",
     "title": "SAP SuccessFactors: Get Enabled and Prepare for Go Live",
     "date": "July 28, 2026",
     "location": "Online",
@@ -3133,7 +2951,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "242",
+    "id": "228",
     "title": "Accelerate migrations with Data Quality Assistant",
     "date": "July 28, 2026",
     "location": "Online - Germany",
@@ -3146,7 +2964,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "243",
+    "id": "229",
     "title": "Enterprise Integration - SAP Integration Suite Lab: From Zero to Deployed",
     "date": "July 28, 2026",
     "location": "Online - Uk",
@@ -3159,7 +2977,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "244",
+    "id": "230",
     "title": "SAP Sales Cloud, Sales and Foundation topics: Q2/2026 Release Overview",
     "date": "July 28, 2026",
     "location": "Online - Germany",
@@ -3172,7 +2990,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "245",
+    "id": "231",
     "title": "SAP Cloud ERP @ Victrola | Innovative Technology Electronics, LLC.",
     "date": "July 29, 2026",
     "location": "Online",
@@ -3185,7 +3003,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "246",
+    "id": "232",
     "title": "SAP Service Cloud, Utilities and SAP Enterprise Service Management: Q2/2026 Release Overview",
     "date": "July 29, 2026",
     "location": "Online - Germany",
@@ -3198,7 +3016,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "247",
+    "id": "233",
     "title": "Designing the Real-Time Enterprise with Event-Driven Architecture",
     "date": "July 29, 2026",
     "location": "Online - Sea",
@@ -3211,7 +3029,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "248",
+    "id": "234",
     "title": "SAP SuccessFactors: Build your Adoption Program​ to Maximize Results (English; APAC)",
     "date": "July 30, 2026",
     "location": "Online - Sea",
@@ -3224,7 +3042,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "249",
+    "id": "235",
     "title": "SAP SuccessFactors: Build your Adoption Program​ to Maximize Results (English; Europe & Americas)",
     "date": "July 30, 2026",
     "location": "Online",
@@ -3237,7 +3055,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "250",
+    "id": "236",
     "title": "Data Without Boundaries: Unlocking Trusted Intelligence with SAP and Snowflake / Session 1 – The Strategic Imperative",
     "date": "August 3, 2026",
     "location": "Online - Sea",
@@ -3250,7 +3068,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "251",
+    "id": "237",
     "title": "Beyond 2027: Your Path from SAP Process Orchestration to Integration Suite",
     "date": "August 5, 2026",
     "location": "Online - Sea",
@@ -3263,7 +3081,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "252",
+    "id": "238",
     "title": "Nachhaltigkeit in der IT-Architektur - Strategien für einen integrierten ESG-Ansatz",
     "date": "August 6, 2026",
     "location": "Online - Germany",
@@ -3276,7 +3094,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "253",
+    "id": "239",
     "title": "SAP Integration Suite: Accelerate your Integration Modernization with Pipeline Concept in Migration tooling",
     "date": "August 10, 2026",
     "location": "Online - Germany",
@@ -3289,7 +3107,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "254",
+    "id": "240",
     "title": "Migration from C4C to SAP Service Cloud Version 2, utilities add-on",
     "date": "August 11, 2026",
     "location": "Online - Germany",
@@ -3302,7 +3120,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "255",
+    "id": "241",
     "title": "Enablement on new AI-based user experience in Joule Work mobile App and SAP Build Work Zone experience",
     "date": "August 11, 2026",
     "location": "Online - Sea",
@@ -3315,7 +3133,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "256",
+    "id": "242",
     "title": " Build Enterprise AI Transformation Roadmap on SAP Business AI Platform",
     "date": "August 12, 2026",
     "location": "Online - Canada",
@@ -3328,7 +3146,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "257",
+    "id": "243",
     "title": "AI-Powered Integration: Accelerate, Optimise, Automate",
     "date": "August 12, 2026",
     "location": "Online - Sea",
@@ -3341,7 +3159,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "258",
+    "id": "244",
     "title": "Designing High Impact AI use Cases on SAP Business AI Platform",
     "date": "August 19, 2026",
     "location": "Online - Canada",
@@ -3354,7 +3172,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "259",
+    "id": "245",
     "title": "From Threads to Technology: A Success Story in Textile Manufacturing",
     "date": "August 26, 2026",
     "location": "Online - Mena",
@@ -3367,7 +3185,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "260",
+    "id": "246",
     "title": "SAP & KPMG Webinar: From ESG Reporting to Business Steering",
     "date": "September 1, 2026",
     "location": "Online - Uk",
@@ -3380,7 +3198,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "261",
+    "id": "247",
     "title": "SAP Integrated Business Planning @ Cargill Inc",
     "date": "September 2, 2026",
     "location": "Online",
@@ -3393,7 +3211,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "262",
+    "id": "248",
     "title": "Webinar SAP | Découvrez comment la SAP Business AI Platform permet de capitaliser sur vos données SAP à l’ère de l’IA agentique",
     "date": "September 3, 2026",
     "location": "Online - France",
@@ -3406,7 +3224,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "263",
+    "id": "249",
     "title": "Webinar SAP | Top 5 des nouveautés QRC - SAP Analytics Cloud",
     "date": "September 8, 2026",
     "location": "Online - France",
@@ -3419,7 +3237,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "264",
+    "id": "250",
     "title": "SAP Discovery Day for Planning - Analysieren. Planen. Handeln.",
     "date": "September 8, 2026",
     "location": "Online - Germany",
@@ -3432,7 +3250,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "265",
+    "id": "251",
     "title": "Beyond Compliance: A CFO Blueprint for turning Sustainability into Business Value",
     "date": "September 8, 2026",
     "location": "Online - Austria",
@@ -3445,7 +3263,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "266",
+    "id": "252",
     "title": "Beyond Compliance: A CFO Blueprint for turning Sustainability into Business Value",
     "date": "September 8, 2026",
     "location": "Online - Sea",
@@ -3458,7 +3276,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "267",
+    "id": "253",
     "title": "Beyond Compliance: A CFO Blueprint for turning Sustainability into Business Value",
     "date": "September 8, 2026",
     "location": "Online",
@@ -3471,7 +3289,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "268",
+    "id": "254",
     "title": "AI4IT - A Product Management Deep Dive for AI in Integration Suite",
     "date": "September 8, 2026",
     "location": "Online - Germany",
@@ -3484,7 +3302,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "269",
+    "id": "255",
     "title": "Sécurisez vos marges et optimisez la conformité de vos flux avec SAP Global Trade Services",
     "date": "September 8, 2026",
     "location": "Online - France",
@@ -3497,7 +3315,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "270",
+    "id": "256",
     "title": "Data Without Boundaries: Unlocking Trusted Intelligence with SAP and Snowflake / Session 2 – Engineering the Future",
     "date": "September 8, 2026",
     "location": "Online - Sea",
@@ -3510,7 +3328,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "271",
+    "id": "257",
     "title": "Get Onboarded with SAP Digital Manufacturing",
     "date": "September 9, 2026",
     "location": "Online - Spain",
@@ -3523,7 +3341,20 @@
     "virtualOnDemand": false
   },
   {
-    "id": "272",
+    "id": "258",
+    "title": "SAP Project Management Network – Vom Hype zur Realität",
+    "date": "September 14, 2026",
+    "location": "Online - Swiss",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/swiss/events/2026-09-14-online-project-management-network-vom-hype-zur-realitat.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_ch/events/2026-09-14-online-project-management-network-vom-hype-zur-realitat/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "259",
     "title": "Get Ready for the German E Invoicing Mandate with SAP Business Network for Buyers: A Deep-dive",
     "date": "September 16, 2026",
     "location": "Online - Germany",
@@ -3536,7 +3367,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "273",
+    "id": "260",
     "title": "Bereit für die E-Rechnungspflicht in Deutschland? Deep Dive: So unterstützt Sie SAP Business Network for Buyers!",
     "date": "September 16, 2026",
     "location": "Online - Germany",
@@ -3549,7 +3380,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "274",
+    "id": "261",
     "title": "SAP SuccessFactors @ Olymel",
     "date": "September 16, 2026",
     "location": "Online - Canada",
@@ -3562,7 +3393,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "275",
+    "id": "262",
     "title": "Data Without Boundaries: Unlocking Trusted Intelligence with SAP and Snowflake / Session 3 – Proof at Scale",
     "date": "October 22, 2026",
     "location": "Online - Sea",
@@ -3575,7 +3406,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "276",
+    "id": "263",
     "title": "Data Without Boundaries: Unlocking Trusted Intelligence with SAP and Snowflake / Session 4 – Innovation Lab",
     "date": "November 25, 2026",
     "location": "Online - Sea",
@@ -3588,7 +3419,202 @@
     "virtualOnDemand": false
   },
   {
+    "id": "264",
+    "title": "Reduce TCO and Prepare for Agentic & Autonomous Commerce with SAP Commerce Cloud",
+    "date": "July 7, 2026",
+    "location": "Online - Germany",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/germany/events/2026-07-07-online-reduce-tco-and-prepare-for-agentic-and-autonomous-commerce-with-commerce-cloud.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-reduce-tco-and-prepare-for-agentic-and-autonomous-commerce-with-commerce-cloud/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "265",
+    "title": "Adoption Webinar: SAP Integration Suite | Realize Event-Driven Architecture through SAP Advanced Event Mesh",
+    "date": "July 7, 2026",
+    "location": "Online - Germany",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/germany/events/2026-07-07-online-realize-event-driven-architecture-through-sap-advanced-event-mesh.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-realize-event-driven-architecture-through-sap-advanced-event-mesh/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "266",
+    "title": "Unlock faster cash flow with AI in SAP Cloud ERP (APAC)",
+    "date": "July 7, 2026",
+    "location": "Online - Sea",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/sea/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-from-billing-to-collection-intelligence.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_sg/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-from-billing-to-collection-intelligence/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "267",
+    "title": "Unlock faster cash flow with AI in SAP Cloud ERP (Americas)",
+    "date": "July 7, 2026",
+    "location": "Online",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-americas.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_us/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-americas/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "268",
+    "title": "The next level of forecasting & replenishment: Demand and Inventory Planning",
+    "date": "July 7, 2026",
+    "location": "Online - Uk",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/uk/events/2026-07-07-online-the-next-level-of-forecasting-and-replenishment-demand-and-inventory-planning.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-online-the-next-level-of-forecasting-and-replenishment-demand-and-inventory-planning/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "269",
+    "title": "Utilities CX Reloaded: The New Sales Process Explained",
+    "date": "July 7, 2026",
+    "location": "Online - Germany",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/germany/events/2026-07-07-online-utilities-cx-reloaded-the-new-sales-process-explained.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-utilities-cx-reloaded-the-new-sales-process-explained/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "270",
+    "title": "Robust clean core extensibility with Custom Code Assistant",
+    "date": "July 7, 2026",
+    "location": "Online - Germany",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/germany/events/2026-07-07-online-robust-clean-core-extensibility-with-custom-code-assistant.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-robust-clean-core-extensibility-with-custom-code-assistant/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "271",
+    "title": "SAPs quarterly PLM Community Call",
+    "date": "July 7, 2026",
+    "location": "Online - Germany",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/germany/events/2026-07-07-online-plm-community-call.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-plm-community-call/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "272",
+    "title": "From Implementation to Impact: Making SAP EWM Deliver",
+    "date": "July 7, 2026",
+    "location": "Online - Australia",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/australia/events/2026-07-06-online-making-sap-ewm-deliver.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_au/events/2026-07-06-online-making-sap-ewm-deliver/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "273",
+    "title": "Unlock faster cash flow with AI in SAP Cloud ERP (EMEA/MEE)",
+    "date": "July 7, 2026",
+    "location": "Online - France",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/france/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-emea-mee.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/fr_fr/events/2026-07-07-online-unlock-faster-cash-flow-with-ai-in-cloud-erp-emea-mee/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "274",
+    "title": "SAP-ERP-Modernisierung in einem regulierten Umfeld: ACREDIAS Weg in die SAP Public Cloud in 12 Monaten (mit adesso)",
+    "date": "July 7, 2026",
+    "location": "Online - Germany",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/germany/events/2026-07-07-online-erp-modernisierung-in-einem-regulierten-umfeld-acredias.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_de/events/2026-07-07-online-erp-modernisierung-in-einem-regulierten-umfeld-acredias/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "275",
+    "title": "From vision to value: Driving customer satisfaction with an AI-powered supply chain",
+    "date": "July 7, 2026",
+    "location": "Online - Sea",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/sea/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_sg/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "276",
+    "title": "Enterprise Integration - A Product Management deep dive",
+    "date": "July 7, 2026",
+    "location": "Online - Uk",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/uk/events/2026-07-07-online-enterprise-integration-a-product-management-deep-dive.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_gb/events/2026-07-07-online-enterprise-integration-a-product-management-deep-dive/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
     "id": "277",
+    "title": "From vision to value: Driving customer satisfaction with an AI-powered supply chain",
+    "date": "July 7, 2026",
+    "location": "Online - Austria",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/austria/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/de_at/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "278",
+    "title": "From vision to value: Driving customer satisfaction with an AI-powered supply chain",
+    "date": "July 7, 2026",
+    "location": "Online",
+    "type": "Virtual - Live",
+    "link": "https://www.sap.com/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain.html",
+    "status": "not_applied",
+    "sapId": "/content/sapdx/countries/en_us/events/2026-07-07-online-from-vision-to-value-driving-customer-satisfaction-with-an-ai-powered-supply-chain/jcr:content",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false
+  },
+  {
+    "id": "279",
     "title": "SAP AI Adoption and Learning Week",
     "date": "6–9 July, 2026",
     "location": "Online",
@@ -3601,7 +3627,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "278",
+    "id": "280",
     "title": "SAP AI Adoption and Learning Week",
     "date": "6–9 July, 2026",
     "location": "Online - Germany",
@@ -3614,7 +3640,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "279",
+    "id": "281",
     "title": "France B2B E-Invoicing and E-Reporting: Latest Regulatory Updates and Compliance Readiness with SAP Document and Reporting Compliance",
     "date": "July 6, 2026",
     "location": "Online - France",
@@ -3627,7 +3653,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "280",
+    "id": "282",
     "title": "Inside SAP Sovereign Cloud: Key Differentiators & Architecture (APAC)",
     "date": "July 2, 2026",
     "location": "Online - Sea",
@@ -3640,7 +3666,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "281",
+    "id": "283",
     "title": "Inside SAP Sovereign Cloud: Key Differentiators & Architecture (EMEA)",
     "date": "July 2, 2026",
     "location": "Online - Germany",
@@ -3653,7 +3679,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "282",
+    "id": "284",
     "title": "SAP Sapphire: Bring it Home Webinar",
     "date": "July 2, 2026",
     "location": "Online - Australia",
@@ -3666,7 +3692,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "283",
+    "id": "285",
     "title": "Un webinar SAP, msg Global Solutions & PwC - Comment piloter en continu la marge des flux intragroupe — et être capable de la défendre lorsque cela devient nécessaire ?",
     "date": "July 2, 2026",
     "location": "Online - France",
@@ -3679,7 +3705,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "284",
+    "id": "286",
     "title": "Del caos a la claridad: cómo la IA transforma la atención al cliente en una experiencia sin fricciones",
     "date": "July 1, 2026",
     "location": "Online - Latinamerica",
@@ -3692,7 +3718,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "285",
+    "id": "287",
     "title": "Accelerate agentic AI with an open data ecosystem",
     "date": "July 1, 2026",
     "location": "Online - Sea",
@@ -3705,7 +3731,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "286",
+    "id": "288",
     "title": "Accelerate agentic AI with an open data ecosystem (APAC)",
     "date": "July 1, 2026",
     "location": "Online - Sea",
@@ -3718,7 +3744,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "287",
+    "id": "289",
     "title": "Meet The Expert: Execution and Generation of Complementary Settlements for SLD",
     "date": "July 1, 2026",
     "location": "Online - Spain",
@@ -3731,7 +3757,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "288",
+    "id": "290",
     "title": "SAP Revenue Growth Management – Q2 2026 Live Quarterly Update Webinar",
     "date": "July 1, 2026",
     "location": "Online",
@@ -3744,7 +3770,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "289",
+    "id": "291",
     "title": "Empowering the Office of the CFO",
     "date": "July 1, 2026",
     "location": "Online - Germany",
@@ -3757,7 +3783,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "290",
+    "id": "292",
     "title": "SAP Cloud ERP: Vom Template zur skalierbaren Transformation bei der Karl Schmidt Spedition GmbH & Co. KG (mit Axians)",
     "date": "July 1, 2026",
     "location": "Online - Germany",
@@ -3770,7 +3796,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "291",
+    "id": "293",
     "title": "Accelerate agentic AI with an open data ecosystem (EMEA & MEE)",
     "date": "July 1, 2026",
     "location": "Online - France",
@@ -3783,7 +3809,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "292",
+    "id": "294",
     "title": "Advanced Success Plan für Partner: Praxisbericht mit Innovabee",
     "date": "June 30, 2026",
     "location": "Online - Germany",
@@ -3796,7 +3822,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "293",
+    "id": "295",
     "title": " Agentic AI: The shift HR can't afford to miss (APAC)",
     "date": "June 30, 2026",
     "location": "Online - Sea",
@@ -3809,7 +3835,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "294",
+    "id": "296",
     "title": "Agentic AI: The shift HR can't afford to miss (Americas)",
     "date": "June 30, 2026",
     "location": "Online",
@@ -3822,7 +3848,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "295",
+    "id": "297",
     "title": "Agentic AI: The shift HR can't afford to miss (EMEA)",
     "date": "June 30, 2026",
     "location": "Online - Uk",
@@ -3835,7 +3861,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "296",
+    "id": "298",
     "title": "Shaping the Autonomous Enterprise",
     "date": "June 30, 2026",
     "location": "Online - Germany",
@@ -3848,7 +3874,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "297",
+    "id": "299",
     "title": "5 lessons from SAP's own transformation to an agentic AI enterprise",
     "date": "June 30, 2026",
     "location": "Online - Germany",
@@ -3861,7 +3887,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "298",
+    "id": "300",
     "title": "From Platform to Cloud: Wie EOS mit RISE die technologische Basis für Innovation, KI und exzellenten Kundenservice schafft (mit CNT)",
     "date": "June 30, 2026",
     "location": "Online - Germany",
@@ -3874,7 +3900,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "299",
+    "id": "301",
     "title": "SAP API Policy Overview",
     "date": "June 30, 2026",
     "location": "Online - Germany",
@@ -3887,7 +3913,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "300",
+    "id": "302",
     "title": "ERP, AI, and the Clarity to Scale: Inside PwC’s Transformation (APAC)",
     "date": "June 29, 2026",
     "location": "Online - Sea",
@@ -3900,7 +3926,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "301",
+    "id": "303",
     "title": "ERP, AI, and the Clarity to Scale: Inside PwC’s Transformation (EMEA/MEE)",
     "date": "June 29, 2026",
     "location": "Online - Spain",
@@ -3913,7 +3939,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "302",
+    "id": "304",
     "title": "ERP, AI, and the Clarity to Scale: Inside PwC’s Transformation (Americas)",
     "date": "29–30 June, 2026",
     "location": "Online",
@@ -3926,7 +3952,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "303",
+    "id": "305",
     "title": "SAP & BearingPoint Webinar: Competitive Advantage and Resilience Through Data-Based Decarbonization – 30min to Sustainability Series",
     "date": "June 29, 2026",
     "location": "Online - Uk",
@@ -3939,7 +3965,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "304",
+    "id": "306",
     "title": "Comply and automate customer and supplier invoices in Germany with SAP Document and Reporting Compliance",
     "date": "June 26, 2026",
     "location": "Online - Germany",
@@ -3952,7 +3978,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "305",
+    "id": "307",
     "title": "SAP Expert Series :DX EYE AI エージェント時代のビジネスデータ基盤 : SAP Business Data Cloud 最新アップデート",
     "date": "June 26, 2026",
     "location": "Online - Japan",
@@ -3965,7 +3991,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "306",
+    "id": "308",
     "title": " AI for Mid-Sized Companies: How and Where to Start?",
     "date": "June 25, 2026",
     "location": "Online - Swiss",
@@ -3978,7 +4004,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "307",
+    "id": "309",
     "title": "Leading the firm: The future of procurement",
     "date": "June 25, 2026",
     "location": "Online - Sea",
@@ -3991,7 +4017,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "308",
+    "id": "310",
     "title": "Leading the firm: The future of procurement",
     "date": "June 25, 2026",
     "location": "Online",
@@ -4004,7 +4030,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "309",
+    "id": "311",
     "title": "Driving HR Efficiency: IDC Insights on CNH’s Digital Document Transformation with SAP SuccessFactors Document Management",
     "date": "June 25, 2026",
     "location": "Online - Uk",
@@ -4017,7 +4043,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "310",
+    "id": "312",
     "title": "From Plan to Progress: the SAP Advanced Success Plan Explained",
     "date": "June 25, 2026",
     "location": "Online - Germany",
@@ -4030,7 +4056,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "311",
+    "id": "313",
     "title": "SAP runs SAP BDC - Unleashing Human & Artificial Intelligence with Data products",
     "date": "June 25, 2026",
     "location": "Online - Germany",
@@ -4043,7 +4069,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "312",
+    "id": "314",
     "title": "Leading the firm: The future of procurement",
     "date": "June 25, 2026",
     "location": "Online - Denmark",
@@ -4056,7 +4082,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "313",
+    "id": "315",
     "title": "Como transformar su cadena de suministro con Inteligencia Artificial",
     "date": "June 24, 2026",
     "location": "Online - Latinamerica",
@@ -4069,7 +4095,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "314",
+    "id": "316",
     "title": "Why Evatec Moved to Public Cloud ERP and their Plan for AI",
     "date": "June 24, 2026",
     "location": "Online - Swiss",
@@ -4082,7 +4108,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "315",
+    "id": "317",
     "title": "Build the data foundation for agentic AI with a business data fabric",
     "date": "June 24, 2026",
     "location": "Online - Sea",
@@ -4095,7 +4121,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "316",
+    "id": "318",
     "title": "Migrating to Cloud HCM: Insights from Cameco’s Success",
     "date": "June 24, 2026",
     "location": "Online - Sea",
@@ -4108,7 +4134,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "317",
+    "id": "319",
     "title": "Leveraging the ERP in the Cloud",
     "date": "June 24, 2026",
     "location": "Online - Netherlands",
@@ -4121,7 +4147,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "318",
+    "id": "320",
     "title": "Migrating to Cloud HCM: Insights from Cameco’s Success",
     "date": "June 24, 2026",
     "location": "Online",
@@ -4134,7 +4160,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "319",
+    "id": "321",
     "title": "Build the data foundation for agentic AI with a business data fabric (Americas)",
     "date": "June 24, 2026",
     "location": "Online",
@@ -4147,7 +4173,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "320",
+    "id": "322",
     "title": "Migrating to Cloud HCM: Insights from Cameco’s Success",
     "date": "June 24, 2026",
     "location": "Online - Germany",
@@ -4160,7 +4186,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "321",
+    "id": "323",
     "title": "Mehr als Technik: Wie VAHLE mit SAP Cloud ERP Organisation, Führung und Zukunftsfähigkeit neu ausgerichtet hat (mit NTT)",
     "date": "June 24, 2026",
     "location": "Online - Germany",
@@ -4173,7 +4199,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "322",
+    "id": "324",
     "title": "An introduction to SAP Integration Suite AI Features",
     "date": "June 24, 2026",
     "location": "Online - Canada",
@@ -4186,7 +4212,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "323",
+    "id": "325",
     "title": "Build the data foundation for agentic AI with a business data fabric",
     "date": "June 24, 2026",
     "location": "Online - France",
@@ -4199,7 +4225,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "324",
+    "id": "326",
     "title": "Build the data foundation for agentic AI with a business data fabric (EMEA & MEE)",
     "date": "June 24, 2026",
     "location": "Online - France",
@@ -4212,7 +4238,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "325",
+    "id": "327",
     "title": "Smarter Projects, Stronger People: A Success Story in Construction",
     "date": "June 23, 2026",
     "location": "Online - Mena",
@@ -4225,7 +4251,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "326",
+    "id": "328",
     "title": "The State of Digitalization and AI in Swiss Companies",
     "date": "June 23, 2026",
     "location": "Online - Swiss",
@@ -4238,7 +4264,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "327",
+    "id": "329",
     "title": "Accelerating the Transition to Cloud ERP with SAP Customer Evolution Kit",
     "date": "June 23, 2026",
     "location": "Online",
@@ -4251,7 +4277,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "328",
+    "id": "330",
     "title": "AI4IT - Intelligent Docs to Automated Workflows: Live Demo",
     "date": "June 23, 2026",
     "location": "Online - Uk",
@@ -4264,7 +4290,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "329",
+    "id": "331",
     "title": "New in SAP for Me: your intelligent way to navigate SAP",
     "date": "June 23, 2026",
     "location": "Online - Germany",
@@ -4277,7 +4303,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "330",
+    "id": "332",
     "title": "Como a UAUIngleza está Transformando o Supply Chain",
     "date": "June 23, 2026",
     "location": "Online - Brazil",
@@ -4290,7 +4316,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "331",
+    "id": "333",
     "title": "SAP Security Webcast in June: Trust by Design: A Practical Framework for Architecture, Security, and Sovereignty",
     "date": "June 18, 2026",
     "location": "Online - Germany",
@@ -4303,7 +4329,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "332",
+    "id": "334",
     "title": "Ley Crea y Crece",
     "date": "June 18, 2026",
     "location": "Online - Spain",
@@ -4316,7 +4342,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "333",
+    "id": "335",
     "title": "SAP S/4HANA Cloud Public Edition, Test Automation Tool",
     "date": "June 18, 2026",
     "location": "Online",
@@ -4329,7 +4355,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "334",
+    "id": "336",
     "title": "From AI-Driven Insights to Automated Operations with SAP Automation Pilot and SAP Cloud ALM",
     "date": "June 18, 2026",
     "location": "Online - Germany",
@@ -4342,7 +4368,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "335",
+    "id": "337",
     "title": "Transforming end-to-end MRO Planning with SAP Integrated Business Planning",
     "date": "June 18, 2026",
     "location": "Online - Germany",
@@ -4355,7 +4381,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "336",
+    "id": "338",
     "title": "Transforma la gestión financiera: automatización y compliance fiscal en el nuevo entorno digital latinoamericano.",
     "date": "June 17, 2026",
     "location": "Online - Latinamerica",
@@ -4368,7 +4394,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "337",
+    "id": "339",
     "title": "Transforme la Gestión Financiera: Automatización y Compliance Fiscal en el Nuevo Entorno Digital Latinoamericano",
     "date": "June 17, 2026",
     "location": "Online - Latinamerica",
@@ -4381,7 +4407,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "338",
+    "id": "340",
     "title": "SAP Sapphire 2026 Unpacked - CTO Insights and Highlights | Swiss Edition",
     "date": "June 17, 2026",
     "location": "Online - Swiss",
@@ -4394,7 +4420,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "339",
+    "id": "341",
     "title": "Inside SAP Field Logistics: What’s New and What’s Next",
     "date": "June 17, 2026",
     "location": "Online - Swiss",
@@ -4407,7 +4433,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "340",
+    "id": "342",
     "title": "Agentic B2B Commerce: Finding the Fast Track to Profitable Growth (APAC)",
     "date": "June 17, 2026",
     "location": "Online - Sea",
@@ -4420,7 +4446,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "341",
+    "id": "343",
     "title": "Agentic B2B Commerce: Finding the Fast Track to Profitable Growth (EMEA/MEE)",
     "date": "June 17, 2026",
     "location": "Online - Sea",
@@ -4433,7 +4459,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "342",
+    "id": "344",
     "title": "Accelerate an agentic-ready enterprise with unified API governance (APAC)",
     "date": "June 17, 2026",
     "location": "Online - Sea",
@@ -4446,7 +4472,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "343",
+    "id": "345",
     "title": "Accelerate an agentic-ready enterprise with unified API governance (Americas)",
     "date": "June 17, 2026",
     "location": "Online",
@@ -4459,7 +4485,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "344",
+    "id": "346",
     "title": "SAP Integration Suite can help optimize your SAP S/4HANA connectivity",
     "date": "June 17, 2026",
     "location": "Online",
@@ -4472,7 +4498,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "345",
+    "id": "347",
     "title": "Reimagining Invoice Processing: AI-Powered Automation for the Modern Enterprise",
     "date": "June 17, 2026",
     "location": "Online",
@@ -4485,7 +4511,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "346",
+    "id": "348",
     "title": "Accelerate an agentic-ready enterprise with unified API governance (EMEA+MEE)",
     "date": "June 17, 2026",
     "location": "Online - Uk",
@@ -4498,7 +4524,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "347",
+    "id": "349",
     "title": "Bereit für die E-Rechnungspflicht in Deutschland? So unterstützt Sie das SAP Business Network for Buyers!",
     "date": "June 17, 2026",
     "location": "Online - Germany",
@@ -4511,7 +4537,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "348",
+    "id": "350",
     "title": "Get Ready for the German E Invoicing Mandate with SAP Business Network for Buyers",
     "date": "June 17, 2026",
     "location": "Online - Germany",
@@ -4524,7 +4550,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "349",
+    "id": "351",
     "title": "Unlocking Energy Flexibility with SAP Distributed Energy Resources",
     "date": "June 16, 2026",
     "location": "Online - Uk",
@@ -4537,7 +4563,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "350",
+    "id": "352",
     "title": "Accelerate Cloud Migrations with Migration Assistants and SAP Cloud ALM",
     "date": "June 16, 2026",
     "location": "Online - Germany",
@@ -4550,7 +4576,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "351",
+    "id": "353",
     "title": "Do Planejamento à Performance: como conectar estratégias, execução e resultados",
     "date": "June 16, 2026",
     "location": "Online - Brazil",
@@ -4563,7 +4589,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "352",
+    "id": "354",
     "title": "Business Suite: Finanzas Innovadoras",
     "date": "June 11, 2026",
     "location": "Online - Latinamerica",
@@ -4576,7 +4602,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "353",
+    "id": "355",
     "title": "Prepare for mandatory electronic invoicing 5-corner model in Slovakia with SAP Document and Reporting Compliance",
     "date": "June 11, 2026",
     "location": "Online - Sk",
@@ -4589,7 +4615,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "354",
+    "id": "356",
     "title": "SAP Engagement Cloud Product Release Q2 Recap",
     "date": "June 11, 2026",
     "location": "Online - Germany",
@@ -4602,7 +4628,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "355",
+    "id": "357",
     "title": "From AI Subscription to AI Consumption: The New Commercial Model After Sapphire",
     "date": "June 11, 2026",
     "location": "Online - Germany",
@@ -4615,7 +4641,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "356",
+    "id": "358",
     "title": "SAP & Planon: Smarter Real Estate and FM for Better Business Results",
     "date": "June 11, 2026",
     "location": "Online - Germany",
@@ -4628,7 +4654,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "357",
+    "id": "359",
     "title": "El manual de IA para líderes de experiencia del cliente: los secretos de su éxito",
     "date": "June 10, 2026",
     "location": "Online - Latinamerica",
@@ -4641,7 +4667,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "358",
+    "id": "360",
     "title": "Build and scale AI agents across the enterprise (APAC)",
     "date": "June 10, 2026",
     "location": "Online - Sea",
@@ -4654,7 +4680,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "359",
+    "id": "361",
     "title": "Build and scale AI agents across the enterprise (Americas)",
     "date": "June 10, 2026",
     "location": "Online",
@@ -4667,7 +4693,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "360",
+    "id": "362",
     "title": "Build and scale AI agents across the enterprise (EMEA+MEE)",
     "date": "June 10, 2026",
     "location": "Online - Uk",
@@ -4680,7 +4706,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "361",
+    "id": "363",
     "title": "The Trust Triad: A Playbook for Architecting Secure and Sovereign SAP Landscapes",
     "date": "June 10, 2026",
     "location": "Online - Germany",
@@ -4693,7 +4719,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "362",
+    "id": "364",
     "title": "Get Ready for France’s E‑Invoicing Mandate with SAP Business Network for Buyers",
     "date": "June 10, 2026",
     "location": "Online - France",
@@ -4706,7 +4732,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "363",
+    "id": "365",
     "title": "Préparez-vous à la réforme française de la facturation électronique avec le SAP Business Network pour les acheteurs",
     "date": "June 10, 2026",
     "location": "Online - France",
@@ -4719,7 +4745,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "364",
+    "id": "366",
     "title": "Playbook de IA dos líderes em experiência do cliente: os segredos do sucesso",
     "date": "June 10, 2026",
     "location": "Online - Brazil",
@@ -4732,7 +4758,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "365",
+    "id": "367",
     "title": "Enterprise Integration - SAP Integration Suite Lab: From Zero to Deployed",
     "date": "June 9, 2026",
     "location": "Online - Uk",
@@ -4745,7 +4771,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "366",
+    "id": "368",
     "title": "Accelerate Cloud Transformation: Migrate from SAP APO to SAP IBP",
     "date": "June 9, 2026",
     "location": "Online - Germany",
@@ -4758,7 +4784,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "367",
+    "id": "369",
     "title": "New Integration paradigms in SAP Sales and Service Cloud version 2",
     "date": "June 9, 2026",
     "location": "Online - Germany",
@@ -4771,20 +4797,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "368",
-    "title": "Unlock Real-Time Commerce Insights: SQL View Gateway Powers Data-Driven Success",
-    "date": "June 8, 2026",
-    "location": "Online - Germany",
-    "type": "Virtual - Live",
-    "link": "https://www.sap.com/germany/events/2026-06-08-online-unlock-real-time-commerce-insights-sql-view-gateway-powers-data-driven-success.html",
-    "status": "not_applied",
-    "sapId": "/content/sapdx/countries/de_de/events/2026-06-08-online-unlock-real-time-commerce-insights-sql-view-gateway-powers-data-driven-success/jcr:content",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false
-  },
-  {
-    "id": "369",
+    "id": "370",
     "title": "Get Onboarded with SAP IBP",
     "date": "May 13, 2026",
     "location": "Online",
@@ -4797,7 +4810,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "370",
+    "id": "371",
     "title": "How Brown-Forman modernizes its SAP Business Warehouse for the AI era (AMERICAS)",
     "date": "April 29, 2026",
     "location": "Online",
@@ -4810,7 +4823,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "371",
+    "id": "372",
     "title": "SAP Utilities Innovation Update: Insights, Demos, Roadmap",
     "date": "April 29, 2026",
     "location": "Online - Germany",
@@ -4823,7 +4836,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "372",
+    "id": "373",
     "title": "Transformando as vendas B2B: Como turbinar seus principais recursos",
     "date": "April 23, 2026",
     "location": "Online - Brazil",
@@ -4836,7 +4849,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "373",
+    "id": "374",
     "title": "Accelerate your Integration Modernization with Pipeline Concept in Migration tooling",
     "date": "April 14, 2026",
     "location": "Online - Germany",
@@ -4849,7 +4862,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "374",
+    "id": "375",
     "title": "SAP BDC (French): SAP Business Data Cloud (core) Onboarding Webcast (Français) - (1h30)",
     "date": "2 April – 1 October, 2026",
     "location": "Online - France",
@@ -4862,7 +4875,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "375",
+    "id": "376",
     "title": "The Next Era of Business Data - Design. Govern. Deliver. Data Products - Data Product Studio",
     "date": "March 19, 2026",
     "location": "Online - Germany",
@@ -4875,7 +4888,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "376",
+    "id": "377",
     "title": "The Next Era of Business Data - From Data Silos to Business Insight: The Power of BDC Connect",
     "date": "March 12, 2026",
     "location": "Online - Germany",
@@ -4888,7 +4901,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "377",
+    "id": "378",
     "title": "The Next Era of Business Data - Empowering SAP Datasphere Users with SAP Business Data Cloud Innovations",
     "date": "February 19, 2026",
     "location": "Online - Germany",
@@ -4901,7 +4914,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "378",
+    "id": "379",
     "title": "Driving Transformation with SAP Business Content & Accelerators",
     "date": "February 17, 2026",
     "location": "Online - Germany",
@@ -4914,7 +4927,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "379",
+    "id": "380",
     "title": "SAP Business Technology Platform (BTP) Onboarding Webinar – Deutsch (1h)",
     "date": "February 4, 2026",
     "location": "Online - Germany",
@@ -4927,7 +4940,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "380",
+    "id": "381",
     "title": "Insights into the Extension of Compatibility Packs",
     "date": "February 4, 2026",
     "location": "Online - Germany",
@@ -4940,7 +4953,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "381",
+    "id": "382",
     "title": "SAP 專家講堂－Business AI │【商業 AI 加速器】第二堂課",
     "date": "January 29, 2026",
     "location": "Online - Taiwan",
@@ -4953,7 +4966,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "382",
+    "id": "383",
     "title": "SAP Ariba, SAP Business Network for Procurement and SAP Business Network for Supply Chain - Get Started Webinar",
     "date": "16 January – 26 December, 2026",
     "location": "Online",
@@ -4966,7 +4979,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "383",
+    "id": "384",
     "title": "SAP Fieldglass Get Started Webcast",
     "date": "13 January – 23 December, 2026",
     "location": "Online",
@@ -4979,7 +4992,7 @@
     "virtualOnDemand": false
   },
   {
-    "id": "384",
+    "id": "385",
     "title": "OGE: Unser Weg zur SAP BTP als zentrale Erweiterungsplatform",
     "date": "March 9, 2026",
     "location": "Online - Germany",
@@ -4992,7 +5005,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "385",
+    "id": "386",
     "title": "Talking AI with SAP: Connecting the Dots – SAP Business Data Cloud, Knowledge Graph and Joule",
     "date": "February 27, 2026",
     "location": "Online - Swiss",
@@ -5005,7 +5018,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "386",
+    "id": "387",
     "title": "Talking AI with SAP: RPT-1 & Perplexity – Real-Time Intelligence in SAP Processes",
     "date": "February 26, 2026",
     "location": "Online",
@@ -5018,7 +5031,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "387",
+    "id": "388",
     "title": "From ECC to Cloud ERP - Your 30‑Minute Crash Course to a Safer SAP Future",
     "date": "February 26, 2026",
     "location": "Online - Australia",
@@ -5031,7 +5044,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "388",
+    "id": "389",
     "title": "Talking AI with SAP: Code Generation and Automation with SAP Joule for Developers",
     "date": "February 25, 2026",
     "location": "Online",
@@ -5044,7 +5057,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "389",
+    "id": "390",
     "title": "Talking AI with SAP: SAP Document AI – Automating Document Processing with SAP AI",
     "date": "February 24, 2026",
     "location": "Online",
@@ -5057,7 +5070,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "390",
+    "id": "391",
     "title": "Talking AI with SAP: SAP AI Agents & Joule Studio",
     "date": "February 23, 2026",
     "location": "Online",
@@ -5070,7 +5083,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "391",
+    "id": "392",
     "title": "From Foundation to Future: Master Data Management as the Fuel for Gen AI",
     "date": "October 15, 2025",
     "location": "Online",
@@ -5083,7 +5096,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "392",
+    "id": "393",
     "title": "AI 時代の Enterprise Planning : 企業予算管理　〜始める前に知っておくべきこと〜",
     "date": "October 10, 2025",
     "location": "Online - Japan",
@@ -5096,7 +5109,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "393",
+    "id": "394",
     "title": "Hello Joule!ウェビナー ～AIで従業員の声を引き出し、戦略に繋ぐ、人事業務の未来～",
     "date": "October 3, 2025",
     "location": "Online - Japan",
@@ -5109,7 +5122,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "394",
+    "id": "395",
     "title": "Stakeholderanalyse in SAP-Projekten: Erfahrungen aus der Praxis",
     "date": "September 25, 2025",
     "location": "Online - Germany",
@@ -5122,7 +5135,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "395",
+    "id": "396",
     "title": "SAP BTP Expert Series : SAP DX EYE SAP Business Data Cloud 概要（入門編）",
     "date": "September 19, 2025",
     "location": "Online - Japan",
@@ -5135,7 +5148,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "396",
+    "id": "397",
     "title": "Modernizing ERP and data to unlock the power of Business AI",
     "date": "September 18, 2025",
     "location": "Online",
@@ -5148,7 +5161,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "397",
+    "id": "398",
     "title": "Hello Joule!ウェビナー～AIでサプライチェーン業務の未来を描く～",
     "date": "September 4, 2025",
     "location": "Online - Japan",
@@ -5161,7 +5174,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "398",
+    "id": "399",
     "title": "人的資本経営の要は従業員の成長機会 いかに個々人に合わせた人材マネジメントを設計、運用するのか",
     "date": "August 18, 2025",
     "location": "Online - Japan",
@@ -5174,7 +5187,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "399",
+    "id": "400",
     "title": "SAP BTP Expert Series : DX EYE SAP Business Data Cloud の全貌～Session 2: SAP Analytics Cloud の最新技術解説とAIを利用したデータ活用の変革～",
     "date": "July 18, 2025",
     "location": "Online - Japan",
@@ -5187,7 +5200,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "400",
+    "id": "401",
     "title": "SAP BTP Expert Series : DX EYE SAP Business Data Cloud の全貌～Session 1: SAP Business Data Cloud 詳細解説​～",
     "date": "July 18, 2025",
     "location": "Online - Japan",
@@ -5200,7 +5213,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "401",
+    "id": "402",
     "title": "製造業が目指す近未来DX　～ニッポン製造業がグローバルで勝つ、デジタル経営・デジタルマニュファクチャリング",
     "date": "July 17, 2025",
     "location": "Online - Japan",
@@ -5213,7 +5226,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "402",
+    "id": "403",
     "title": "Hello Joule!ウェビナー 〜経理に“意識せず使えるAI”を。業務の未来を一歩先へ〜",
     "date": "July 3, 2025",
     "location": "Online - Japan",
@@ -5226,7 +5239,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "403",
+    "id": "404",
     "title": "タレントマネジメントにおける AI の未来",
     "date": "July 2, 2025",
     "location": "Online - Japan",
@@ -5239,7 +5252,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "404",
+    "id": "405",
     "title": "Discover how AI agents unlock value in SAP Cloud ERP Private",
     "date": "June 26, 2025",
     "location": "Online",
@@ -5252,7 +5265,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "405",
+    "id": "406",
     "title": "KI fürs Business – Weit mehr als ChatGPT",
     "date": "January 30, 2025",
     "location": "Online - Germany",
@@ -5265,7 +5278,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "406",
+    "id": "407",
     "title": "Maximieren Sie Ihren B2B-Erfolg: Die unschlagbare Kombination aus Marketing Engagement und Customer Data Platform",
     "date": "January 24, 2025",
     "location": "Online - Germany",
@@ -5278,7 +5291,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "407",
+    "id": "408",
     "title": "Mehr als nur online einkaufen: So nutzen Sie B2B Kundenportale für Beratung, Vertrieb und Serviceprozesse!",
     "date": "January 23, 2025",
     "location": "Online - Germany",
@@ -5291,7 +5304,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "408",
+    "id": "409",
     "title": "KI als Gamechanger im Kundenservice: So vereinfachen Sie die Prozesse für Ihre Agenten!",
     "date": "January 22, 2025",
     "location": "Online - Germany",
@@ -5304,7 +5317,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "409",
+    "id": "410",
     "title": "Effizienz und Umsatzoptimierung in der Mobile-First-Era: Nutzung von KI und End-to-End Integration ins ERP mit der SAP Sales Cloud",
     "date": "January 21, 2025",
     "location": "Online - Germany",
@@ -5317,7 +5330,7 @@
     "virtualOnDemand": true
   },
   {
-    "id": "410",
+    "id": "411",
     "title": " Mit KI den Fachkräftemangel meistern: Praktische KI Anwendungen im Sales, Service und E-Commerce",
     "date": "January 20, 2025",
     "location": "Online - Germany",

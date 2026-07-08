@@ -21,25 +21,51 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('Explore all events');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('All');
-  const [lastRefreshed, setLastRefreshed] = useState(new Date().toLocaleTimeString());
+  const [lastRefreshed, setLastRefreshed] = useState('');
   const [syncMessage, setSyncMessage] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
+
+  const formatLastSynced = (isoString) => {
+    if (!isoString) return '';
+    const date = new Date(isoString);
+    if (isNaN(date.getTime())) return isoString;
+
+    const now = new Date();
+    const isToday = date.getDate() === now.getDate() &&
+                    date.getMonth() === now.getMonth() &&
+                    date.getFullYear() === now.getFullYear();
+
+    const timeStr = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+    if (isToday) {
+      return `Today at ${timeStr}`;
+    }
+    
+    const dateStr = date.toLocaleDateString([], { month: 'short', day: 'numeric' });
+    return `${dateStr} at ${timeStr}`;
+  };
 
   const fetchEvents = async () => {
     try {
       const res = await fetch('/api/events');
       const data = await res.json();
-      setEvents(data);
+      if (data && data.events) {
+        setEvents(data.events);
+        if (data.lastSynced) {
+          setLastRefreshed(formatLastSynced(data.lastSynced));
+        }
+      } else {
+        setEvents(data || []);
+      }
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch events:', error);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     fetchEvents();
 
-    // Simulate 24-hour automation check
     const interval = setInterval(() => {
       refreshData();
     }, 86400000); // 24 hours (24 * 60 * 60 * 1000)
@@ -52,7 +78,11 @@ export default function Dashboard() {
       const res = await fetch('/api/events', { method: 'PATCH' });
       const data = await res.json();
       await fetchEvents();
-      setLastRefreshed(new Date().toLocaleTimeString());
+      if (data.lastSynced) {
+        setLastRefreshed(formatLastSynced(data.lastSynced));
+      } else {
+        setLastRefreshed(formatLastSynced(new Date().toISOString()));
+      }
       if (data.source === 'sap_api') {
         setSyncMessage(`Synced ${data.count} live SAP events.`);
       } else {
@@ -149,6 +179,8 @@ export default function Dashboard() {
     let matchesTab = false;
     if (activeTab === 'Explore all events') {
       matchesTab = true;
+    } else if (activeTab === 'Upcoming') {
+      matchesTab = parseDateForSort(event.date) > new Date();
     } else if (activeTab === 'In-person') {
       matchesTab = event.inPerson;
     } else if (activeTab === 'Virtual - Live') {
@@ -234,7 +266,7 @@ export default function Dashboard() {
       {/* Stats Section */}
       <section className="stats-grid">
         <StatCard label="Total Events" value={stats.total} icon={<Calendar className="text-blue" />} onClick={() => setActiveTab('Explore all events')} />
-        <StatCard label="Upcoming" value={stats.upcoming} icon={<Clock className="text-purple" />} />
+        <StatCard label="Upcoming" value={stats.upcoming} icon={<Clock className="text-purple" />} onClick={() => setActiveTab('Upcoming')} />
         <StatCard label="Virtual" value={stats.virtual} icon={<Monitor className="text-green" />} onClick={() => setActiveTab('Virtual - Live')} />
         <StatCard label="Applied" value={stats.applied} icon={<CheckCircle2 className="text-blue" />} onClick={() => setActiveTab('Applied')} />
       </section>
@@ -245,7 +277,7 @@ export default function Dashboard() {
           <div className="section-header">
             <h2>Explore Events <span className="results-count">({filteredEvents.length} results)</span></h2>
             <div className="tabs">
-              {['Explore all events', 'In-person', 'Virtual - Live', 'Virtual - On-demand', 'Applied'].map(tab => (
+              {['Explore all events', 'Upcoming', 'In-person', 'Virtual - Live', 'Virtual - On-demand', 'Applied'].map(tab => (
                 <button
                   key={tab}
                   className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
