@@ -5652,19 +5652,6 @@
     "company": "Oracle"
   },
   {
-    "id": "oracle-CORP260512P00013",
-    "title": "Oracle EPM Test Drive Paris",
-    "date": "July 7, 2026 14:00",
-    "location": "Paris, Paris",
-    "type": "In-person",
-    "inPerson": true,
-    "virtualLive": false,
-    "virtualOnDemand": false,
-    "link": "https://eventreg.oracle.com/profile/web/index.cfm?PKwebID=0x970844abcd&source=CORP260512P00013:OW:ES:LV",
-    "status": "not_applied",
-    "company": "Oracle"
-  },
-  {
     "id": "oracle-CORP260506P00035",
     "title": "Oracle Fusion Data Intelligence Test Drive",
     "date": "July 7, 2026 12:00",
@@ -5674,6 +5661,19 @@
     "virtualLive": false,
     "virtualOnDemand": false,
     "link": "https://eventreg.oracle.com/profile/web/index.cfm?PKwebID=0x970958abcd&source=CORP260506P00035:OW:ES:LV",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "oracle-CORP260512P00013",
+    "title": "Oracle EPM Test Drive Paris",
+    "date": "July 7, 2026 14:00",
+    "location": "Paris, Paris",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://eventreg.oracle.com/profile/web/index.cfm?PKwebID=0x970844abcd&source=CORP260512P00013:OW:ES:LV",
     "status": "not_applied",
     "company": "Oracle"
   },
@@ -5704,19 +5704,6 @@
     "company": "Oracle"
   },
   {
-    "id": "oracle-CORP260618P00013",
-    "title": "ORACLE OCI Más valor y menos coste",
-    "date": "July 8, 2026 12:00",
-    "location": "Madrid, Madrid",
-    "type": "In-person",
-    "inPerson": true,
-    "virtualLive": false,
-    "virtualOnDemand": false,
-    "link": "https://eventreg.oracle.com/profile/web/index.cfm?PKwebID=0x974131abcd&source=CORP260618P00013:OW:ES:LV",
-    "status": "not_applied",
-    "company": "Oracle"
-  },
-  {
     "id": "oracle-CORP260512P00008",
     "title": "Oracle Developer Coaching: OCI Generative AI for Developer Productivity",
     "date": "July 8, 2026 11:00",
@@ -5726,6 +5713,19 @@
     "virtualLive": true,
     "virtualOnDemand": false,
     "link": "https://go.oracle.com/LP=153637?elqCampaignId=668679&source=CORP260512P00008:OW:ES:LV",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "oracle-CORP260618P00013",
+    "title": "ORACLE OCI Más valor y menos coste",
+    "date": "July 8, 2026 12:00",
+    "location": "Madrid, Madrid",
+    "type": "In-person",
+    "inPerson": true,
+    "virtualLive": false,
+    "virtualOnDemand": false,
+    "link": "https://eventreg.oracle.com/profile/web/index.cfm?PKwebID=0x974131abcd&source=CORP260618P00013:OW:ES:LV",
     "status": "not_applied",
     "company": "Oracle"
   },
@@ -5873,19 +5873,6 @@
     "company": "Oracle"
   },
   {
-    "id": "oracle-CORP260605P00038",
-    "title": "Oracle Health: Transforming Workforce and Supply Chain Management Through Clinical Integration",
-    "date": "July 16, 2026 12:30",
-    "location": "Online - United States",
-    "type": "Virtual - Live",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false,
-    "link": "https://go.oracle.com/LP=153590?elqCampaignId=670239&source=CORP260605P00038:OW:ES:LV",
-    "status": "not_applied",
-    "company": "Oracle"
-  },
-  {
     "id": "oracle-CORP260616P00005",
     "title": "Oracle Hospitality Forum, Kuala Lumpur",
     "date": "July 16, 2026 13:30",
@@ -5895,6 +5882,19 @@
     "virtualLive": false,
     "virtualOnDemand": false,
     "link": "https://eventreg.oracle.com/profile/web/index.cfm?PKwebID=0x973808abcd&source=CORP260616P00005:OW:ES:LV",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "oracle-CORP260605P00038",
+    "title": "Oracle Health: Transforming Workforce and Supply Chain Management Through Clinical Integration",
+    "date": "July 16, 2026 12:30",
+    "location": "Online - United States",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://go.oracle.com/LP=153590?elqCampaignId=670239&source=CORP260605P00038:OW:ES:LV",
     "status": "not_applied",
     "company": "Oracle"
   },
@@ -5925,19 +5925,6 @@
     "company": "Oracle"
   },
   {
-    "id": "oracle-CORP260202P00003",
-    "title": "NotebookLM × Oracle AI Databaseで始める業務データ分析とレポート生成",
-    "date": "July 21, 2026 15:00",
-    "location": "Online - Japan",
-    "type": "Virtual - Live",
-    "inPerson": false,
-    "virtualLive": true,
-    "virtualOnDemand": false,
-    "link": "https://go.oracle.com/LP=153801?elqCampaignId=659091&source=CORP260202P00003:OW:ES:LV",
-    "status": "not_applied",
-    "company": "Oracle"
-  },
-  {
     "id": "oracle-CORP260518P00034",
     "title": "Oracle Multicloud Workshop mit Microsoft",
     "date": "July 21, 2026 10:00",
@@ -5947,6 +5934,19 @@
     "virtualLive": false,
     "virtualOnDemand": false,
     "link": "https://eventreg.oracle.com/profile/web/index.cfm?PKwebID=0x971946abcd&source=CORP260518P00034:OW:ES:LV",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "oracle-CORP260202P00003",
+    "title": "NotebookLM × Oracle AI Databaseで始める業務データ分析とレポート生成",
+    "date": "July 21, 2026 15:00",
+    "location": "Online - Japan",
+    "type": "Virtual - Live",
+    "inPerson": false,
+    "virtualLive": true,
+    "virtualOnDemand": false,
+    "link": "https://go.oracle.com/LP=153801?elqCampaignId=659091&source=CORP260202P00003:OW:ES:LV",
     "status": "not_applied",
     "company": "Oracle"
   },
@@ -6757,19 +6757,6 @@
     "company": "Oracle"
   },
   {
-    "id": "oracle-CORP251223P00024",
-    "title": "Oracle Webinar: Project success in the field with Lipman",
-    "date": "March 19, 2026 14:00 AET / 11:00",
-    "location": "Online - Australia",
-    "type": "Virtual - On-demand",
-    "inPerson": false,
-    "virtualLive": false,
-    "virtualOnDemand": true,
-    "link": "https://go.oracle.com/LP=151682?elqCampaignId=656673&source=CORP251223P00024:OW:ES:LV",
-    "status": "not_applied",
-    "company": "Oracle"
-  },
-  {
     "id": "oracle-DEVT260210P00002",
     "title": "Oracle Integration Product Update Webcast: Fusion AI Studio & Integration",
     "date": "March 19, 2026 09:00",
@@ -6779,6 +6766,19 @@
     "virtualLive": false,
     "virtualOnDemand": true,
     "link": "https://go.oracle.com/LP=152186?elqCampaignId=659968&source=DEVT260210P00002:OW:ES:LV",
+    "status": "not_applied",
+    "company": "Oracle"
+  },
+  {
+    "id": "oracle-CORP251223P00024",
+    "title": "Oracle Webinar: Project success in the field with Lipman",
+    "date": "March 19, 2026 14:00 AET / 11:00",
+    "location": "Online - Australia",
+    "type": "Virtual - On-demand",
+    "inPerson": false,
+    "virtualLive": false,
+    "virtualOnDemand": true,
+    "link": "https://go.oracle.com/LP=151682?elqCampaignId=656673&source=CORP251223P00024:OW:ES:LV",
     "status": "not_applied",
     "company": "Oracle"
   },

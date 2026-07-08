@@ -8,7 +8,9 @@ import {
   Search,
   ExternalLink,
   Sun,
-  Moon
+  Moon,
+  Users,
+  Award
 } from 'lucide-react';
 
 const getCountryFromLocation = (location) => {
@@ -73,6 +75,44 @@ function deriveFromRules(text, rules, fallback) {
   return fallback;
 }
 
+function toTitleCaseWord(word) {
+  if (!word) return word;
+  if (/[A-Z].*[A-Z]/.test(word) || /\d/.test(word) || /[./&-]/.test(word)) return word;
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+function formatPartnerTitle(title) {
+  const value = String(title || '').trim();
+  if (!value) return 'SAP Partner';
+
+  if (value === value.toUpperCase() && /[A-Z]{4,}/.test(value)) {
+    return value
+      .split(' ')
+      .map((word) => {
+        if (word.length <= 3 || /[()&/-]/.test(word)) return word;
+        return word.charAt(0) + word.slice(1).toLowerCase();
+      })
+      .join(' ');
+  }
+
+  if (value === value.toLowerCase()) {
+    return value
+      .split(' ')
+      .map((word) => toTitleCaseWord(word))
+      .join(' ');
+  }
+
+  return value;
+}
+
+function formatPartnerDescription(description) {
+  const value = String(description || '').replace(/\s+/g, ' ').trim();
+  if (!value) return 'No description available.';
+
+  const normalized = value.charAt(0).toUpperCase() + value.slice(1);
+  return /[.!?]$/.test(normalized) ? normalized : `${normalized}.`;
+}
+
 function getProductCategory(event) {
   return deriveFromRules(event.title, PRODUCT_CATEGORY_RULES, 'General Business');
 }
@@ -135,6 +175,19 @@ export default function Dashboard() {
   const [syncMessage, setSyncMessage] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
   const [theme, setTheme] = useState('light');
+  const [currentView, setCurrentView] = useState('events');
+  const [partners, setPartners] = useState([]);
+  const [totalPartners, setTotalPartners] = useState(0);
+  const [partnersLoading, setPartnersLoading] = useState(false);
+  const [partnersPage, setPartnersPage] = useState(0);
+  const [distributions, setDistributions] = useState({ PRODUCTS: [], INDUSTRY: [], ENGAGEMENT: [], LOCATION: [] });
+
+  const [selectedPartnerType, setSelectedPartnerType] = useState('');
+  const [selectedSolution, setSelectedSolution] = useState('');
+  const [selectedFocusIndustry, setSelectedFocusIndustry] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedCloudCompetency, setSelectedCloudCompetency] = useState(false);
+  const [partnersSort, setPartnersSort] = useState('bestmatch');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -204,6 +257,45 @@ export default function Dashboard() {
       setSyncMessage('Refresh failed. Try browser import from SAP finder.');
     }
   };
+
+  const fetchPartners = async () => {
+    setPartnersLoading(true);
+    try {
+      const filterParts = [];
+      if (selectedPartnerType) filterParts.push(`engagement:${selectedPartnerType}`);
+      if (selectedSolution) filterParts.push(`products:${selectedSolution}`);
+      if (selectedFocusIndustry) filterParts.push(`industry:${selectedFocusIndustry}`);
+      if (selectedLocation) filterParts.push(`location:${selectedLocation}`);
+      if (selectedCloudCompetency) filterParts.push(`isCompetency:true`);
+      const filterStr = filterParts.join(';');
+
+      const url = `/api/partners?q=${encodeURIComponent(searchTerm)}&page=${partnersPage}&filter=${encodeURIComponent(filterStr)}&order=${partnersSort}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      if (data && !data.error) {
+        setPartners(data.partners || []);
+        setTotalPartners(data.count || 0);
+        if (data.distributions) {
+          setDistributions(data.distributions);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to fetch partners:', e);
+    } finally {
+      setPartnersLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (currentView === 'partners') {
+      fetchPartners();
+    }
+  }, [currentView, searchTerm, partnersPage, selectedPartnerType, selectedSolution, selectedFocusIndustry, selectedLocation, selectedCloudCompetency, partnersSort]);
+
+  // Reset page number on search or filter change
+  useEffect(() => {
+    setPartnersPage(0);
+  }, [searchTerm, selectedPartnerType, selectedSolution, selectedFocusIndustry, selectedLocation, selectedCloudCompetency, partnersSort]);
 
   useEffect(() => {
     const initialFetch = setTimeout(() => {
@@ -423,6 +515,47 @@ export default function Dashboard() {
             {syncMessage ? <span className="sync-message">{syncMessage}</span> : null}
           </div>
         </div>
+
+        {/* View Switcher Tabs */}
+        <div className="view-switcher" style={{ display: 'flex', gap: '0.25rem', background: 'var(--surface-alt)', padding: '0.25rem', borderRadius: '12px', border: '1px solid var(--card-border)' }}>
+          <button
+            onClick={() => setCurrentView('events')}
+            className={`view-tab ${currentView === 'events' ? 'active' : ''}`}
+            style={{
+              padding: '0.45rem 1rem',
+              borderRadius: '8px',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              border: 'none',
+              cursor: 'pointer',
+              background: currentView === 'events' ? 'var(--card-bg)' : 'transparent',
+              color: currentView === 'events' ? 'var(--foreground)' : 'var(--text-muted)',
+              boxShadow: currentView === 'events' ? '0 1px 3px rgba(0,0,0,0.05)' : 'none',
+              transition: 'all 0.15s ease-in-out'
+            }}
+          >
+            Events
+          </button>
+          <button
+            onClick={() => setCurrentView('partners')}
+            className={`view-tab ${currentView === 'partners' ? 'active' : ''}`}
+            style={{
+              padding: '0.45rem 1rem',
+              borderRadius: '8px',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              border: 'none',
+              cursor: 'pointer',
+              background: currentView === 'partners' ? 'var(--card-bg)' : 'transparent',
+              color: currentView === 'partners' ? 'var(--foreground)' : 'var(--text-muted)',
+              boxShadow: currentView === 'partners' ? '0 1px 3px rgba(0,0,0,0.05)' : 'none',
+              transition: 'all 0.15s ease-in-out'
+            }}
+          >
+            SAP Partners
+          </button>
+        </div>
+
         <div className="header-actions">
           <div className="search-box glass-panel">
             <Search size={18} />
@@ -449,7 +582,9 @@ export default function Dashboard() {
         </div>
       </header>
 
-      <div className="sap-filter-bar glass-panel">
+      {currentView === 'events' ? (
+        <>
+          <div className="sap-filter-bar glass-panel">
         <FilterSelect
           label="Date Range"
           value={selectedDateRange}
@@ -595,6 +730,189 @@ export default function Dashboard() {
           </div>
         </section>
       </div>
+        </>
+      ) : (
+        <div className="main-content" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {/* Partners filter bar */}
+          <div className="sap-filter-bar glass-panel" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', padding: '1.5rem' }}>
+            <FilterSelect
+              label="Partner Type"
+              value={selectedPartnerType}
+              onChange={setSelectedPartnerType}
+              options={[
+                { value: '', label: 'All Types' },
+                ...(distributions.ENGAGEMENT || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
+              ]}
+            />
+            <FilterSelect
+              label="Solution"
+              value={selectedSolution}
+              onChange={setSelectedSolution}
+              options={[
+                { value: '', label: 'All Solutions' },
+                ...(distributions.PRODUCTS || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
+              ]}
+            />
+            <FilterSelect
+              label="Focus Industry"
+              value={selectedFocusIndustry}
+              onChange={setSelectedFocusIndustry}
+              options={[
+                { value: '', label: 'All Industries' },
+                ...(distributions.INDUSTRY || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
+              ]}
+            />
+            <FilterSelect
+              label="Location"
+              value={selectedLocation}
+              onChange={setSelectedLocation}
+              options={[
+                { value: '', label: 'All Locations' },
+                ...(distributions.LOCATION || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
+              ]}
+            />
+            <FilterSelect
+              label="Sort By"
+              value={partnersSort}
+              onChange={setPartnersSort}
+              options={[
+                { value: 'bestmatch', label: 'Best match' },
+                { value: 'title:asc', label: 'Alphabetical A-Z' },
+                { value: 'title:desc', label: 'Alphabetical Z-A' }
+              ]}
+            />
+            
+            {/* Cloud Competency toggle */}
+            <div 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '0.6rem', 
+                background: 'var(--surface-alt)', 
+                padding: '0.45rem 1rem', 
+                borderRadius: '8px', 
+                border: '1px solid var(--card-border)', 
+                cursor: 'pointer', 
+                userSelect: 'none',
+                height: '38px',
+                marginTop: '1.2rem'
+              }} 
+              onClick={() => setSelectedCloudCompetency(!selectedCloudCompetency)}
+            >
+              <input type="checkbox" checked={selectedCloudCompetency} readOnly style={{ cursor: 'pointer' }} />
+              <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--foreground)' }}>Cloud Competency</span>
+            </div>
+          </div>
+
+          <section className="explore-section">
+            <div className="section-header">
+              <h2>SAP Partners Directory <span className="results-count">({totalPartners} results)</span></h2>
+            </div>
+            
+            {partnersLoading ? (
+              <div className="loading-screen" style={{ minHeight: '350px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                  <div className="spinner" style={{ width: '40px', height: '40px', border: '3px solid var(--card-border)', borderTopColor: '#3b82f6', borderRadius: '50%', animation: 'spin 1s linear infinite' }}></div>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Loading SAP partners...</p>
+                </div>
+              </div>
+            ) : partners.length === 0 ? (
+              <div className="loading-screen" style={{ minHeight: '350px' }}>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>No partners found matching your search criteria.</p>
+              </div>
+            ) : (
+              <>
+                <div className="partners-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem', padding: '1.5rem 0' }}>
+                  {partners.map((partner) => {
+                    const displayTitle = formatPartnerTitle(partner.title);
+                    const displayDescription = formatPartnerDescription(partner.description);
+
+                    return (
+                    <div key={partner.id} className="partner-card glass-panel" style={{ display: 'flex', flexDirection: 'column', padding: '1.5rem', borderRadius: '16px', background: 'var(--card-bg)', border: '1px solid var(--card-border)', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)', transition: 'all 0.2s' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                        <div style={{ width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', border: '1px solid var(--card-border)', background: 'var(--surface-alt)', padding: '4px', overflow: 'hidden' }}>
+                          <img src={partner.logoUrl.startsWith('http') ? partner.logoUrl : `https://partnerfinder.sap.com${partner.logoUrl}`} alt={displayTitle} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                        </div>
+                        <div>
+                          <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--foreground)', margin: 0 }}>{displayTitle}</h3>
+                          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>ID: {partner.profileId}</span>
+                        </div>
+                      </div>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--foreground)', margin: '0 0 1.25rem 0', flex: 1, lineHeight: '1.4', opacity: 0.8 }}>{displayDescription}</p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid var(--card-border)', marginBottom: '1.25rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                          <Users size={16} className="text-blue" />
+                          <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1 }}>Consultants</span>
+                            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--foreground)' }}>{partner.consultants ? partner.consultants.toLocaleString() : '0'}</span>
+                          </div>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                          <Award size={16} className="text-purple" />
+                          <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1 }}>Competencies</span>
+                            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--foreground)' }}>{partner.competencyTotal || partner.competencies || 0}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href={`https://partnerfinder.sap.com/profile/${partner.profileId}`} target="_blank" rel="noopener noreferrer" className="apply-link" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none', background: '#3b82f6', color: '#ffffff', fontWeight: 600, fontSize: '0.85rem', padding: '0.6rem', borderRadius: '8px', width: '100%', textAlign: 'center' }}>
+                        View Profile <ExternalLink size={14} />
+                      </a>
+                    </div>
+                    );
+                  })}
+                </div>
+
+                {/* Pagination */}
+                {Math.ceil(totalPartners / 12) > 1 && (
+                  <div className="pagination" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', padding: '1rem' }}>
+                    <button
+                      onClick={() => setPartnersPage(p => Math.max(0, p - 1))}
+                      disabled={partnersPage === 0}
+                      style={{ padding: '0.5rem 0.75rem', borderRadius: '6px', border: '1px solid var(--card-border)', background: 'var(--card-bg)', color: 'var(--foreground)', cursor: 'pointer', opacity: partnersPage === 0 ? 0.5 : 1 }}
+                    >
+                      &lt;
+                    </button>
+                    {Array.from({ length: Math.min(5, Math.ceil(totalPartners / 12)) }, (_, idx) => {
+                      const totalPages = Math.ceil(totalPartners / 12);
+                      let page = idx;
+                      if (partnersPage > 2) {
+                        page = partnersPage - 2 + idx;
+                      }
+                      if (page >= totalPages) return null;
+                      
+                      return (
+                        <button
+                          key={page}
+                          onClick={() => setPartnersPage(page)}
+                          style={{
+                            padding: '0.5rem 1rem',
+                            borderRadius: '6px',
+                            border: `1px solid ${partnersPage === page ? 'var(--foreground)' : 'var(--card-border)'}`,
+                            background: partnersPage === page ? 'var(--foreground)' : 'var(--card-bg)',
+                            color: partnersPage === page ? 'var(--background)' : 'var(--foreground)',
+                            fontWeight: partnersPage === page ? 'bold' : 'normal',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          {page + 1}
+                        </button>
+                      );
+                    })}
+                    <button
+                      onClick={() => setPartnersPage(p => Math.min(Math.ceil(totalPartners / 12) - 1, p + 1))}
+                      disabled={partnersPage === Math.ceil(totalPartners / 12) - 1}
+                      style={{ padding: '0.5rem 0.75rem', borderRadius: '6px', border: '1px solid var(--card-border)', background: 'var(--card-bg)', color: 'var(--foreground)', cursor: 'pointer', opacity: partnersPage === Math.ceil(totalPartners / 12) - 1 ? 0.5 : 1 }}
+                    >
+                      &gt;
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
+          </section>
+        </div>
+      )}
         <style jsx>{`
         .dashboard {
           padding: 2rem;
@@ -1085,6 +1403,11 @@ export default function Dashboard() {
           .sap-filter-bar {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
       `}</style>
     </main>
