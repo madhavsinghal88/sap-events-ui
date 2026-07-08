@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'SAP Events Tracker',
-  description: 'Track and manage SAP events with premium UI',
+  title: 'EVENTZZ • Unified Event Intelligence Dashboard',
+  description: 'Track and filter live tech events across enterprise directories with premium UI',
 };
 
 export default function RootLayout({ children }) {

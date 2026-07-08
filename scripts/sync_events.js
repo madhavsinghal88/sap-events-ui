@@ -6,6 +6,7 @@ const {
   fetchAllSapEvents,
   mergeWithExistingStatuses,
 } = require('../lib/sapFetcher');
+const { fetchGitexEvents } = require('../lib/gitexFetcher');
 const {
   hasGoogleCredentials,
   readEventsFromSheet,
@@ -75,14 +76,26 @@ async function syncEvents() {
     fetchedEvents = [];
   }
 
-  let finalEvents = [];
-  if (source === 'sap_api') {
-    const nonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP');
-    const sapEvents = mergeWithExistingStatuses(fetchedEvents, existingEvents.filter(e => !e.company || e.company === 'SAP'));
-    finalEvents = [...sapEvents, ...nonSapEvents];
-  } else {
-    finalEvents = existingEvents;
+  // Fetch GITEX side events
+  let gitexEvents = [];
+  try {
+    gitexEvents = await fetchGitexEvents();
+    console.log(`Successfully fetched ${gitexEvents.length} GITEX events.`);
+  } catch (error) {
+    console.warn(`GITEX fetch failed: ${error.message}`);
+    gitexEvents = existingEvents.filter(e => e.company === 'GITEX');
   }
+
+  let finalEvents = [];
+  let sapEvents = [];
+  if (source === 'sap_api') {
+    sapEvents = mergeWithExistingStatuses(fetchedEvents, existingEvents.filter(e => !e.company || e.company === 'SAP'));
+  } else {
+    sapEvents = existingEvents.filter(e => !e.company || e.company === 'SAP');
+  }
+
+  const otherNonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP' && e.company !== 'GITEX');
+  finalEvents = [...sapEvents, ...gitexEvents, ...otherNonSapEvents];
 
   const timestamp = new Date().toISOString();
   if (useGoogle) {

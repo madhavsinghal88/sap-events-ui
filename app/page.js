@@ -431,7 +431,7 @@ export default function Dashboard() {
         <div className="header-left">
           <div onClick={() => setView('landing')} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', marginBottom: '0.4rem' }}>
             <Globe className="text-blue animate-pulse" size={24} />
-            <h1 className="gradient-text" style={{ fontSize: '1.8rem', fontWeight: 800 }}>EventAll</h1>
+            <h1 className="gradient-text" style={{ fontSize: '1.8rem', fontWeight: 800, letterSpacing: '0.05em' }}>EVENTZZ</h1>
           </div>
           <div className="last-updated">
             <Clock size={14} className="text-blue" />
@@ -528,7 +528,7 @@ export default function Dashboard() {
 
       {/* Company Selector Tab Bar */}
       <div className="company-selector glass-panel">
-        {['ALL COMPANIES', 'SAP EVENTS', 'ORACLE EVENTS', 'XYZ EVENTS', 'MICROSOFT EVENTS', 'SALESFORCE EVENTS'].map(compTab => {
+        {['ALL COMPANIES', 'SAP EVENTS', 'GITEX EVENTS', 'ORACLE EVENTS', 'XYZ EVENTS', 'MICROSOFT EVENTS', 'SALESFORCE EVENTS'].map(compTab => {
           const compValue = compTab.replace(' EVENTS', '').replace('ALL ', 'All');
           const isSelected = selectedCompany === compValue;
           return (
@@ -589,7 +589,7 @@ export default function Dashboard() {
             </div>
             <div className="table-body">
               {filteredEvents.map((event) => (
-                <div key={event.id} className="table-row">
+                <div key={`${event.company || 'SAP'}-${event.id}`} className="table-row">
                   <div className="col date">{event.date}</div>
                   <div className="col title">
                     <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem' }}>
@@ -699,6 +699,12 @@ export default function Dashboard() {
           background: #DCFCE7;
         }
 
+        .company-tab-btn.active.gitex {
+          border-color: #F97316;
+          color: #C2410C;
+          background: #FFEDD5;
+        }
+
         .company-badge {
           font-size: 0.6rem;
           font-weight: 700;
@@ -736,6 +742,12 @@ export default function Dashboard() {
           background: #DCFCE7;
           color: #15803D;
           border: 1px solid #BBF7D0;
+        }
+
+        .company-badge.gitex {
+          background: #FFEDD5;
+          color: #C2410C;
+          border: 1px solid #FED7AA;
         }
 
         .header {
