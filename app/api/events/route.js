@@ -69,7 +69,11 @@ export async function POST(request) {
     fs.writeFileSync(DATA_PATH, JSON.stringify(updatedData, null, 2));
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to update data: ' + error.message }, { status: 500 });
+    const isReadOnly = error.code === 'EROFS' || error.message.includes('read-only') || error.message.includes('EROFS');
+    const msg = isReadOnly 
+      ? "Cannot save updates because Vercel's filesystem is read-only. Please configure Google Sheets in your Vercel project environment settings to enable status tracking."
+      : error.message;
+    return NextResponse.json({ error: 'Failed to update data: ' + msg }, { status: 500 });
   }
 }
 
@@ -97,11 +101,16 @@ export async function PATCH() {
       
       return NextResponse.json({ message: 'SAP sync complete', count: events.length, source: 'sap_api', lastSynced: timestamp });
     } catch (error) {
+      const isReadOnly = error.code === 'EROFS' || error.message.includes('read-only') || error.message.includes('EROFS');
+      const hint = isReadOnly
+        ? `Vercel's filesystem is read-only. Please configure Google Sheets environment variables (GOOGLE_SERVICE_ACCOUNT_JSON and GOOGLE_SHEET_ID) in your Vercel project settings to enable server-side updates.`
+        : `SAP API request failed (${error.message}). Vercel cloud server IPs are protected/blocked by SAP's Akamai CDN firewall. Run a local sync (npm run sync) from your home/office network, or copy & run the browser import script.`;
+
       return NextResponse.json({
-        message: 'SAP API blocked from server. Use browser import instead.',
+        message: isReadOnly ? 'Vercel filesystem is read-only.' : 'SAP API blocked from server. Use browser import instead.',
         count: existingEvents.length,
         source: 'local',
-        hint: `SAP API request failed (${error.message}). Vercel cloud server IPs are protected/blocked by SAP's Akamai CDN firewall. Run a local sync (npm run sync) from your home/office network, or copy & run the browser import script.`,
+        hint,
         error: error.message,
       });
     }
