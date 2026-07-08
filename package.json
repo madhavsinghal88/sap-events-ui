@@ -10,7 +10,8 @@
     "sync": "node scripts/sync_events.js",
     "scheduler": "node scripts/scheduler.js",
     "print-import-script": "node scripts/print_import_script.js",
-    "import-sap-payload": "node scripts/import_sap_payload.js"
+    "import-sap-payload": "node scripts/import_sap_payload.js",
+    "normalize-events": "node scripts/normalize_events.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

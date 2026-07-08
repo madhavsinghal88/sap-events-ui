@@ -7,6 +7,9 @@ const {
   mergeWithExistingStatuses,
 } = require('../lib/sapFetcher');
 const { fetchGitexEvents } = require('../lib/gitexFetcher');
+const { fetchOracleEvents } = require('../lib/oracleFetcher');
+const { fetchGlobalAIEvents } = require('../lib/globalaiFetcher');
+const { normalizeEvents } = require('../lib/eventFormatters');
 const {
   hasGoogleCredentials,
   readEventsFromSheet,
@@ -86,6 +89,38 @@ async function syncEvents() {
     gitexEvents = existingEvents.filter(e => e.company === 'GITEX');
   }
 
+  // Fetch Oracle events
+  let oracleEvents = [];
+  try {
+    const fetchedOracle = await fetchOracleEvents();
+    const existingOracle = existingEvents.filter(e => e.company === 'Oracle');
+    const statusMap = new Map(existingOracle.map(e => [e.link || e.title, e.status || 'not_applied']));
+    oracleEvents = fetchedOracle.map(event => ({
+      ...event,
+      status: statusMap.get(event.link || event.title) || 'not_applied'
+    }));
+    console.log(`Successfully fetched ${oracleEvents.length} Oracle events.`);
+  } catch (error) {
+    console.warn(`Oracle fetch failed: ${error.message}`);
+    oracleEvents = existingEvents.filter(e => e.company === 'Oracle');
+  }
+
+  // Fetch Global AI events
+  let globalaiEvents = [];
+  try {
+    const fetchedGlobalAI = await fetchGlobalAIEvents();
+    const existingGlobalAI = existingEvents.filter(e => e.company === 'Global AI');
+    const statusMap = new Map(existingGlobalAI.map(e => [e.link || e.title, e.status || 'not_applied']));
+    globalaiEvents = fetchedGlobalAI.map(event => ({
+      ...event,
+      status: statusMap.get(event.link || event.title) || 'not_applied'
+    }));
+    console.log(`Successfully fetched ${globalaiEvents.length} Global AI events.`);
+  } catch (error) {
+    console.warn(`Global AI fetch failed: ${error.message}`);
+    globalaiEvents = existingEvents.filter(e => e.company === 'Global AI');
+  }
+
   let finalEvents = [];
   let sapEvents = [];
   if (source === 'sap_api') {
@@ -94,8 +129,8 @@ async function syncEvents() {
     sapEvents = existingEvents.filter(e => !e.company || e.company === 'SAP');
   }
 
-  const otherNonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP' && e.company !== 'GITEX');
-  finalEvents = [...sapEvents, ...gitexEvents, ...otherNonSapEvents];
+  const otherNonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP' && e.company !== 'GITEX' && e.company !== 'Oracle' && e.company !== 'Global AI');
+  finalEvents = normalizeEvents([...sapEvents, ...gitexEvents, ...oracleEvents, ...globalaiEvents, ...otherNonSapEvents]);
 
   const timestamp = new Date().toISOString();
   if (useGoogle) {

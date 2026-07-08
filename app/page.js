@@ -1,14 +1,12 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import { normalizeEvent, parseEventDate } from '../lib/eventFormatters';
 import {
-  Calendar,
   MapPin,
-  Monitor,
   Clock,
   Search,
   ExternalLink,
-  Globe,
   Sun,
   Moon
 } from 'lucide-react';
@@ -257,52 +255,19 @@ export default function Dashboard() {
     setSortConfig({ key, direction });
   };
 
-  const parseDateForSort = (dateStr) => {
-    if (!dateStr) return new Date(0);
-    
-    let clean = dateStr.replace(/[–—-]/g, '-');
-    
-    if (clean.includes('-')) {
-      const parts = clean.split('-');
-      const firstPart = parts[0].trim();
-      const lastPart = parts[parts.length - 1].trim();
-      
-      if (/^\d+$/.test(firstPart)) {
-        const monthYearMatch = lastPart.match(/[a-zA-Z]+,?\s*\d{4}/);
-        if (monthYearMatch) {
-          clean = `${monthYearMatch[0].replace(',', '')} ${firstPart}`;
-        }
-      } else {
-        const yearMatch = lastPart.match(/\d{4}/);
-        if (yearMatch) {
-          clean = `${firstPart}, ${yearMatch[0]}`;
-        }
-      }
-    }
-
-    const parsed = new Date(clean);
-    if (!isNaN(parsed.getTime())) return parsed;
-    
-    const yearMatch = dateStr.match(/\d{4}/);
-    const year = yearMatch ? yearMatch[0] : '1970';
-    const monthMatch = dateStr.match(/(January|February|March|April|May|June|July|August|September|October|November|December)/i);
-    const month = monthMatch ? monthMatch[0] : 'January';
-    
-    return new Date(`${month} 1, ${year}`);
-  };
-
   const enrichedEvents = useMemo(() => (
     events.map((event) => {
-      const parsedDate = parseDateForSort(event.date);
+      const normalized = normalizeEvent(event);
+      const parsedDate = parseEventDate(normalized.date, normalized.link);
       return {
-        ...event,
+        ...normalized,
         parsedDate,
-        regionCountry: getCountryFromLocation(event.location),
-        productCategory: getProductCategory(event),
-        industry: getIndustry(event),
-        eventCategory: getEventCategory(event),
-        language: getLanguage(event),
-        eventType: event.type || 'Other',
+        regionCountry: getCountryFromLocation(normalized.location),
+        productCategory: getProductCategory(normalized),
+        industry: getIndustry(normalized),
+        eventCategory: getEventCategory(normalized),
+        language: getLanguage(normalized),
+        eventType: normalized.type || 'Other',
         dateRange: getDateRangeBucket(parsedDate),
       };
     })
@@ -339,6 +304,15 @@ export default function Dashboard() {
     Array.from(new Set(companyFilteredEvents.map((e) => e.eventType))).sort()
   ), [companyFilteredEvents]);
 
+  const companyEventCounts = useMemo(() => {
+    const counts = { all: enrichedEvents.length };
+    enrichedEvents.forEach((event) => {
+      const company = (event.company || 'SAP').toLowerCase();
+      counts[company] = (counts[company] || 0) + 1;
+    });
+    return counts;
+  }, [enrichedEvents]);
+
   const sortedEvents = [...companyFilteredEvents].sort((a, b) => {
     if (sortConfig.key === 'date') {
       const dateA = a.parsedDate;
@@ -370,7 +344,7 @@ export default function Dashboard() {
     if (activeTab === 'Explore all events') {
       matchesTab = true;
     } else if (activeTab === 'Upcoming') {
-      matchesTab = parseDateForSort(event.date) > new Date();
+      matchesTab = event.parsedDate > new Date();
     } else if (activeTab === 'In-person') {
       matchesTab = event.inPerson;
     } else if (activeTab === 'Virtual - Live') {
@@ -413,25 +387,35 @@ export default function Dashboard() {
       matchesSearch;
   });
 
-  const toBeAppliedEvents = companyFilteredEvents.filter(e => e.status === 'to_be_applied');
-
-  const stats = {
-    total: companyFilteredEvents.length,
-    upcoming: companyFilteredEvents.filter(e => parseDateForSort(e.date) > new Date()).length,
-    virtual: companyFilteredEvents.filter(e => e.virtualLive || e.virtualOnDemand).length,
-    applied: companyFilteredEvents.filter(e => e.status === 'applied').length
-  };
-
-  if (loading) return <div className="loading-screen">Loading SAP Events...</div>;
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="brand-text" style={{ alignItems: 'center' }}>
+          <div className="brand-title-line">
+            <span className="nexus-gradient nexus-prefix">SAP • AI</span>
+            <span className="nexus-gradient nexus-name">NEXUS</span>
+          </div>
+          <div className="brand-subtitle">GLOBAL EVENT TRACKER</div>
+        </div>
+        <p style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Loading events...</p>
+      </div>
+    );
+  }
 
   return (
     <main className="dashboard">
       {/* Header */}
       <header className="header glass-panel">
         <div className="header-left">
-          <div onClick={() => setView('landing')} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', marginBottom: '0.4rem' }}>
-            <Globe className="text-blue animate-pulse" size={24} />
-            <h1 className="gradient-text" style={{ fontSize: '1.8rem', fontWeight: 800, letterSpacing: '0.05em' }}>EVENTZZ</h1>
+          <div className="brand-lockup">
+            <div className="brand-text">
+              <div className="brand-title-line">
+                <span className="nexus-gradient nexus-prefix">SAP • AI</span>
+                <span className="nexus-gradient nexus-name">NEXUS</span>
+              </div>
+              <div className="brand-subtitle">GLOBAL EVENT TRACKER</div>
+              <div className="brand-tagline">SAP + AI EVENTS | INTELLIGENCE & CONNECTION</div>
+            </div>
           </div>
           <div className="last-updated">
             <Clock size={14} className="text-blue" />
@@ -528,36 +512,32 @@ export default function Dashboard() {
 
       {/* Company Selector Tab Bar */}
       <div className="company-selector glass-panel">
-        {['ALL COMPANIES', 'SAP EVENTS', 'GITEX EVENTS', 'ORACLE EVENTS', 'XYZ EVENTS', 'MICROSOFT EVENTS', 'SALESFORCE EVENTS'].map(compTab => {
-          const compValue = compTab.replace(' EVENTS', '').replace('ALL ', 'All');
-          const isSelected = selectedCompany === compValue;
+        {['ALL COMPANIES', 'SAP EVENTS', 'GITEX EVENTS', 'ORACLE EVENTS', 'GLOBAL AI EVENTS', 'XYZ EVENTS', 'MICROSOFT EVENTS', 'SALESFORCE EVENTS'].map(compTab => {
+          const compValue = compTab.includes('ALL') ? 'All' : compTab.replace(' EVENTS', '');
+          const lookupKey = compValue.toLowerCase();
+          const isSelected = selectedCompany.toLowerCase() === lookupKey;
+          const eventCount = companyEventCounts[lookupKey] || 0;
+          const cssClass = lookupKey.replace(/\s+/g, '-');
           return (
             <button
               key={compTab}
               onClick={() => handleCompanyChange(compValue)}
-              className={`company-tab-btn ${isSelected ? 'active' : ''} ${compValue.toLowerCase()}`}
+              className={`company-tab-btn ${isSelected ? 'active' : ''} ${cssClass}`}
             >
-              {compTab}
+              {compTab} ({eventCount})
             </button>
           );
         })}
       </div>
 
-      {/* Stats Section */}
-      <section className="stats-grid">
-        <StatCard label="Indexed Events" value={stats.total} icon={<Calendar className="text-blue" />} onClick={() => setActiveTab('Explore all events')} />
-        <StatCard label="Future Opportunities" value={stats.upcoming} icon={<Clock className="text-purple" />} onClick={() => setActiveTab('Upcoming')} />
-        <StatCard label="Online Tracks" value={stats.virtual} icon={<Monitor className="text-green" />} onClick={() => setActiveTab('Virtual - Live')} />
-      </section>
-
       <div className="main-content">
         {/* Explore Section */}
         <section className="explore-section">
           <div className="section-header">
-            <h2>Explore Feed <span className="results-count">({filteredEvents.length} opportunities)</span></h2>
+            <h2>Explore Feed <span className="results-count">({filteredEvents.length} of {companyFilteredEvents.length} events)</span></h2>
             <div className="tabs">
               {[
-                { label: 'Explore All', value: 'Explore all events' },
+                { label: `Explore All (${companyFilteredEvents.length})`, value: 'Explore all events' },
                 { label: 'Upcoming', value: 'Upcoming' },
                 { label: 'In-Person', value: 'In-person' },
                 { label: 'Virtual (Live)', value: 'Virtual - Live' },
@@ -593,7 +573,7 @@ export default function Dashboard() {
                   <div className="col date">{event.date}</div>
                   <div className="col title">
                     <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.4rem' }}>
-                      <span className={`company-badge ${(event.company || 'SAP').toLowerCase()}`}>
+                      <span className={`company-badge ${(event.company || 'SAP').toLowerCase().replace(/\s+/g, '-')}`}>
                         {event.company || 'SAP'}
                       </span>
                       <span className="event-title-text">{event.title}</span>
@@ -705,6 +685,12 @@ export default function Dashboard() {
           background: #FFEDD5;
         }
 
+        .company-tab-btn.active.global-ai {
+          border-color: #EF4444;
+          color: #991B1B;
+          background: #FEE2E2;
+        }
+
         .company-badge {
           font-size: 0.6rem;
           font-weight: 700;
@@ -750,6 +736,12 @@ export default function Dashboard() {
           border: 1px solid #FED7AA;
         }
 
+        .company-badge.global-ai {
+          background: #FEE2E2;
+          color: #991B1B;
+          border: 1px solid #FECACA;
+        }
+
         .header {
           display: flex;
           justify-content: space-between;
@@ -759,6 +751,12 @@ export default function Dashboard() {
           border: 1px solid var(--card-border);
           border-radius: 16px;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .header-left {
+          display: flex;
+          flex-direction: column;
+          gap: 0.55rem;
         }
 
         .header-left h1 {
@@ -874,12 +872,6 @@ export default function Dashboard() {
           background: var(--surface-hover);
           border-color: var(--border-strong);
           transform: translateY(-1px);
-        }
-
-        .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1.5rem;
         }
 
         .section-header {
@@ -1054,6 +1046,7 @@ export default function Dashboard() {
         .loading-screen {
           height: 100vh;
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           font-size: 1.25rem;
@@ -1070,10 +1063,6 @@ export default function Dashboard() {
         @media (max-width: 1200px) {
           .sap-filter-bar {
             grid-template-columns: repeat(4, minmax(0, 1fr));
-          }
-
-          .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
           }
         }
 
@@ -1148,67 +1137,5 @@ function FilterSelect({ label, value, onChange, options, alignRight = false }) {
         }
       `}</style>
     </label>
-  );
-}
-
-function StatCard({ label, value, icon, onClick }) {
-  return (
-    <div className={`stat-card glass-panel ${onClick ? 'clickable' : ''}`} onClick={onClick}>
-      <div className="stat-icon">{icon}</div>
-      <div className="stat-info">
-        <span className="stat-label">{label}</span>
-        <span className="stat-value">{value}</span>
-      </div>
-      <style jsx>{`
-        .stat-card {
-          padding: 1.5rem;
-          display: flex;
-          align-items: center;
-          gap: 1.25rem;
-          background: var(--card-bg);
-          border: 1px solid var(--card-border);
-          border-radius: 16px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
-          transition: all 150ms ease;
-        }
-        .stat-card.clickable {
-          cursor: pointer;
-        }
-        .stat-card.clickable:hover {
-          transform: translateY(-2px);
-          border-color: var(--border-strong);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-        }
-        .stat-card:hover:not(.clickable) {
-          transform: translateY(-1px);
-        }
-        .stat-icon {
-          padding: 0.75rem;
-          background: var(--surface-alt);
-          border-radius: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--primary);
-        }
-        .stat-info {
-          display: flex;
-          flex-direction: column;
-        }
-        .stat-label {
-          font-size: 0.8rem;
-          color: var(--text-muted);
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.03em;
-        }
-        .stat-value {
-          font-size: 1.6rem;
-          font-weight: 800;
-          color: var(--foreground);
-          margin-top: 0.1rem;
-        }
-      `}</style>
-    </div>
   );
 }

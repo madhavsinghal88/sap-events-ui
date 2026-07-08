@@ -7,6 +7,7 @@ import path from 'path';
 
 import { fetchAllSapEvents, mergeWithExistingStatuses } from '../../../lib/sapFetcher';
 import { hasGoogleCredentials, readEventsFromSheet, writeEventsToSheet, readLastSyncFromSheet, writeLastSyncToSheet } from '../../../lib/googleSheets';
+import { normalizeEvents } from '../../../lib/eventFormatters';
 
 const DATA_PATH = path.join(process.cwd(), 'data/events.json');
 const LAST_SYNC_PATH = path.join(process.cwd(), 'data/last_sync.json');
@@ -42,7 +43,7 @@ export async function GET() {
       lastSynced = new Date().toISOString();
     }
 
-    return NextResponse.json({ events, lastSynced });
+    return NextResponse.json({ events: normalizeEvents(events), lastSynced });
   } catch (error) {
     return NextResponse.json({ error: 'Failed to read data: ' + error.message }, { status: 500 });
   }
@@ -88,7 +89,7 @@ export async function PATCH() {
       const fetchedEvents = await fetchAllSapEvents();
       const nonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP');
       const sapEvents = mergeWithExistingStatuses(fetchedEvents, existingEvents.filter(e => !e.company || e.company === 'SAP'));
-      const events = [...sapEvents, ...nonSapEvents];
+      const events = normalizeEvents([...sapEvents, ...nonSapEvents]);
       
       const timestamp = new Date().toISOString();
       if (useGoogle) {

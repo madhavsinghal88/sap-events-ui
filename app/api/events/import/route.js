@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { mapImportedPayload, mergeWithExistingStatuses } from '../../../../lib/sapFetcher';
+import { normalizeEvents } from '../../../../lib/eventFormatters';
 
 const DATA_PATH = path.join(process.cwd(), 'data/events.json');
 
@@ -18,7 +19,7 @@ export async function POST(request) {
     const payload = await request.json();
     const existingEvents = readExistingEvents();
     const fetchedEvents = mapImportedPayload(payload);
-    const events = mergeWithExistingStatuses(fetchedEvents, existingEvents);
+    const events = normalizeEvents(mergeWithExistingStatuses(fetchedEvents, existingEvents));
 
     fs.writeFileSync(DATA_PATH, JSON.stringify(events, null, 2));
 
