@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   Calendar,
   MapPin,
@@ -12,8 +12,34 @@ import {
   Filter,
   ExternalLink,
   ChevronRight,
-  Info
+  Info,
+  Globe
 } from 'lucide-react';
+
+const getCountryFromLocation = (location) => {
+  if (!location) return 'Global';
+  let loc = location.trim();
+  if (loc.toLowerCase() === 'online') return 'Online';
+  if (loc.toLowerCase() === 'global') return 'Global';
+  
+  if (loc.includes('Online - ')) {
+    loc = loc.replace('Online - ', '').trim();
+  } else if (loc.includes(',')) {
+    const parts = loc.split(',');
+    loc = parts[parts.length - 1].trim();
+  }
+  
+  if (loc.includes('Germany')) return 'Germany';
+  if (loc === 'Swiss') return 'Switzerland';
+  if (loc === 'Uk') return 'United Kingdom';
+  if (loc === 'Sk') return 'Slovakia';
+  if (loc === 'Latinamerica') return 'Latin America';
+  if (loc === 'United States of America') return 'United States';
+  if (loc === 'Sea') return 'South East Asia';
+  if (loc === 'Mena') return 'Middle East & North Africa';
+  
+  return loc;
+};
 
 export default function Dashboard() {
   const [events, setEvents] = useState([]);
@@ -21,6 +47,15 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('Explore all events');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('All');
+  const [selectedCountry, setSelectedCountry] = useState('All');
+  
+  const countriesList = useMemo(() => {
+    const list = new Set();
+    events.forEach(e => {
+      list.add(getCountryFromLocation(e.location));
+    });
+    return Array.from(list).sort();
+  }, [events]);
   const [lastRefreshed, setLastRefreshed] = useState('');
   const [syncMessage, setSyncMessage] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
@@ -197,9 +232,14 @@ export default function Dashboard() {
       matchesMonth = eventDate.getMonth() === parseInt(selectedMonth, 10);
     }
 
+    let matchesCountry = true;
+    if (selectedCountry !== 'All') {
+      matchesCountry = getCountryFromLocation(event.location) === selectedCountry;
+    }
+
     const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.location.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesTab && matchesMonth && matchesSearch;
+    return matchesTab && matchesMonth && matchesCountry && matchesSearch;
   });
 
   const toBeAppliedEvents = events.filter(e => e.status === 'to_be_applied');
@@ -226,6 +266,19 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="header-actions">
+          <div className="month-filter-box glass-panel">
+            <Globe size={16} />
+            <select
+              value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}
+              className="month-select"
+            >
+              <option value="All">All Countries</option>
+              {countriesList.map(country => (
+                <option key={country} value={country}>{country}</option>
+              ))}
+            </select>
+          </div>
           <div className="month-filter-box glass-panel">
             <Calendar size={16} />
             <select
