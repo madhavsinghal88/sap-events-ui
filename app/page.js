@@ -10,8 +10,14 @@ import {
   Sun,
   Moon,
   Users,
-  Award
+  Award,
+  Download,
+  FileSpreadsheet,
+  FileText,
 } from 'lucide-react';
+import * as XLSX from 'xlsx';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 const KNOWN_COUNTRIES = new Set([
   'Algeria',
@@ -624,6 +630,43 @@ export default function Dashboard() {
       matchesSearch;
   });
 
+  const exportColumns = ['date', 'title', 'company', 'type', 'location', 'status', 'link'];
+  const exportHeaders = ['Date', 'Title', 'Company', 'Type', 'Location', 'Status', 'Link'];
+
+  const exportToExcel = () => {
+    const rows = filteredEvents.map((e) =>
+      exportColumns.map((col) => (col === 'link' ? { f: e.link, t: 'l', l: { Target: e.link, Tooltip: 'Open' } } : e[col] || ''))
+    );
+    const ws = XLSX.utils.aoa_to_sheet([exportHeaders, ...rows]);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Events');
+    XLSX.writeFile(wb, 'sap-events.xlsx');
+  };
+
+  const exportToPDF = () => {
+    const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    doc.setFontSize(16);
+    doc.text('SAP Events Tracker', 14, 15);
+    doc.setFontSize(9);
+    doc.setTextColor(120);
+    doc.text(`${filteredEvents.length} events | Exported ${new Date().toLocaleDateString()}`, 14, 22);
+
+    doc.autoTable({
+      startY: 28,
+      head: [exportHeaders],
+      body: filteredEvents.map((e) => exportColumns.map((col) => e[col] || '')),
+      styles: { fontSize: 7, cellPadding: 2 },
+      headStyles: { fillColor: [41, 128, 185] },
+      alternateRowStyles: { fillColor: [245, 248, 250] },
+      columnStyles: {
+        1: { cellWidth: 60 },
+        5: { cellWidth: 25 },
+      },
+    });
+
+    doc.save('sap-events.pdf');
+  };
+
   if (loading) {
     return (
       <div className="loading-screen">
@@ -714,6 +757,16 @@ export default function Dashboard() {
           <button onClick={refreshData} className="refresh-btn glass-panel">
             Trigger Intel Sync
           </button>
+          {currentView === 'events' && (
+            <>
+              <button onClick={exportToExcel} className="export-btn glass-panel" title="Download Excel">
+                <FileSpreadsheet size={16} /> Excel
+              </button>
+              <button onClick={exportToPDF} className="export-btn glass-panel" title="Download PDF">
+                <FileText size={16} /> PDF
+              </button>
+            </>
+          )}
           <button
             type="button"
             onClick={toggleTheme}
@@ -1311,6 +1364,28 @@ export default function Dashboard() {
         }
 
         .refresh-btn:hover {
+          background: var(--surface-hover);
+          border-color: var(--border-strong);
+          transform: translateY(-1px);
+        }
+
+        .export-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          padding: 0.5rem 0.85rem;
+          font-weight: 600;
+          font-size: 0.85rem;
+          color: var(--foreground);
+          background: var(--card-bg);
+          border: 1px solid var(--card-border);
+          border-radius: 8px;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+          transition: all 150ms ease;
+          cursor: pointer;
+        }
+
+        .export-btn:hover {
           background: var(--surface-hover);
           border-color: var(--border-strong);
           transform: translateY(-1px);

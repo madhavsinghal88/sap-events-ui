@@ -17,12 +17,15 @@
     "@supabase/supabase-js": "^2.110.4",
     "dotenv": "^16.4.7",
     "googleapis": "^144.0.0",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
     "lucide-react": "^0.575.0",
     "next": "16.1.6",
     "node-fetch": "^2.7.0",
     "puppeteer-core": "^25.3.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "eslint": "^9",
