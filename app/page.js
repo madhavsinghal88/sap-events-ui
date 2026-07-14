@@ -317,6 +317,7 @@ export default function Dashboard() {
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
   const [theme, setTheme] = useState('light');
   const [currentView, setCurrentView] = useState('events');
+  const [downloadMenuOpen, setDownloadMenuOpen] = useState(false);
   const [partners, setPartners] = useState([]);
   const [totalPartners, setTotalPartners] = useState(0);
   const [partnersLoading, setPartnersLoading] = useState(false);
@@ -333,6 +334,16 @@ export default function Dashboard() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('eventall-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (downloadMenuOpen && !e.target.closest('.download-dropdown')) {
+        setDownloadMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [downloadMenuOpen]);
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -758,14 +769,24 @@ export default function Dashboard() {
             Trigger Intel Sync
           </button>
           {currentView === 'events' && (
-            <>
-              <button onClick={exportToExcel} className="export-btn glass-panel" title="Download Excel">
-                <FileSpreadsheet size={16} /> Excel
+            <div className="download-dropdown">
+              <button
+                onClick={() => setDownloadMenuOpen(!downloadMenuOpen)}
+                className="download-btn glass-panel"
+              >
+                <Download size={16} /> Download
               </button>
-              <button onClick={exportToPDF} className="export-btn glass-panel" title="Download PDF">
-                <FileText size={16} /> PDF
-              </button>
-            </>
+              {downloadMenuOpen && (
+                <div className="download-menu glass-panel">
+                  <button onClick={() => { exportToExcel(); setDownloadMenuOpen(false); }}>
+                    <FileSpreadsheet size={14} /> Excel
+                  </button>
+                  <button onClick={() => { exportToPDF(); setDownloadMenuOpen(false); }}>
+                    <FileText size={14} /> PDF
+                  </button>
+                </div>
+              )}
+            </div>
           )}
           <button
             type="button"
@@ -1369,7 +1390,11 @@ export default function Dashboard() {
           transform: translateY(-1px);
         }
 
-        .export-btn {
+        .download-dropdown {
+          position: relative;
+        }
+
+        .download-btn {
           display: inline-flex;
           align-items: center;
           gap: 0.35rem;
@@ -1385,10 +1410,41 @@ export default function Dashboard() {
           cursor: pointer;
         }
 
-        .export-btn:hover {
+        .download-btn:hover {
           background: var(--surface-hover);
           border-color: var(--border-strong);
           transform: translateY(-1px);
+        }
+
+        .download-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          margin-top: 4px;
+          padding: 4px;
+          border-radius: 8px;
+          z-index: 100;
+          min-width: 140px;
+        }
+
+        .download-menu button {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          width: 100%;
+          padding: 0.5rem 0.75rem;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: var(--foreground);
+          background: none;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: background 100ms;
+        }
+
+        .download-menu button:hover {
+          background: var(--surface-hover);
         }
 
         .section-header {
