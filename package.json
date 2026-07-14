@@ -14,6 +14,7 @@
     "normalize-events": "node scripts/normalize_events.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.4",
     "dotenv": "^16.4.7",
     "googleapis": "^144.0.0",
     "lucide-react": "^0.575.0",

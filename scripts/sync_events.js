@@ -11,12 +11,11 @@ const { fetchOracleEvents } = require('../lib/oracleFetcher');
 const { fetchGlobalAIEvents } = require('../lib/globalaiFetcher');
 const { normalizeEvents } = require('../lib/eventFormatters');
 const {
-  hasGoogleCredentials,
-  readEventsFromSheet,
-  writeEventsToSheet,
-  writeLastSyncToSheet,
-  getCredentialHelp,
-} = require('../lib/googleSheets');
+  hasSupabaseCredentials,
+  readEventsFromDb,
+  writeEventsToDb,
+  writeLastSyncToDb,
+} = require('../lib/supabase');
 
 const DATA_PATH = path.join(process.cwd(), 'data/events.json');
 const LAST_SYNC_PATH = path.join(process.cwd(), 'data/last_sync.json');
@@ -55,14 +54,14 @@ function mergeEvents(localEvents, remoteEvents) {
 }
 
 async function syncEvents() {
-  const useGoogle = hasGoogleCredentials();
-  
+  const useSupabase = hasSupabaseCredentials();
+
   let existingEvents = [];
-  if (useGoogle) {
+  if (useSupabase) {
     try {
-      existingEvents = await readEventsFromSheet();
+      existingEvents = await readEventsFromDb();
     } catch (error) {
-      console.warn(`Could not read Google Sheet: ${error.message}`);
+      console.warn(`Could not read from Supabase: ${error.message}`);
       existingEvents = readLocalEvents();
     }
   } else {
@@ -133,12 +132,12 @@ async function syncEvents() {
   finalEvents = normalizeEvents([...sapEvents, ...gitexEvents, ...oracleEvents, ...globalaiEvents, ...otherNonSapEvents]);
 
   const timestamp = new Date().toISOString();
-  if (useGoogle) {
+  if (useSupabase) {
     try {
-      await writeEventsToSheet(finalEvents);
-      await writeLastSyncToSheet(timestamp);
+      await writeEventsToDb(finalEvents);
+      await writeLastSyncToDb(timestamp);
     } catch (error) {
-      console.error(`Google Sheets upload failed: ${error.message}`);
+      console.error(`Supabase upload failed: ${error.message}`);
     }
   } else {
     writeLocalEvents(finalEvents);
