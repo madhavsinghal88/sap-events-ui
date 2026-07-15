@@ -301,6 +301,7 @@ export default function Dashboard() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('Explore all events');
+  const [upcomingSubTab, setUpcomingSubTab] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDateRange, setSelectedDateRange] = useState('All');
   const [selectedProductCategory, setSelectedProductCategory] = useState('All');
@@ -598,7 +599,16 @@ export default function Dashboard() {
     if (activeTab === 'Explore all events') {
       matchesTab = true;
     } else if (activeTab === 'Upcoming') {
-      matchesTab = event.parsedDate > new Date();
+      const isUpcoming = event.parsedDate > new Date();
+      if (upcomingSubTab === 'All') {
+        matchesTab = isUpcoming;
+      } else if (upcomingSubTab === 'In-person') {
+        matchesTab = isUpcoming && event.inPerson;
+      } else if (upcomingSubTab === 'Virtual - Live') {
+        matchesTab = isUpcoming && event.virtualLive;
+      } else if (upcomingSubTab === 'Virtual - On-demand') {
+        matchesTab = isUpcoming && event.virtualOnDemand;
+      }
     } else if (activeTab === 'In-person') {
       matchesTab = event.inPerson;
     } else if (activeTab === 'Virtual - Live') {
@@ -889,22 +899,45 @@ export default function Dashboard() {
         <section className="explore-section">
           <div className="section-header">
             <h2>Explore Feed <span className="results-count">({filteredEvents.length} of {companyFilteredEvents.length} events)</span></h2>
-            <div className="tabs">
-              {[
-                { label: `Explore All (${companyFilteredEvents.length})`, value: 'Explore all events' },
-                { label: 'Upcoming', value: 'Upcoming' },
-                { label: 'In-Person', value: 'In-person' },
-                { label: 'Virtual (Live)', value: 'Virtual - Live' },
-                { label: 'On-Demand', value: 'Virtual - On-demand' }
-              ].map(tab => (
-                <button
-                  key={tab.value}
-                  className={`tab-btn ${activeTab === tab.value ? 'active' : ''}`}
-                  onClick={() => setActiveTab(tab.value)}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            <div className="tabs-wrapper">
+              <div className="tabs">
+                {[
+                  { label: `Explore All (${companyFilteredEvents.length})`, value: 'Explore all events' },
+                  { label: 'Upcoming', value: 'Upcoming' },
+                  { label: 'In-Person', value: 'In-person' },
+                  { label: 'Virtual (Live)', value: 'Virtual - Live' },
+                  { label: 'On-Demand', value: 'Virtual - On-demand' }
+                ].map(tab => (
+                  <button
+                    key={tab.value}
+                    className={`tab-btn ${activeTab === tab.value ? 'active' : ''}`}
+                    onClick={() => {
+                      setActiveTab(tab.value);
+                      if (tab.value !== 'Upcoming') setUpcomingSubTab('All');
+                    }}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              {activeTab === 'Upcoming' && (
+                <div className="upcoming-subtabs">
+                  {[
+                    { label: 'All', value: 'All' },
+                    { label: 'In-Person', value: 'In-person' },
+                    { label: 'Virtual', value: 'Virtual - Live' },
+                    { label: 'On-Demand', value: 'Virtual - On-demand' }
+                  ].map(sub => (
+                    <button
+                      key={sub.value}
+                      className={`subtab-btn ${upcomingSubTab === sub.value ? 'active' : ''}`}
+                      onClick={() => setUpcomingSubTab(sub.value)}
+                    >
+                      {sub.label}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -1484,6 +1517,43 @@ export default function Dashboard() {
         }
 
         .tab-btn.active {
+          background: var(--card-bg);
+          color: var(--foreground);
+          font-weight: 600;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .tabs-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 0.35rem;
+        }
+
+        .upcoming-subtabs {
+          display: flex;
+          gap: 0.2rem;
+          background: var(--surface-alt);
+          padding: 0.2rem;
+          border-radius: 6px;
+          border: 1px solid var(--card-border);
+        }
+
+        .subtab-btn {
+          padding: 0.25rem 0.65rem;
+          border-radius: 5px;
+          font-size: 0.72rem;
+          font-weight: 500;
+          color: var(--text-muted);
+          transition: all 150ms ease;
+        }
+
+        .subtab-btn:hover {
+          color: var(--foreground);
+          background: var(--tab-hover);
+        }
+
+        .subtab-btn.active {
           background: var(--card-bg);
           color: var(--foreground);
           font-weight: 600;
