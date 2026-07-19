@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { normalizeEvent, parseEventDate } from '../lib/eventFormatters';
+import { t, translateEventType } from '../lib/uiTranslations';
 import {
   MapPin,
   Clock,
@@ -14,10 +15,26 @@ import {
   Download,
   FileSpreadsheet,
   FileText,
+  Globe,
+  Loader2,
 } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+
+const TARGET_LANGUAGES = {
+  en: 'English',
+  ja: 'Japanese',
+  de: 'German',
+  fr: 'French',
+  es: 'Spanish',
+  pt: 'Portuguese',
+  zh: 'Chinese',
+  ko: 'Korean',
+  ar: 'Arabic',
+  hi: 'Hindi',
+  ru: 'Russian',
+};
 
 const KNOWN_COUNTRIES = new Set([
   'Algeria',
@@ -276,13 +293,22 @@ function getLanguage(event) {
   const link = String(event.link || '').toLowerCase();
   const location = String(event.location || '').toLowerCase();
 
-  if (/[\u3040-\u30ff\u4e00-\u9faf]/.test(title)) return 'Japanese';
+  const hasKorean = /[\uac00-\ud7af]/.test(title);
+  const hasJapaneseKana = /[\u3040-\u30ff]/.test(title);
+  const hasCJK = /[\u4e00-\u9faf]/.test(title);
+
+  if (hasKorean) return 'Korean';
+  if (hasJapaneseKana) return 'Japanese';
+  if (hasCJK && (link.includes('/japan/') || location.includes('japan'))) return 'Japanese';
+  if (hasCJK) return 'Chinese';
+
   if (/[äöüß]/i.test(title) || link.includes('/germany/') || location.includes('germany')) return 'German';
   if (/[\u00c0-\u024f]/.test(title) && (link.includes('/spain/') || link.includes('/mexico/') || location.includes('spain'))) {
     return 'Spanish';
   }
   if (link.includes('/france/') || location.includes('france')) return 'French';
   if (link.includes('/brazil/') || location.includes('brazil')) return 'Portuguese';
+  if (link.includes('/japan/') || location.includes('japan')) return 'Japanese';
   return 'English';
 }
 
@@ -295,6 +321,15 @@ function getDateRangeBucket(date) {
   if (diffDays <= 30) return 'Next 30 Days';
   if (diffDays <= 90) return 'Next 90 Days';
   return 'Later';
+}
+
+function needsTranslation(event, targetLang) {
+  if (!event?.title) return false;
+  if (targetLang === 'en') {
+    // English UI: only convert non-English source titles.
+    return event.language && event.language !== 'English';
+  }
+  return true;
 }
 
 export default function Dashboard() {
@@ -312,6 +347,16 @@ export default function Dashboard() {
   const [selectedCountry, setSelectedCountry] = useState('All');
   const [selectedEventType, setSelectedEventType] = useState('All');
   const [selectedCompany, setSelectedCompany] = useState('All');
+
+  const [translateLang, setTranslateLang] = useState('en');
+  const [transMap, setTransMap] = useState({});
+  const [transLoading, setTransLoading] = useState({});
+  const [transError, setTransError] = useState('');
+  const [bulkTranslating, setBulkTranslating] = useState(false);
+  const [translateProgress, setTranslateProgress] = useState({ done: 0, total: 0 });
+  const translateAbortRef = useRef(0);
+  const transMapRef = useRef({});
+  const ui = (key) => t(translateLang, key);
 
   const [lastRefreshed, setLastRefreshed] = useState('');
   const [syncMessage, setSyncMessage] = useState('');
@@ -331,6 +376,8 @@ export default function Dashboard() {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [partnersSort, setPartnersSort] = useState('bestmatch');
 
+  const eventTransKey = (event) => `${event.company || 'SAP'}-${event.id}`;
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('eventall-theme', theme);
@@ -345,6 +392,21 @@ export default function Dashboard() {
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [downloadMenuOpen]);
+
+  useEffect(() => {
+    transMapRef.current = transMap;
+  }, [transMap]);
+
+  useEffect(() => {
+    localStorage.setItem('eventall-lang', translateLang);
+  }, [translateLang]);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('eventall-lang');
+    if (saved && TARGET_LANGUAGES[saved]) {
+      setTranslateLang(saved);
+    }
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -407,6 +469,42 @@ export default function Dashboard() {
     } catch (error) {
       console.error('Refresh failed:', error);
       setSyncMessage('Refresh failed. Try browser import from SAP finder.');
+    }
+  };
+
+  const translateEvent = async (event, text) => {
+    const key = eventTransKey(event);
+    if (transMap[key]?.lang === translateLang) {
+      setTransMap((prev) => {
+        const next = { ...prev };
+        delete next[key];
+        return next;
+      });
+      setTransError('');
+      return;
+    }
+
+    setTransLoading((prev) => ({ ...prev, [key]: true }));
+    setTransError('');
+    try {
+      const res = await fetch(
+        `/api/translate?text=${encodeURIComponent(text)}&target=${encodeURIComponent(translateLang)}`
+      );
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        throw new Error(data.error || 'Translation failed');
+      }
+      if (data.translated) {
+        setTransMap((prev) => ({
+          ...prev,
+          [key]: { lang: translateLang, text: data.translated },
+        }));
+      }
+    } catch (err) {
+      console.error('Translation failed:', err);
+      setTransError(err.message || 'Translation failed');
+    } finally {
+      setTransLoading((prev) => ({ ...prev, [key]: false }));
     }
   };
 
@@ -654,11 +752,175 @@ export default function Dashboard() {
   const exportColumns = ['date', 'title', 'company', 'type', 'location', 'status', 'link'];
   const exportHeaders = ['Date', 'Title', 'Company', 'Type', 'Location', 'Status', 'Link'];
 
+  const allEventKeys = useMemo(
+    () => enrichedEvents.map((event) => eventTransKey(event)).join('|'),
+    [enrichedEvents]
+  );
+
+  useEffect(() => {
+    const runId = ++translateAbortRef.current;
+
+    if (!enrichedEvents.length) {
+      setBulkTranslating(false);
+      setTranslateProgress({ done: 0, total: 0 });
+      return;
+    }
+
+    const cacheKey = `eventall-trans-${translateLang}`;
+    try {
+      const cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && typeof parsed === 'object') {
+          setTransMap(parsed);
+          transMapRef.current = parsed;
+        }
+      }
+    } catch {
+      // ignore cache parse errors
+    }
+
+    // English: only non-English titles. Other languages: translate everything.
+    const eventsToTranslate = enrichedEvents.filter((event) =>
+      needsTranslation(event, translateLang)
+    );
+    let cancelled = false;
+
+    const translateBatch = async () => {
+      const pendingAll = eventsToTranslate.filter((event) => {
+        const key = eventTransKey(event);
+        const cached = transMapRef.current[key];
+        return !(cached?.lang === translateLang && cached?.text);
+      });
+
+      setTranslateProgress({
+        done: eventsToTranslate.length - pendingAll.length,
+        total: eventsToTranslate.length,
+      });
+
+      if (pendingAll.length === 0) {
+        setBulkTranslating(false);
+        return;
+      }
+
+      setBulkTranslating(true);
+      setTransError('');
+      let completed = eventsToTranslate.length - pendingAll.length;
+      let failures = 0;
+
+      for (let i = 0; i < pendingAll.length; i += 20) {
+        if (cancelled || runId !== translateAbortRef.current) return;
+
+        const pending = pendingAll.slice(i, i + 20);
+
+        pending.forEach((event) => {
+          const key = eventTransKey(event);
+          setTransLoading((prev) => ({ ...prev, [key]: true }));
+        });
+
+        try {
+          const res = await fetch('/api/translate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              texts: pending.map((event) => event.title),
+              target: translateLang,
+            }),
+          });
+          const data = await res.json();
+
+          if (!res.ok || data.error) {
+            throw new Error(data.error || 'Translation failed');
+          }
+
+          if (cancelled || runId !== translateAbortRef.current) return;
+
+          setTransMap((prev) => {
+            const next = { ...prev };
+            pending.forEach((event, idx) => {
+              const titleResult = data.results?.[idx];
+              if (!titleResult?.translated) {
+                failures += 1;
+                return;
+              }
+              // Skip no-op results that are identical to the source.
+              if (titleResult.translated.trim() === String(event.title).trim()) {
+                return;
+              }
+              next[eventTransKey(event)] = {
+                lang: translateLang,
+                text: titleResult.translated,
+              };
+            });
+            transMapRef.current = next;
+            try {
+              sessionStorage.setItem(cacheKey, JSON.stringify(next));
+            } catch {
+              // ignore quota errors
+            }
+            return next;
+          });
+        } catch (err) {
+          failures += pending.length;
+          console.error('Batch translation failed:', err);
+          if (!cancelled && runId === translateAbortRef.current) {
+            setTransError(err.message || 'Some translations failed; continuing…');
+          }
+        } finally {
+          pending.forEach((event) => {
+            const key = eventTransKey(event);
+            setTransLoading((prev) => ({ ...prev, [key]: false }));
+          });
+          completed = Math.min(eventsToTranslate.length, completed + pending.length);
+          if (!cancelled && runId === translateAbortRef.current) {
+            setTranslateProgress({
+              done: completed,
+              total: eventsToTranslate.length,
+            });
+          }
+        }
+      }
+
+      if (!cancelled && runId === translateAbortRef.current) {
+        setBulkTranslating(false);
+        if (failures === 0) {
+          setTransError('');
+        } else {
+          setTransError(`Finished with ${failures} failed title(s). Re-select language to retry.`);
+        }
+      }
+    };
+
+    translateBatch();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [translateLang, allEventKeys]);
+
   const exportToExcel = () => {
     const rows = filteredEvents.map((e) =>
-      exportColumns.map((col) => (col === 'link' ? { f: e.link, t: 'l', l: { Target: e.link, Tooltip: 'Open' } } : e[col] || ''))
+      exportColumns.map((col) => e[col] || '')
     );
     const ws = XLSX.utils.aoa_to_sheet([exportHeaders, ...rows]);
+    
+    // Add hyperlinks to Link column
+    const linkColIdx = exportColumns.indexOf('link');
+    filteredEvents.forEach((e, idx) => {
+      if (e.link) {
+        const cellRef = XLSX.utils.encode_cell({ r: idx + 1, c: linkColIdx });
+        if (ws[cellRef]) {
+          ws[cellRef].l = { Target: e.link, Tooltip: 'Open link' };
+        }
+      }
+    });
+    
+    // Set column widths
+    ws['!cols'] = [
+      { wch: 12 }, { wch: 50 }, { wch: 10 }, { wch: 15 },
+      { wch: 30 }, { wch: 12 }, { wch: 60 },
+    ];
+    
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Events');
     XLSX.writeFile(wb, 'sap-events.xlsx');
@@ -698,7 +960,7 @@ export default function Dashboard() {
           </div>
           <div className="brand-subtitle">GLOBAL EVENT TRACKER</div>
         </div>
-        <p style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Loading events...</p>
+        <p style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>{ui('loadingEvents')}</p>
       </div>
     );
   }
@@ -720,8 +982,14 @@ export default function Dashboard() {
           </div>
           <div className="last-updated">
             <Clock size={14} className="text-blue" />
-             <span className="status-indicator">Last intelligence sync: {lastRefreshed}</span>
+             <span className="status-indicator">{ui('lastSync')}: {lastRefreshed}</span>
             {syncMessage ? <span className="sync-message">{syncMessage}</span> : null}
+            {bulkTranslating ? (
+              <span className="sync-message">
+                {ui('translatingProgress')} {translateProgress.done}/{translateProgress.total}
+              </span>
+            ) : null}
+            {transError ? <span className="sync-message">{transError}</span> : null}
           </div>
         </div>
 
@@ -743,7 +1011,7 @@ export default function Dashboard() {
               transition: 'all 0.15s ease-in-out'
             }}
           >
-            Events
+            {ui('events')}
           </button>
           <button
             onClick={() => setCurrentView('partners')}
@@ -761,7 +1029,7 @@ export default function Dashboard() {
               transition: 'all 0.15s ease-in-out'
             }}
           >
-            SAP Partners
+            {ui('sapPartners')}
           </button>
         </div>
 
@@ -770,13 +1038,25 @@ export default function Dashboard() {
             <Search size={18} />
             <input
               type="text"
-              placeholder="Search titles, keywords, cities..."
+              placeholder={ui('searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
+          <div className="translate-lang-box glass-panel" title={ui('translateTo')}>
+            <Globe size={16} />
+            <select
+              value={translateLang}
+              onChange={(e) => setTranslateLang(e.target.value)}
+              aria-label={ui('language')}
+            >
+              {Object.entries(TARGET_LANGUAGES).map(([code, label]) => (
+                <option key={code} value={code}>{label}</option>
+              ))}
+            </select>
+          </div>
           <button onClick={refreshData} className="refresh-btn glass-panel">
-            Trigger Intel Sync
+            {ui('triggerIntelSync')}
           </button>
           {currentView === 'events' && (
             <div className="download-dropdown">
@@ -784,15 +1064,15 @@ export default function Dashboard() {
                 onClick={() => setDownloadMenuOpen(!downloadMenuOpen)}
                 className="download-btn glass-panel"
               >
-                <Download size={16} /> Download
+                <Download size={16} /> {ui('download')}
               </button>
               {downloadMenuOpen && (
                 <div className="download-menu glass-panel">
                   <button onClick={() => { exportToExcel(); setDownloadMenuOpen(false); }}>
-                    <FileSpreadsheet size={14} /> Excel
+                    <FileSpreadsheet size={14} /> {ui('excel')}
                   </button>
                   <button onClick={() => { exportToPDF(); setDownloadMenuOpen(false); }}>
-                    <FileText size={14} /> PDF
+                    <FileText size={14} /> {ui('pdf')}
                   </button>
                 </div>
               )}
@@ -806,7 +1086,7 @@ export default function Dashboard() {
             title={theme === 'light' ? 'Black background' : 'White background'}
           >
             {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
-            {theme === 'light' ? 'Black' : 'White'}
+            {theme === 'light' ? ui('black') : ui('white')}
           </button>
         </div>
       </header>
@@ -815,60 +1095,68 @@ export default function Dashboard() {
         <>
           <div className="sap-filter-bar glass-panel">
         <FilterSelect
-          label="Date Range"
+          label={ui('dateRange')}
           value={selectedDateRange}
           onChange={setSelectedDateRange}
-          options={['All', 'Next 30 Days', 'Next 90 Days', 'Later', 'Past']}
+          options={[
+            { value: 'All', label: ui('all') },
+            { value: 'Next 30 Days', label: ui('next30') },
+            { value: 'Next 90 Days', label: ui('next90') },
+            { value: 'Later', label: ui('later') },
+            { value: 'Past', label: ui('past') },
+          ]}
         />
         <FilterSelect
-          label="Product Category"
+          label={ui('productCategory')}
           value={selectedProductCategory}
           onChange={setSelectedProductCategory}
-          options={['All', ...productCategories]}
+          options={[{ value: 'All', label: ui('all') }, ...productCategories.map((v) => ({ value: v, label: v }))]}
         />
         <FilterSelect
-          label="Industry"
+          label={ui('industry')}
           value={selectedIndustry}
           onChange={setSelectedIndustry}
-          options={['All', ...industries]}
+          options={[{ value: 'All', label: ui('all') }, ...industries.map((v) => ({ value: v, label: v }))]}
         />
         <FilterSelect
-          label="Event Category"
+          label={ui('eventCategory')}
           value={selectedEventCategory}
           onChange={setSelectedEventCategory}
-          options={['All', ...eventCategories]}
+          options={[{ value: 'All', label: ui('all') }, ...eventCategories.map((v) => ({ value: v, label: v }))]}
         />
         <FilterSelect
-          label="Language"
+          label={ui('language')}
           value={selectedLanguage}
           onChange={setSelectedLanguage}
-          options={['All', ...languages]}
+          options={[{ value: 'All', label: ui('all') }, ...languages.map((v) => ({ value: v, label: v }))]}
         />
         <FilterSelect
-          label="Region/Country"
+          label={ui('regionCountry')}
           value={selectedCountry}
           onChange={setSelectedCountry}
-          options={countryOptions}
+          options={countryOptions.map((opt) => (
+            opt.value === 'All' ? { ...opt, label: ui('all') } : opt
+          ))}
         />
         <FilterSelect
-          label="Event Type"
+          label={ui('eventType')}
           value={selectedEventType}
           onChange={setSelectedEventType}
-          options={['All', ...eventTypes]}
+          options={[{ value: 'All', label: ui('all') }, ...eventTypes.map((v) => ({ value: v, label: v }))]}
         />
         <FilterSelect
-          label="Sort By"
+          label={ui('sortBy')}
           value={`${sortConfig.key}:${sortConfig.direction}`}
           onChange={(value) => {
             const [key, direction] = value.split(':');
             setSortConfig({ key, direction });
           }}
           options={[
-            { value: 'date:asc', label: 'Upcoming' },
-            { value: 'date:desc', label: 'Newest' },
-            { value: 'title:asc', label: 'Title A-Z' },
-            { value: 'location:asc', label: 'Location' },
-            { value: 'status:asc', label: 'Status' },
+            { value: 'date:asc', label: ui('upcoming') },
+            { value: 'date:desc', label: ui('newest') },
+            { value: 'title:asc', label: ui('titleAZ') },
+            { value: 'location:asc', label: ui('location') },
+            { value: 'status:asc', label: ui('status') },
           ]}
           alignRight
         />
@@ -876,19 +1164,28 @@ export default function Dashboard() {
 
       {/* Company Selector Tab Bar */}
       <div className="company-selector glass-panel">
-        {['ALL COMPANIES', 'SAP EVENTS', 'GITEX EVENTS', 'ORACLE EVENTS', 'GLOBAL AI EVENTS', 'XYZ EVENTS', 'MICROSOFT EVENTS', 'SALESFORCE EVENTS'].map(compTab => {
-          const compValue = compTab.includes('ALL') ? 'All' : compTab.replace(' EVENTS', '');
+        {[
+          { key: 'ALL COMPANIES', label: ui('allCompanies') },
+          { key: 'SAP EVENTS', label: ui('sapEvents') },
+          { key: 'GITEX EVENTS', label: ui('gitexEvents') },
+          { key: 'ORACLE EVENTS', label: ui('oracleEvents') },
+          { key: 'GLOBAL AI EVENTS', label: ui('globalAiEvents') },
+          { key: 'XYZ EVENTS', label: ui('xyzEvents') },
+          { key: 'MICROSOFT EVENTS', label: ui('microsoftEvents') },
+          { key: 'SALESFORCE EVENTS', label: ui('salesforceEvents') },
+        ].map(compTab => {
+          const compValue = compTab.key.includes('ALL') ? 'All' : compTab.key.replace(' EVENTS', '');
           const lookupKey = compValue.toLowerCase();
           const isSelected = selectedCompany.toLowerCase() === lookupKey;
           const eventCount = companyEventCounts[lookupKey] || 0;
           const cssClass = lookupKey.replace(/\s+/g, '-');
           return (
             <button
-              key={compTab}
+              key={compTab.key}
               onClick={() => handleCompanyChange(compValue)}
               className={`company-tab-btn ${isSelected ? 'active' : ''} ${cssClass}`}
             >
-              {compTab} ({eventCount})
+              {compTab.label} ({eventCount})
             </button>
           );
         })}
@@ -898,15 +1195,15 @@ export default function Dashboard() {
         {/* Explore Section */}
         <section className="explore-section">
           <div className="section-header">
-            <h2>Explore Feed <span className="results-count">({filteredEvents.length} of {companyFilteredEvents.length} events)</span></h2>
+            <h2>{ui('exploreFeed')} <span className="results-count">({filteredEvents.length} {ui('of')} {companyFilteredEvents.length} {ui('eventsLabel')})</span></h2>
             <div className="tabs-wrapper">
               <div className="tabs">
                 {[
-                  { label: `Explore All (${companyFilteredEvents.length})`, value: 'Explore all events' },
-                  { label: 'Upcoming', value: 'Upcoming' },
-                  { label: 'In-Person', value: 'In-person' },
-                  { label: 'Virtual (Live)', value: 'Virtual - Live' },
-                  { label: 'On-Demand', value: 'Virtual - On-demand' }
+                  { label: `${ui('exploreAll')} (${companyFilteredEvents.length})`, value: 'Explore all events' },
+                  { label: ui('upcoming'), value: 'Upcoming' },
+                  { label: ui('inPerson'), value: 'In-person' },
+                  { label: ui('virtualLive'), value: 'Virtual - Live' },
+                  { label: ui('onDemand'), value: 'Virtual - On-demand' }
                 ].map(tab => (
                   <button
                     key={tab.value}
@@ -923,10 +1220,10 @@ export default function Dashboard() {
               {activeTab === 'Upcoming' && (
                 <div className="upcoming-subtabs">
                   {[
-                    { label: 'All', value: 'All' },
-                    { label: 'In-Person', value: 'In-person' },
-                    { label: 'Virtual', value: 'Virtual - Live' },
-                    { label: 'On-Demand', value: 'Virtual - On-demand' }
+                    { label: ui('all'), value: 'All' },
+                    { label: ui('inPerson'), value: 'In-person' },
+                    { label: ui('virtual'), value: 'Virtual - Live' },
+                    { label: ui('onDemand'), value: 'Virtual - On-demand' }
                   ].map(sub => (
                     <button
                       key={sub.value}
@@ -944,18 +1241,21 @@ export default function Dashboard() {
           <div className="events-table glass-panel">
             <div className="table-header">
               <div className="col sortable" onClick={() => requestSort('date')}>
-                Date & Time {sortConfig.key === 'date' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                {ui('dateTime')} {sortConfig.key === 'date' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
               <div className="col sortable" onClick={() => requestSort('title')}>
-                Event Title {sortConfig.key === 'title' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                {ui('eventTitle')} {sortConfig.key === 'title' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
               <div className="col sortable" onClick={() => requestSort('location')}>
-                Location & Type {sortConfig.key === 'location' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                {ui('locationType')} {sortConfig.key === 'location' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
-              <div className="col">Official Link</div>
+              <div className="col">{ui('officialLink')}</div>
             </div>
             <div className="table-body">
-              {filteredEvents.map((event) => (
+              {filteredEvents.map((event) => {
+                const key = eventTransKey(event);
+                const translated = transMap[key]?.lang === translateLang ? transMap[key].text : null;
+                return (
                 <div key={`${event.company || 'SAP'}-${event.id}`} className="table-row">
                   <div className="col date">{event.date}</div>
                   <div className="col title">
@@ -963,21 +1263,47 @@ export default function Dashboard() {
                       <span className={`company-badge ${(event.company || 'SAP').toLowerCase().replace(/\s+/g, '-')}`}>
                         {event.company || 'SAP'}
                       </span>
-                      <span className="event-title-text">{event.title}</span>
+                      <span className="event-title-text">
+                        {translated || event.title}
+                      </span>
+                      {(translated || transLoading[key]) && (
+                        <span className="trans-badge">
+                          {transLoading[key]
+                            ? '...'
+                            : (TARGET_LANGUAGES[translateLang] || translateLang)}
+                        </span>
+                      )}
+                      <button
+                        className="translate-btn"
+                        onClick={() => translateEvent(event, event.title)}
+                        disabled={transLoading[key] || bulkTranslating}
+                        title={
+                          translated
+                            ? ui('showOriginal')
+                            : `${ui('translateTo')} ${TARGET_LANGUAGES[translateLang] || translateLang}`
+                        }
+                      >
+                        {transLoading[key] ? (
+                          <Loader2 size={14} className="spin" />
+                        ) : (
+                          <Globe size={14} />
+                        )}
+                      </button>
                     </div>
                   </div>
                   <div className="col location">
-                    <span className="badge">{event.type}</span>
+                    <span className="badge">{translateEventType(translateLang, event.type)}</span>
                     <MapPin size={12} className="loc-pin" />
                     <span className="loc-text">{event.location}</span>
                   </div>
                   <div className="col action">
                     <a href={event.link} target="_blank" rel="noopener noreferrer" className="apply-link">
-                      Apply <ExternalLink size={14} />
+                      {ui('apply')} <ExternalLink size={14} />
                     </a>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -988,68 +1314,68 @@ export default function Dashboard() {
           {/* Partners filter bar */}
           <div className="sap-filter-bar glass-panel" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', padding: '1.5rem' }}>
             <FilterSelect
-              label="Partner Type"
+              label={ui('partnerType')}
               value={selectedPartnerType}
               onChange={setSelectedPartnerType}
               options={[
-                { value: '', label: 'All Types' },
+                { value: '', label: ui('allTypes') },
                 ...(distributions.ENGAGEMENT || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
               ]}
             />
             <FilterSelect
-              label="Solution"
+              label={ui('solution')}
               value={selectedSolution}
               onChange={setSelectedSolution}
               options={[
-                { value: '', label: 'All Solutions' },
+                { value: '', label: ui('allSolutions') },
                 ...(distributions.PRODUCTS || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
               ]}
             />
             <FilterSelect
-              label="Focus Industry"
+              label={ui('focusIndustry')}
               value={selectedFocusIndustry}
               onChange={setSelectedFocusIndustry}
               options={[
-                { value: '', label: 'All Industries' },
+                { value: '', label: ui('allIndustries') },
                 ...(distributions.INDUSTRY || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
               ]}
             />
             <FilterSelect
-              label="Location"
+              label={ui('location')}
               value={selectedLocation}
               onChange={setSelectedLocation}
               options={[
-                { value: '', label: 'All Locations' },
+                { value: '', label: ui('allLocations') },
                 ...(distributions.LOCATION || []).map(o => ({ value: o.title, label: `${o.title} (${o.count})` }))
               ]}
             />
             <FilterSelect
-              label="Sort By"
+              label={ui('sortBy')}
               value={partnersSort}
               onChange={setPartnersSort}
               options={[
-                { value: 'bestmatch', label: 'Best match' },
-                { value: 'title:asc', label: 'Alphabetical A-Z' },
-                { value: 'title:desc', label: 'Alphabetical Z-A' }
+                { value: 'bestmatch', label: ui('bestMatch') },
+                { value: 'title:asc', label: ui('alphaAZ') },
+                { value: 'title:desc', label: ui('alphaZA') }
               ]}
             />
           </div>
 
           <section className="explore-section">
             <div className="section-header">
-              <h2>SAP Partners Directory <span className="results-count">({totalPartners} results)</span></h2>
+              <h2>{ui('partnersDirectory')} <span className="results-count">({totalPartners} {ui('results')})</span></h2>
             </div>
             
             {partnersLoading ? (
               <div className="loading-screen" style={{ minHeight: '350px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
                   <div className="spinner" style={{ width: '40px', height: '40px', border: '3px solid var(--card-border)', borderTopColor: '#3b82f6', borderRadius: '50%', animation: 'spin 1s linear infinite' }}></div>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Loading SAP partners...</p>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{ui('loadingPartners')}</p>
                 </div>
               </div>
             ) : partners.length === 0 ? (
               <div className="loading-screen" style={{ minHeight: '350px' }}>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>No partners found matching your search criteria.</p>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{ui('noPartners')}</p>
               </div>
             ) : (
               <>
@@ -1074,20 +1400,20 @@ export default function Dashboard() {
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                           <Users size={16} className="text-blue" />
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1 }}>Consultants</span>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1 }}>{ui('consultants')}</span>
                             <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--foreground)' }}>{partner.consultants ? partner.consultants.toLocaleString() : '0'}</span>
                           </div>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                           <Award size={16} className="text-purple" />
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1 }}>Competencies</span>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1 }}>{ui('competencies')}</span>
                             <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--foreground)' }}>{partner.competencyTotal || partner.competencies || 0}</span>
                           </div>
                         </div>
                       </div>
                       <a href={`https://partnerfinder.sap.com/profile/${partner.profileId}`} target="_blank" rel="noopener noreferrer" className="apply-link" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none', background: '#3b82f6', color: '#ffffff', fontWeight: 600, fontSize: '0.85rem', padding: '0.6rem', borderRadius: '8px', width: '100%', textAlign: 'center' }}>
-                        View Profile <ExternalLink size={14} />
+                        {ui('viewProfile')} <ExternalLink size={14} />
                       </a>
                     </div>
                     );
@@ -1733,6 +2059,73 @@ export default function Dashboard() {
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
+        }
+
+        .spin {
+          animation: spin 1s linear infinite;
+        }
+
+        .translate-lang-box {
+          display: flex;
+          align-items: center;
+          gap: 0.35rem;
+          padding: 0.4rem 0.6rem;
+          background: var(--card-bg);
+          border: 1px solid var(--card-border);
+          border-radius: 8px;
+          color: var(--text-muted);
+        }
+
+        .translate-lang-box select {
+          background: transparent;
+          border: none;
+          color: var(--foreground);
+          font-size: 0.8rem;
+          font-weight: 500;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .translate-lang-box select option {
+          background: var(--card-bg);
+          color: var(--foreground);
+        }
+
+        .translate-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.2rem;
+          border-radius: 4px;
+          border: 1px solid var(--card-border);
+          background: var(--surface-alt);
+          color: var(--text-muted);
+          cursor: pointer;
+          transition: all 150ms ease;
+          flex-shrink: 0;
+        }
+
+        .translate-btn:hover {
+          background: #3b82f6;
+          color: #ffffff;
+          border-color: #3b82f6;
+        }
+
+        .translate-btn:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        .trans-badge {
+          font-size: 0.55rem;
+          font-weight: 600;
+          padding: 0.1rem 0.3rem;
+          border-radius: 3px;
+          background: #DBEAFE;
+          color: #1D4ED8;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          flex-shrink: 0;
         }
       `}</style>
     </main>
