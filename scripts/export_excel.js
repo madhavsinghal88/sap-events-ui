@@ -4,26 +4,38 @@ const path = require('path');
 
 const events = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/events.json'), 'utf8'));
 
-function normalizeDate(dateStr) {
-  if (!dateStr) return '';
-  
-  // Handle various date formats
-  let cleaned = dateStr.replace(/\|/g, '').replace(/·/g, '').trim();
-  
-  // Try to parse with Date
-  const date = new Date(cleaned);
-  if (!isNaN(date.getTime())) {
-    return date.toISOString().split('T')[0]; // YYYY-MM-DD
+function extractTime(rawDate) {
+  if (!rawDate) return '';
+  const cleaned = String(rawDate).replace(/&[a-z]+;/gi, ' ').trim();
+  const part = cleaned.match(/[|·]\s*(.+)$/);
+  if (part) {
+    const timeMatch = part[1].match(/(\d{1,2}:\d{2}(?:\s*(?:AM|PM))?)(?:\s*[–-]\s*(\d{1,2}:\d{2}(?:\s*(?:AM|PM))?))?/i);
+    return timeMatch ? timeMatch[0].trim() : '';
   }
-  
-  // Return original if can't parse
-  return cleaned;
+  const timeMatch = cleaned.match(/(\d{1,2}:\d{2}(?:\s*(?:AM|PM))?)(?:\s*[–-]\s*(\d{1,2}:\d{2}(?:\s*(?:AM|PM))?))?/i);
+  return timeMatch ? timeMatch[0].trim() : '';
 }
 
-const headers = ['Date', 'Title', 'Company', 'Type', 'Location', 'Status', 'Link'];
+function normalizeDate(dateStr) {
+  if (!dateStr) return '';
+  let d = dateStr.replace(/\s*[|·]\s*.*$/, '');
+  d = d.replace(/\s+\d{1,2}:\d{2}.*$/, '');
+  return d.trim();
+}
+
+const headers = ['Date', 'Time', 'Upcoming', 'Title', 'Company', 'Type', 'Location', 'Status', 'Link'];
+
+function isUpcoming(dateStr) {
+  if (!dateStr) return 'No';
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return 'No';
+  return d > new Date() ? 'Yes' : 'No';
+}
 
 const rows = events.map(e => [
   normalizeDate(e.date),
+  extractTime(e.date),
+  isUpcoming(e.date),
   e.title,
   e.company,
   e.type,
@@ -34,19 +46,14 @@ const rows = events.map(e => [
 
 const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
 
-// Set column widths
 ws['!cols'] = [
-  { wch: 12 },  // Date
-  { wch: 50 },  // Title
-  { wch: 10 },  // Company
-  { wch: 15 },  // Type
-  { wch: 30 },  // Location
-  { wch: 12 },  // Status
-  { wch: 60 },  // Link
+  { wch: 14 }, { wch: 10 }, { wch: 8 }, { wch: 50 },
+  { wch: 12 }, { wch: 14 }, { wch: 30 }, { wch: 12 },
+  { wch: 60 },
 ];
+ws['!autofilter'] = { ref: XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: rows.length, c: headers.length - 1 } }) };
 
-// Add hyperlinks to Link column
-const linkCol = 6; // 0-indexed
+const linkCol = 8;
 events.forEach((e, idx) => {
   const cellRef = XLSX.utils.encode_cell({ r: idx + 1, c: linkCol });
   if (e.link && ws[cellRef]) {

@@ -749,8 +749,8 @@ export default function Dashboard() {
       matchesSearch;
   });
 
-  const exportColumns = ['date', 'title', 'company', 'type', 'location', 'status', 'link'];
-  const exportHeaders = ['Date', 'Title', 'Company', 'Type', 'Location', 'Status', 'Link'];
+  const exportColumns = ['date', 'time', 'title', 'company', 'type', 'location', 'status', 'link'];
+  const exportHeaders = ['Date', 'Time', 'Upcoming', 'Title', 'Company', 'Type', 'Location', 'Status', 'Link'];
 
   const allEventKeys = useMemo(
     () => enrichedEvents.map((event) => eventTransKey(event)).join('|'),
@@ -899,13 +899,22 @@ export default function Dashboard() {
   }, [translateLang, allEventKeys]);
 
   const exportToExcel = () => {
-    const rows = filteredEvents.map((e) =>
-      exportColumns.map((col) => e[col] || '')
-    );
+    const now = new Date();
+    const rows = filteredEvents.map((e) => [
+      (e.date || '').replace(/\s*[|·]\s*.*$/, '').replace(/\s+\d{1,2}:\d{2}.*$/, '').trim(),
+      e.time || '',
+      e.parsedDate > now ? 'Yes' : 'No',
+      e.title || '',
+      e.company || '',
+      e.type || '',
+      e.location || '',
+      e.status || '',
+      e.link || '',
+    ]);
     const ws = XLSX.utils.aoa_to_sheet([exportHeaders, ...rows]);
     
     // Add hyperlinks to Link column
-    const linkColIdx = exportColumns.indexOf('link');
+    const linkColIdx = exportHeaders.indexOf('Link');
     filteredEvents.forEach((e, idx) => {
       if (e.link) {
         const cellRef = XLSX.utils.encode_cell({ r: idx + 1, c: linkColIdx });
@@ -917,9 +926,11 @@ export default function Dashboard() {
     
     // Set column widths
     ws['!cols'] = [
-      { wch: 12 }, { wch: 50 }, { wch: 10 }, { wch: 15 },
-      { wch: 30 }, { wch: 12 }, { wch: 60 },
+      { wch: 14 }, { wch: 10 }, { wch: 8 }, { wch: 50 },
+      { wch: 12 }, { wch: 14 }, { wch: 30 }, { wch: 12 },
+      { wch: 60 },
     ];
+    ws['!autofilter'] = { ref: XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: rows.length, c: exportHeaders.length - 1 } }) };
     
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Events');
@@ -937,7 +948,17 @@ export default function Dashboard() {
     doc.autoTable({
       startY: 28,
       head: [exportHeaders],
-      body: filteredEvents.map((e) => exportColumns.map((col) => e[col] || '')),
+      body: filteredEvents.map((e) => [
+        (e.date || '').replace(/\s*[|·]\s*.*$/, '').replace(/\s+\d{1,2}:\d{2}.*$/, '').trim(),
+        e.time || '',
+        e.parsedDate > new Date() ? 'Yes' : 'No',
+        e.title || '',
+        e.company || '',
+        e.type || '',
+        e.location || '',
+        e.status || '',
+        e.link || '',
+      ]),
       styles: { fontSize: 7, cellPadding: 2 },
       headStyles: { fillColor: [41, 128, 185] },
       alternateRowStyles: { fillColor: [245, 248, 250] },
