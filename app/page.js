@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable';
 
 const TARGET_LANGUAGES = {
   en: 'English',
@@ -934,16 +934,26 @@ export default function Dashboard() {
     doc.setTextColor(120);
     doc.text(`${filteredEvents.length} events | Exported ${new Date().toLocaleDateString()}`, 14, 22);
 
-    doc.autoTable({
+    autoTable(doc, {
       startY: 28,
       head: [exportHeaders],
-      body: filteredEvents.map((e) => exportColumns.map((col) => e[col] || '')),
+      body: filteredEvents.map((e) => [
+        (e.date || '').replace(/\s*[|·]\s*.*$/, '').replace(/\s+\d{1,2}:\d{2}.*$/, '').trim(),
+        e.time || '',
+        e.parsedDate > new Date() ? 'Yes' : 'No',
+        e.title || '',
+        e.company || '',
+        e.type || '',
+        e.location || '',
+        e.status || '',
+        e.link || '',
+      ]),
       styles: { fontSize: 7, cellPadding: 2 },
       headStyles: { fillColor: [41, 128, 185] },
       alternateRowStyles: { fillColor: [245, 248, 250] },
       columnStyles: {
-        1: { cellWidth: 60 },
-        5: { cellWidth: 25 },
+        3: { cellWidth: 60 },
+        8: { cellWidth: 25 },
       },
     });
 
