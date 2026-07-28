@@ -1,13 +1,14 @@
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
 
-import { fetchAllSapEvents, mergeWithExistingStatuses } from '../../../lib/sapFetcher';
-import { hasSupabaseCredentials, readEventsFromDb, writeEventsToDb, readLastSyncFromDb, writeLastSyncToDb } from '../../../lib/supabase';
+import { hasSupabaseCredentials, readEventsFromDb, writeEventsToDb, readLastSyncFromDb } from '../../../lib/supabase';
 import { normalizeEvents } from '../../../lib/eventFormatters';
+import { syncEvents } from '../../../scripts/sync_events';
 
 const DATA_PATH = path.join(process.cwd(), 'data/events.json');
 const LAST_SYNC_PATH = path.join(process.cwd(), 'data/last_sync.json');
@@ -80,44 +81,31 @@ export async function POST(request) {
 
 export async function PATCH() {
   try {
-    const useSupabase = hasSupabaseCredentials();
-    const existingEvents = useSupabase
-      ? await readEventsFromDb()
-      : JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+    const result = await syncEvents();
+    const { sap = 0, gitex = 0, oracle = 0, globalAi = 0 } = result.sources || {};
+    const message = result.source === 'sap_api'
+      ? `Synced ${result.count} events (SAP ${sap}, GITEX ${gitex}, Oracle ${oracle}, Global AI ${globalAi}).`
+      : `Partner sources synced; SAP API unavailable — kept ${sap} existing SAP events. Total ${result.count} (GITEX ${gitex}, Oracle ${oracle}, Global AI ${globalAi}).`;
 
-    try {
-      const fetchedEvents = await fetchAllSapEvents();
-      const nonSapEvents = existingEvents.filter(e => e.company && e.company !== 'SAP');
-      const sapEvents = mergeWithExistingStatuses(fetchedEvents, existingEvents.filter(e => !e.company || e.company === 'SAP'));
-      const events = normalizeEvents([...sapEvents, ...nonSapEvents]);
-
-      const timestamp = new Date().toISOString();
-      if (useSupabase) {
-        await writeEventsToDb(events);
-        await writeLastSyncToDb(timestamp);
-      } else {
-        fs.writeFileSync(DATA_PATH, JSON.stringify(events, null, 2));
-        try {
-          fs.writeFileSync(LAST_SYNC_PATH, JSON.stringify({ lastSynced: timestamp }, null, 2));
-        } catch (e) {}
-      }
-
-      return NextResponse.json({ message: 'SAP sync complete', count: events.length, source: 'sap_api', lastSynced: timestamp });
-    } catch (error) {
-      const isReadOnly = error.code === 'EROFS' || error.message.includes('read-only') || error.message.includes('EROFS');
-      const hint = isReadOnly
-        ? `Configure Supabase env vars (SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY) in your Vercel project settings.`
-        : `SAP API request failed (${error.message}). Vercel cloud server IPs are protected/blocked by SAP's Akamai CDN firewall. Run a local sync (npm run sync) from your home/office network, or copy & run the browser import script.`;
-
-      return NextResponse.json({
-        message: isReadOnly ? 'Vercel filesystem is read-only.' : 'SAP API blocked from server. Use browser import instead.',
-        count: existingEvents.length,
-        source: 'local',
-        hint,
-        error: error.message,
-      });
-    }
+    return NextResponse.json({
+      message,
+      count: result.count,
+      source: result.source,
+      sources: result.sources,
+      lastSynced: result.lastSynced,
+      hint: result.source === 'sap_api'
+        ? undefined
+        : 'SAP API blocked from this server (Akamai). Partner APIs (GITEX/Oracle/Global AI) were still refreshed. Use browser import for fresh SAP data.',
+    });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to refresh data: ' + error.message }, { status: 500 });
+    const isReadOnly = error.code === 'EROFS' || error.message.includes('read-only') || error.message.includes('EROFS');
+    const hint = isReadOnly
+      ? 'Configure Supabase env vars (SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY) in your Vercel project settings.'
+      : error.message;
+
+    return NextResponse.json({
+      error: 'Failed to refresh data: ' + error.message,
+      hint,
+    }, { status: 500 });
   }
 }

@@ -461,8 +461,12 @@ export default function Dashboard() {
       } else {
         setLastRefreshed(formatLastSynced(new Date().toISOString()));
       }
-      if (data.source === 'sap_api') {
-        setSyncMessage(`Synced ${data.count} live SAP events.`);
+      if (data.error) {
+        setSyncMessage(data.hint || data.error || 'Refresh failed.');
+      } else if (data.message) {
+        setSyncMessage(data.message);
+      } else if (data.source === 'sap_api') {
+        setSyncMessage(`Synced ${data.count} live events.`);
       } else {
         setSyncMessage(data.hint || 'Server sync blocked. Run the browser import from SAP finder.');
       }
