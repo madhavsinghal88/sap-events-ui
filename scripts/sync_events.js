@@ -133,18 +133,25 @@ async function syncEvents() {
 
   const timestamp = new Date().toISOString();
   if (useSupabase) {
-    try {
-      await writeEventsToDb(finalEvents);
-      await writeLastSyncToDb(timestamp);
-    } catch (error) {
-      console.error(`Supabase upload failed: ${error.message}`);
-    }
+    await writeEventsToDb(finalEvents);
+    await writeLastSyncToDb(timestamp);
   } else {
     writeLocalEvents(finalEvents);
     writeLocalLastSync(timestamp);
   }
 
-  return { source, count: finalEvents.length };
+  return {
+    source,
+    count: finalEvents.length,
+    lastSynced: timestamp,
+    sources: {
+      sap: sapEvents.length,
+      gitex: gitexEvents.length,
+      oracle: oracleEvents.length,
+      globalAi: globalaiEvents.length,
+      other: otherNonSapEvents.length,
+    },
+  };
 }
 
 if (require.main === module) {
