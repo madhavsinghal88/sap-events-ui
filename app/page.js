@@ -360,6 +360,7 @@ export default function Dashboard() {
 
   const [lastRefreshed, setLastRefreshed] = useState('');
   const [syncMessage, setSyncMessage] = useState('');
+  const [isSyncing, setIsSyncing] = useState(false);
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'asc' });
   const [theme, setTheme] = useState('light');
   const [currentView, setCurrentView] = useState('events');
@@ -452,6 +453,9 @@ export default function Dashboard() {
   };
 
   const refreshData = async () => {
+    if (isSyncing) return;
+    setIsSyncing(true);
+    setSyncMessage('');
     try {
       const res = await fetch('/api/events', { method: 'PATCH' });
       const data = await res.json();
@@ -473,6 +477,8 @@ export default function Dashboard() {
     } catch (error) {
       console.error('Refresh failed:', error);
       setSyncMessage('Refresh failed. Try browser import from SAP finder.');
+    } finally {
+      setIsSyncing(false);
     }
   };
 
@@ -1080,8 +1086,20 @@ export default function Dashboard() {
               ))}
             </select>
           </div>
-          <button onClick={refreshData} className="refresh-btn glass-panel">
-            {ui('triggerIntelSync')}
+          <button
+            onClick={refreshData}
+            className="refresh-btn glass-panel"
+            disabled={isSyncing}
+            aria-busy={isSyncing}
+          >
+            {isSyncing ? (
+              <>
+                <Loader2 size={16} className="spin" />
+                {ui('syncingEvents')}
+              </>
+            ) : (
+              ui('syncEvents')
+            )}
           </button>
           {currentView === 'events' && (
             <div className="download-dropdown">
@@ -1495,6 +1513,16 @@ export default function Dashboard() {
           </section>
         </div>
       )}
+        <style jsx global>{`
+          @keyframes sync-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          svg.spin {
+            animation: sync-spin 0.8s linear infinite;
+            flex-shrink: 0;
+          }
+        `}</style>
         <style jsx>{`
         .dashboard {
           padding: 2rem;
@@ -1757,6 +1785,10 @@ export default function Dashboard() {
         }
 
         .refresh-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.4rem;
           padding: 0.5rem 1rem;
           font-weight: 600;
           font-size: 0.85rem;
@@ -1766,12 +1798,18 @@ export default function Dashboard() {
           border-radius: 8px;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
           transition: all 150ms ease;
+          min-width: 8.5rem;
         }
 
-        .refresh-btn:hover {
+        .refresh-btn:hover:not(:disabled) {
           background: var(--surface-hover);
           border-color: var(--border-strong);
           transform: translateY(-1px);
+        }
+
+        .refresh-btn:disabled {
+          opacity: 0.75;
+          cursor: wait;
         }
 
         .download-dropdown {
@@ -2079,15 +2117,6 @@ export default function Dashboard() {
           .sap-filter-bar {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
-        }
-
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        .spin {
-          animation: spin 1s linear infinite;
         }
 
         .translate-lang-box {
